@@ -33,7 +33,8 @@ const ImageSlideshow = ({ images, autoPlay = true, autoPlayInterval = 5000 }) =>
   if (!images || images.length === 0) return null;
 
   return (
-    <div className="relative w-full h-96 overflow-hidden rounded-lg">
+   <div className="relative w-full h-[500px] md:h-[600px] overflow-hidden rounded-lg">
+
       {/* Main Image Display */}
       <div className="relative w-full h-full">
         {images.map((image, index) => (
@@ -46,7 +47,7 @@ const ImageSlideshow = ({ images, autoPlay = true, autoPlayInterval = 5000 }) =>
             <img
               src={image.src}
               alt={image.alt || `Slide ${index + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain bg-amber-500"
             />
             {image.caption && (
               <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
@@ -108,7 +109,7 @@ const App = () => {
       case 'home': return <HomePage />;
       case 'about': return <AboutPage />;
       case 'services': return <ServicesPage />;
-      case 'packages': return <PackagesPage />;
+      case 'testimonials': return <TestimonialsPage />;
       case 'contact': return <ContactPage />;
       default: return <HomePage />;
     }
@@ -136,7 +137,7 @@ const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenu
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About Us' },
     { id: 'services', label: 'Services' },
-    { id: 'packages', label: 'Packages' },
+    { id: 'testimonials', label: 'Testimonials' },
     { id: 'contact', label: 'Contact' }
   ];
 
@@ -150,7 +151,7 @@ const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenu
             <div className="w-10 h-10 mr-3 flex items-center justify-center">
               <img 
                 src="\logo-alpha-consulting-ke.jpg" 
-                alt="Alpha Consultancy KE Logo" 
+                alt="Alpha Coaching KE Logo" 
                 className="w-10 h-10 object-contain"
                 onError={(e) => {
                   // Fallback if logo doesn't exist - show initials
@@ -159,12 +160,12 @@ const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenu
                 }}
               />
               {/* Fallback logo with gold background */}
-              <div className="w-10 h-10 bg-yellow-600 rounded-lg flex items-center justify-center" style={{display: 'none'}}>
+              <div className="w-10 h-10 bg-amber-600 rounded-lg flex items-center justify-center" style={{display: 'none'}}>
                 <span className="text-white font-bold text-xl">AC</span>
               </div>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">Alpha Consultancy KE</h1>
+              <h1 className="text-xl font-bold text-gray-900">Alpha Coaching KE</h1>
               <p className="text-sm text-gray-600">Professional Therapy Services</p>
             </div>
           </div>
@@ -177,8 +178,8 @@ const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenu
                 onClick={() => setCurrentPage(item.id)}
                 className={`px-3 py-2 text-sm font-medium transition-colors ${
                   currentPage === item.id
-                    ? 'text-yellow-600 border-b-2 border-yellow-600'
-                    : 'text-gray-700 hover:text-yellow-600'
+                    ? 'text-amber-600 border-b-2 border-amber-600'
+                    : 'text-gray-700 hover:text-amber-600'
                 }`}
               >
                 {item.label}
@@ -207,8 +208,8 @@ const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenu
                 }}
                 className={`block w-full text-left px-3 py-2 text-sm font-medium ${
                   currentPage === item.id
-                    ? 'text-yellow-600 bg-yellow-50'
-                    : 'text-gray-700 hover:text-yellow-600 hover:bg-gray-50'
+                    ? 'text-amber-600 bg-amber-50'
+                    : 'text-gray-700 hover:text-amber-600 hover:bg-gray-50'
                 }`}
               >
                 {item.label}
@@ -229,17 +230,22 @@ const HomePage = () => {
   // Slideshow images - you can add more images here
   const slideImages = [
     {
-      src: "https://alphagroupke.wordpress.com/wp-content/uploads/2025/01/logo-alpha-consulting-ke.jpg",
+      src: "/logo-alpha-consulting-ke.jpg",
       alt: "Alpha Consulting KE Logo",
       caption: "Welcome to Alpha Consulting KE - Your transformation journey begins here"
     },
     {
-      src: "https://alphagroupke.wordpress.com/wp-content/uploads/2025/04/amazeing-mom-program-flier-healing-table.jpg",
-      alt: "Amaze-ing Mom Program",
+      src: "/personal couch.jpg",
+      alt: "personal trauma couching",
       caption: "Join our monthly trauma healing sessions - Every woman is invited to the healing table"
     },
     {
-      src: "https://alphagroupke.wordpress.com/wp-content/uploads/2025/03/1000598910.jpg",
+      src: "/relationship couch.jpg",
+      alt: "relationship trauma couching",
+      caption: "Join our monthly trauma healing sessions - Every woman is invited to the healing table"
+    },
+    {
+      src: "/child couch.jpg",
       alt: "Psalm 139",
       caption: "You are fearfully and wonderfully made - Psalm 139"
     }
@@ -248,18 +254,16 @@ const HomePage = () => {
   return (
     <>
       {/* Hero Section with Slideshow */}
-      <section className="bg-gradient-to-r from-yellow-600 to-gray-900 text-white py-20">
+      <section className="bg-gradient-to-r from-amber-600 to-gray-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Logo and Main Heading */}
-          <div className="text-center mb-12">
+          {/*<div className="text-center mb-12">
             
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            {<h1 className="text-4xl md:text-6xl font-bold mb-6">
               Welcome to Alpha Consulting KE
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-yellow-100">
-              Our logo is a symbol of the reality of how life happens to us. We are visible to the world and ready to live to our fullest potential.
-            </p>
-          </div>
+            </h1>}
+           
+          </div>*/ }
 
           {/* Image Slideshow */}
           <div className="mb-8">
@@ -267,9 +271,7 @@ const HomePage = () => {
           </div>
 
           <div className="text-center">
-            <button className="btn-primary text-lg px-8 py-4 scale-in">
-              Start Your Transformation Today
-            </button>
+           
           </div>
         </div>
       </section>
@@ -286,7 +288,7 @@ const HomePage = () => {
               <p className="mb-4">
                 Our role is to support you to stand strong. We help ensure you are not 'pulled down' by intangible or unseen experiences that have previously held you back.
               </p>
-              <p className="text-yellow-600 font-semibold text-xl">
+              <p className="text-amber-600 font-semibold text-xl">
                 Transformation begins when you say 'YES!' to intentionally engage to meet the best version of your future self.
               </p>
             </div>
@@ -311,7 +313,7 @@ const HomePage = () => {
               "As a parent, am I intentionally helping my child fill any learning gaps they might be facing academically?",
               "Do I feel like I am parenting negatively? Do I constantly feel defeated, implosive or explosive about parenting?"
             ].map((question, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md border-l-4 border-yellow-600">
+              <div key={index} className="bg-white p-6 rounded-lg shadow-md border-l-4 border-amber-600">
                 <p className="text-gray-700 font-medium">{question}</p>
               </div>
             ))}
@@ -320,73 +322,100 @@ const HomePage = () => {
       </section>
 
       {/* Amaze-ing Mom Program */}
-      <section className="py-16 bg-yellow-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">What's NEW?!</h2>
-            <h3 className="text-2xl font-semibold text-yellow-600 mb-6">Amaze-ing Mom Program</h3>
-            <p className="text-xl text-gray-600 mb-4">Every month in 2025 is trauma healing month.</p>
-            <p className="text-lg text-gray-700 mb-8">Every woman is invited to the online webinar dubbed 'healing table' with Coach Moriah.</p>
-          </div>
+      <section className="py-16 bg-amber-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl font-bold text-gray-900 mb-4">What's NEW?!</h2>
+      <h3 className="text-2xl font-semibold text-amber-600 mb-6">Amaze-ing Mom Program</h3>
+      <p className="text-xl text-gray-600 mb-4">Every month in 2025 is trauma healing month.</p>
+      <p className="text-lg text-gray-700 mb-8">Every woman is invited to the online webinar dubbed 'healing table' with Coach Moriah.</p>
+    </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <h4 className="text-xl font-bold text-gray-900 mb-2">February Theme</h4>
-              <p className="text-yellow-600 font-semibold">Unwinding the cord of trauma</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <h4 className="text-xl font-bold text-gray-900 mb-2">March Theme</h4>
-              <p className="text-yellow-600 font-semibold">Understanding trauma and starting from the middle</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <h4 className="text-xl font-bold text-gray-900 mb-2">April Theme</h4>
-              <p className="text-yellow-600 font-semibold">Mother wound</p>
-            </div>
-          </div>
+    <div className="grid md:grid-cols-3 gap-8 mb-12">
+      <div className="bg-white p-6 rounded-lg shadow-md text-center">
+        <h4 className="text-xl font-bold text-gray-900 mb-2">February Theme</h4>
+        <p className="text-amber-600 font-semibold">Unwinding the cord of trauma</p>
+      </div>
+      <div className="bg-white p-6 rounded-lg shadow-md text-center">
+        <h4 className="text-xl font-bold text-gray-900 mb-2">March Theme</h4>
+        <p className="text-amber-600 font-semibold">Understanding trauma and starting from the middle</p>
+      </div>
+      <div className="bg-white p-6 rounded-lg shadow-md text-center">
+        <h4 className="text-xl font-bold text-gray-900 mb-2">April Theme</h4>
+        <p className="text-amber-600 font-semibold">Mother wound</p>
+      </div>
+    </div>
 
-          <div className="bg-white p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
-            <h4 className="text-2xl font-bold text-gray-900 mb-4 text-center">Join the Healing Table</h4>
-            <div className="space-y-4 text-gray-700">
-              <p><strong>Schedule:</strong> Every 2nd and 3rd Saturday at 7:00 PM GMT</p>
-              <p><strong>Payment:</strong> MPESA Express to 254-710484899</p>
-              <p><strong>Paybill:</strong> 595607 Account: Amaze-ing Mom</p>
-              
-              <div className="mt-6">
-                <h5 className="font-semibold mb-2">You will need:</h5>
-                <ul className="list-disc list-inside space-y-1 text-gray-600">
-                  <li>A notebook and pen</li>
-                  <li>Water or other preferred drink</li>
-                  <li>Look your best (Wear something nice that you haven't worn in a while, and perfume!)</li>
-                </ul>
-              </div>
-              
-              <div className="text-center mt-8">
-                <a 
-                  href="https://forms.gle/a4RezeUf7TaqKXY76" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="btn-primary inline-block px-8 py-3"
-                >
-                  Register Here
-                </a>
-              </div>
-            </div>
-          </div>
+    {/* Mother Wound Section with Flier */}
+    <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
+      <div className="bg-white p-8 rounded-lg shadow-lg">
+        <h4 className="text-2xl font-bold text-gray-900 mb-4">July Special: Mother Wound Healing</h4>
+        <div className="space-y-4 text-gray-700">
+          <p className="text-lg">Join us for a transformative session focused on healing the mother wound - one of the most profound healing journeys a woman can undertake.</p>
+          <p>This session will help you understand, process, and begin healing generational patterns that may be affecting your relationships, parenting, and self-worth.</p>
         </div>
-      </section>
+      </div>
+      
+      <div className="flex justify-center">
+        <img 
+          src="/mother wound flier.jpg" 
+          alt="Mother Wound Healing Session Flier" 
+          className="w-full max-w-md h-auto rounded-lg shadow-lg"
+          onError={(e) => {
+            e.target.style.display = 'none';
+            e.target.nextSibling.style.display = 'block';
+          }}
+        />
+        <div className="hidden bg-amber-100 border-2 border-amber-600 rounded-lg p-8 text-center max-w-md">
+          <h5 className="text-xl font-bold text-amber-700 mb-2">Mother Wound Healing</h5>
+          <p className="text-amber-600">Special healing session - July 2025</p>
+        </div>
+      </div>
+    </div>
+
+    <div className="bg-white p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
+      <h4 className="text-2xl font-bold text-gray-900 mb-4 text-center">Join the Healing Table</h4>
+      <div className="space-y-4 text-gray-700">
+        <p><strong>Schedule:</strong> Every 2nd and 3rd Saturday at 7:00 PM GMT</p>
+        <p><strong>Payment:</strong> MPESA Express to 254-710484899</p>
+        <p><strong>Paybill:</strong> 595607 Account: Amaze-ing Mom</p>
+        
+        <div className="mt-6">
+          <h5 className="font-semibold mb-2">You will need:</h5>
+          <ul className="list-disc list-inside space-y-1 text-gray-600">
+            <li>A notebook and pen</li>
+            <li>Water or other preferred drink</li>
+            <li>Look your best (Wear something nice that you haven't worn in a while, and perfume!)</li>
+          </ul>
+        </div>
+        
+        <div className="text-center mt-8">
+          <a 
+            href="https://forms.gle/a4RezeUf7TaqKXY76" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="btn-primary inline-block px-8 py-3"
+          >
+            Register Here
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       
     </>
   );
 };
 
-// About Page Component
+
 // About Page Component
 const AboutPage = () => {
   // Images for slideshow sections
   const moriahImages = [
     {
-      src: "https://alphagroupke.wordpress.com/wp-content/uploads/2022/10/nicole-eflier-pic-1.jpg",
+      src: "/about profile pic.jpg",
       alt: "Moriah - Founder of Alpha Group KE",
       caption: "Moriah - Multi-gifted businesswoman passionate about Personal Development and Healing Trauma"
     }
@@ -420,17 +449,22 @@ const AboutPage = () => {
 
   const eventImages = [
     {
-      src: "https://alphagroupke.wordpress.com/wp-content/uploads/2025/01/birthday-pic-1.jpg",
+      src: "/birthday-pic.jpg",
       alt: "Birthday Event",
       caption: "Professional MC services for birthday celebrations"
     },
     {
-      src: "https://alphagroupke.wordpress.com/wp-content/uploads/2025/01/graduation-edit.png",
+      src: "/graduation photo alpha group.jpg",
       alt: "Graduation Event",
       caption: "Graduation ceremonies and milestone celebrations"
     },
     {
-      src: "https://alphagroupke.wordpress.com/wp-content/uploads/2025/01/kiddy-birthdays.jpg",
+      src: "/strathmore address.jpg",
+      alt: "Graduation Event",
+      caption: "Graduation ceremonies and milestone celebrations"
+    },
+    {
+      src: "/mc.jpg",
       alt: "Kids Birthday Party",
       caption: "Specialized kids' events with the 'midas touch'"
     }
@@ -442,7 +476,7 @@ const AboutPage = () => {
         {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">About Alpha Group KE</h1>
-          <h2 className="text-2xl text-yellow-600 font-semibold mb-4">
+          <h2 className="text-2xl text-amber-600 font-semibold mb-4">
             Transformational Recovery for Women and Children: A Holistic Approach
           </h2>
         </div>
@@ -461,17 +495,17 @@ const AboutPage = () => {
               </p>
               <p>
                 She holds a Degree in Life Coaching and is pursuing her studies as a{' '}
-                <a href="https://www.eaipc.ac.ke/" target="_blank" rel="noopener noreferrer" className="text-yellow-600 hover:text-yellow-700">
+                <a href="https://www.eaipc.ac.ke/" target="_blank" rel="noopener noreferrer" className="text-amber-600 hover:text-amber-700">
                   Counsellor
                 </a>{' '}
                 and{' '}
-                <a href="https://www.usiu.ac.ke/" target="_blank" rel="noopener noreferrer" className="text-yellow-600 hover:text-yellow-700">
+                <a href="https://www.usiu.ac.ke/" target="_blank" rel="noopener noreferrer" className="text-amber-600 hover:text-amber-700">
                   Psychologist
                 </a>.
               </p>
               <p>
                 Moriah is an alumnus of{' '}
-                <a href="https://strathmore.edu/" target="_blank" rel="noopener noreferrer" className="text-yellow-600 hover:text-yellow-700">
+                <a href="https://strathmore.edu/" target="_blank" rel="noopener noreferrer" className="text-amber-600 hover:text-amber-700">
                   Strathmore University
                 </a>, where she took an Accelerated Business Course that transformed her business.
               </p>
@@ -488,167 +522,12 @@ const AboutPage = () => {
           </div>
         </div>
 
-        {/* Our Approach Section */}
-        <div className="bg-yellow-50 p-8 rounded-lg mb-16">
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">Our Approach</h3>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              At Alpha Group, our services encompass a holistic approach. We focus on life, purpose, and service 
-              to the child and adult to impact the community positively. We value excellence and intentional 
-              approaches towards the success of our clients.
-            </p>
-          </div>
-          
-          <div className="text-center">
-            <h4 className="text-2xl font-bold text-yellow-600 mb-2">
-              Helping your child Learn.Transform.Repeat ……. in hours!
-            </h4>
-            <blockquote className="text-lg italic text-gray-700">
-              "Education is not the learning of facts, but the training of the mind to think."
-              <footer className="text-sm text-gray-600 mt-2">— Albert Einstein</footer>
-            </blockquote>
-          </div>
-        </div>
-
-        {/* Services Overview Section */}
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">Transformation in Hours</h3>
-            <div className="space-y-4 text-gray-600">
-              <p className="text-xl font-semibold text-yellow-600">
-                Children and adults experience a full transformation in hours!
-              </p>
-              <p>
-                Our services are ideal for struggling learners. They are also suitable for adults interested in 
-                closing any learning gaps. These gaps may have been experienced along their learning or life journey.
-              </p>
-              <p>
-                The LIP (Learning Intervention Program) has restored the 'alpha' state of the children we have 
-                worked with. It has helped them continue with their learning journey completely transformed!
-              </p>
-              <p>
-                The Masterpiece Program continues to elevate individuals to seek and attain their highest and 
-                best possible outcomes.
-              </p>
-              <p className="text-lg font-semibold text-gray-900">
-                Choosing Alpha Group KE is one of the best decisions our clients have made; make yours today!
-              </p>
-            </div>
-          </div>
-          <div>
-            <ImageSlideshow images={servicesImages} autoPlay={false} />
-          </div>
-        </div>
-
-        {/* Service Divisions */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Service Divisions</h3>
-          
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <h4 className="text-xl font-bold text-yellow-600 mb-3">Bella Borsa Consultants</h4>
-              <p className="text-gray-600">
-                An image consultancy that guides individuals and teams seeking successful transitions through 
-                <span className="font-semibold text-yellow-600"> #intentional living</span>
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <h4 className="text-xl font-bold text-yellow-600 mb-3">Mwanicole Consultants</h4>
-              <p className="text-gray-600">
-                A consulting firm in matters of Education and Psychology. Our clients enjoy 
-                <span className="font-semibold text-yellow-600"> #howtolearn</span>
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <h4 className="text-xl font-bold text-yellow-600 mb-3">Knowell Book Busters</h4>
-              <p className="text-gray-600">
-                A learner's experience based on their academic or developmental need towards desired outcomes.
-              </p>
-            </div>
-          </div>
-
-          {/* Service Logos Slideshow */}
-          <div className="mb-8">
-            <ImageSlideshow images={programLogos} autoPlay={true} autoPlayInterval={4000} />
-          </div>
-        </div>
-
-        {/* Introduction Forms Section */}
-        <div className="bg-gray-50 p-8 rounded-lg mb-16">
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">Get Started Today</h3>
-            <p className="text-lg text-gray-600 mb-6">
-              Please introduce yourself and let us know exactly what you would like us to offer you. 
-              This clarifies your need and helps us to match you with the best facilitator.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-lg text-center">
-              <h4 className="font-bold text-gray-900 mb-2">Bella Borsa</h4>
-              <p className="text-sm text-gray-600 mb-4">Success Mindset and Intentional Living</p>
-              <a 
-                href="https://forms.gle/ekuCHQpbHFvpcggi9" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn-primary inline-block px-4 py-2 text-sm"
-              >
-                Introduction Form
-              </a>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg text-center">
-              <h4 className="font-bold text-gray-900 mb-2">Mwanicole Consultants</h4>
-              <p className="text-sm text-gray-600 mb-4">Educational Consultancy and Learning Journeys</p>
-              <a 
-                href="https://forms.gle/8xSCKxbnaLmujv2m9" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn-primary inline-block px-4 py-2 text-sm"
-              >
-                Introduction Form
-              </a>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg text-center">
-              <h4 className="font-bold text-gray-900 mb-2">Knowell Book Busters</h4>
-              <p className="text-sm text-gray-600 mb-4">Kids Book Club & Writing Workshop</p>
-              <a 
-                href="https://forms.gle/ecVEntkk5U7dxpzn8" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn-primary inline-block px-4 py-2 text-sm"
-              >
-                Introduction Form
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Rates Section */}
-        <div className="text-center mb-16">
-          <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Rates</h3>
-          <p className="text-lg text-gray-600 mb-8 max-w-4xl mx-auto">
-            Many of our clients have enjoyed the benefits of blending at least 2 of the programs. 
-            This approach caters for holistic growth and supports development and sustainable outcomes.
-          </p>
-          <a 
-            href="https://forms.gle/mAwQY1fCLw9M9Pd97" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="btn-primary inline-block px-8 py-3 text-lg"
-          >
-            View Rates Schedule 2022-2023
-          </a>
-        </div>
 
         {/* Events MC Section */}
         <div className="mb-16">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">Events MC Services</h3>
-            <h4 className="text-xl text-yellow-600 font-semibold mb-2">What's an event without an MC?</h4>
+            <h4 className="text-xl text-amber-600 font-semibold mb-2">What's an event without an MC?</h4>
             <p className="text-lg text-gray-600">Your anxiety ends here!</p>
             <p className="text-lg text-gray-700 mt-4">
               Moriah has a 'midas touch' for kids' events (new-born, graduation, pediatric care hospitalization, 
@@ -659,8 +538,9 @@ const AboutPage = () => {
           <ImageSlideshow images={eventImages} autoPlay={true} autoPlayInterval={5000} />
         </div>
 
+
         {/* Media Features Section */}
-        <div className="bg-yellow-50 p-8 rounded-lg mb-16">
+        <div className="bg-amber-50 p-8 rounded-lg mb-16">
           <h3 className="text-3xl font-bold text-gray-900 text-center mb-8">Media Features & Recognition</h3>
           
           <div className="grid md:grid-cols-2 gap-6">
@@ -670,21 +550,21 @@ const AboutPage = () => {
                 <li>
                   <a href="https://www.youtube.com/watch?v=MdTnJTvnXpY&feature=youtu.be" 
                      target="_blank" rel="noopener noreferrer" 
-                     className="text-yellow-600 hover:text-yellow-700">
+                     className="text-amber-600 hover:text-amber-700">
                     Ebru TV - Importance of an Image Consultant
                   </a>
                 </li>
                 <li>
                   <a href="https://www.youtube.com/watch?v=eUz60PEX0no&t=66s" 
                      target="_blank" rel="noopener noreferrer" 
-                     className="text-yellow-600 hover:text-yellow-700">
+                     className="text-amber-600 hover:text-amber-700">
                     Ebru TV - Widows in Kenya and beyond
                   </a>
                 </li>
                 <li>
                   <a href="https://www.facebook.com/watch/live/?ref=search&v=2212548072103552" 
                      target="_blank" rel="noopener noreferrer" 
-                     className="text-yellow-600 hover:text-yellow-700">
+                     className="text-amber-600 hover:text-amber-700">
                     Niusline TV - Successful parenting
                   </a>
                 </li>
@@ -697,14 +577,14 @@ const AboutPage = () => {
                 <li>
                   <a href="https://parentsafrica.com/nicole-ngigi-helping-widows-rebuild-their-lives/" 
                      target="_blank" rel="noopener noreferrer" 
-                     className="text-yellow-600 hover:text-yellow-700">
+                     className="text-amber-600 hover:text-amber-700">
                     Parents Africa Magazine - Helping widows rebuild their lives
                   </a>
                 </li>
                 <li>
                   <a href="https://m.facebook.com/RisingStarKenya/" 
                      target="_blank" rel="noopener noreferrer" 
-                     className="text-yellow-600 hover:text-yellow-700">
+                     className="text-amber-600 hover:text-amber-700">
                     CFC Stanbic Rising Star Kenya - Professional Services Category Finalist
                   </a>
                 </li>
@@ -753,62 +633,293 @@ const AboutPage = () => {
 
 // Services Page Component
 const ServicesPage = () => {
-  const services = [
+  // Service program images
+  const programImages = [
     {
-      title: "Individual Therapy",
-      description: "One-on-one sessions with licensed therapists for personalized mental health support.",
-      features: ["Depression & Anxiety", "Trauma & PTSD", "Relationship Issues", "Life Transitions"]
+      src: "/transform lives in hours.jpg",
+      alt: "LIP Program Benefits",
+      caption: "Learning Intervention Program - Transforming lives in hours"
+    }
+  ];
+
+  const programLogos = [
+    {
+      src: "/child talk.jpg",
+      alt: "Mwanicole Consultants Logo",
+      caption: "Mwanicole Consultants - Education and Psychology"
     },
     {
-      title: "Couples Therapy",
-      description: "Professional guidance for couples working through relationship challenges.",
-      features: ["Communication Skills", "Conflict Resolution", "Intimacy Issues", "Pre-marital Counseling"]
+      src: "/annual-writing-workshop-pic.jpg",
+      alt: "Alpha Group Full Logo",
+      caption: "Alpha Group - Transformational Recovery"
     },
     {
-      title: "Group Therapy",
-      description: "Supportive group sessions focusing on shared experiences and challenges.",
-      features: ["Support Groups", "Skills Training", "Peer Support", "Specialized Topics"]
+      src: "/child education.jpg",
+      alt: "Mwanicole Consultants Logo",
+      caption: "How to book a child consultation."
     },
     {
-      title: "Family Therapy",
-      description: "Comprehensive family counseling to improve relationships and communication.",
-      features: ["Family Dynamics", "Parenting Support", "Teen Issues", "Blended Families"]
+      src: "/bella-borsa-logo-2.jpg",
+      alt: "Bella Borsa Logo",
+      caption: "Bella Borsa Consultants - Image Consultancy"
     }
   ];
 
   return (
     <div className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        {/* Header Section */}
+        <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Our Services</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We offer a comprehensive range of mental health services to meet your unique needs.
+          <h2 className="text-2xl text-amber-600 font-semibold mb-4">
+            Transformational Recovery for Women and Children: A Holistic Approach
+          </h2>
+          <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+            At Alpha Group, our services encompass a holistic approach. We focus on life, purpose, and service 
+            to the child and adult to impact the community positively. We value excellence and intentional 
+            approaches towards the success of our clients.
           </p>
         </div>
-        
-        <div className="grid md:grid-cols-2 gap-8">
-          {services.map((service, index) => (
-            <div key={index} className="bg-white p-8 rounded-lg shadow-md">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
-              <p className="text-gray-600 mb-6">{service.description}</p>
-              
-              <h4 className="font-semibold text-gray-900 mb-3">What we address:</h4>
-              <ul className="space-y-2">
-                {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center">
-                    <span className="w-2 h-2 bg-yellow-600 rounded-full mr-3"></span>
-                    <span className="text-gray-600">{feature}</span>
-                  </li>
-                ))}
+
+        {/* Main Service Promise */}
+        <div className="bg-amber-50 p-8 rounded-lg mb-16">
+          <div className="text-center">
+            <h3 className="text-3xl font-bold text-amber-600 mb-4">
+              Helping your child Learn.Transform.Repeat ……. in hours!
+            </h3>
+            <blockquote className="text-lg italic text-gray-700 mb-6">
+              "Education is not the learning of facts, but the training of the mind to think."
+              <footer className="text-sm text-gray-600 mt-2">— Albert Einstein</footer>
+            </blockquote>
+            <p className="text-xl font-semibold text-amber-600 mb-4">
+              Children and adults experience a full transformation in hours!
+            </p>
+          </div>
+        </div>
+
+        {/* Transformation Services Overview */}
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+          <div>
+            <h3 className="text-3xl font-bold text-gray-900 mb-6">Transformation in Hours</h3>
+            <div className="space-y-4 text-gray-600">
+              <p>
+                Our services are ideal for struggling learners. They are also suitable for adults interested in 
+                closing any learning gaps. These gaps may have been experienced along their learning or life journey.
+              </p>
+              <p>
+                The LIP (Learning Intervention Program) has restored the 'alpha' state of the children we have 
+                worked with. It has helped them continue with their learning journey completely transformed!
+              </p>
+              <p>
+                The Masterpiece Program continues to elevate individuals to seek and attain their highest and 
+                best possible outcomes.
+              </p>
+              <p className="text-lg font-semibold text-gray-900">
+                Choosing Alpha Group KE is one of the best decisions our clients have made; make yours today!
+              </p>
+            </div>
+          </div>
+          <div>
+            <ImageSlideshow images={programImages} autoPlay={false} />
+          </div>
+        </div>
+
+        {/* Service Divisions */}
+        <div className="mb-16">
+          <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Service Divisions</h3>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <h4 className="text-xl font-bold text-amber-600 mb-3">Bella Borsa Consultants</h4>
+              <p className="text-gray-600 mb-4">
+                An image consultancy that guides individuals and teams seeking successful transitions through 
+                <span className="font-semibold text-amber-600"> #intentional living</span>
+              </p>
+              <div className="space-y-2 text-sm text-gray-700">
+                <p><strong>Services:</strong></p>
+                <ul className="text-left space-y-1">
+                  <li>• Success Mindset Development</li>
+                  <li>• Intentional Living Coaching</li>
+                  <li>• Personal Image Consulting</li>
+                  <li>• Leadership Transitions</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <h4 className="text-xl font-bold text-amber-600 mb-3">Mwanicole Consultants</h4>
+              <p className="text-gray-600 mb-4">
+                A consulting firm in matters of Education and Psychology. Our clients enjoy 
+                <span className="font-semibold text-amber-600"> #howtolearn</span>
+              </p>
+              <div className="space-y-2 text-sm text-gray-700">
+                <p><strong>Services:</strong></p>
+                <ul className="text-left space-y-1">
+                  <li>• Learning Intervention Program (LIP)</li>
+                  <li>• Educational Consultancy</li>
+                  <li>• Learning Gap Assessment</li>
+                  <li>• Trauma-Informed Learning</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <h4 className="text-xl font-bold text-amber-600 mb-3">Knowell Book Busters</h4>
+              <p className="text-gray-600 mb-4">
+                A learner's experience based on their academic or developmental need towards desired outcomes.
+              </p>
+              <div className="space-y-2 text-sm text-gray-700">
+                <p><strong>Services:</strong></p>
+                <ul className="text-left space-y-1">
+                  <li>• Kids Book Club</li>
+                  <li>• Writing Workshops</li>
+                  <li>• Reading Intervention</li>
+                  <li>• Academic Support</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Service Logos Slideshow */}
+          <div className="mb-8">
+            <ImageSlideshow images={programLogos} autoPlay={true} autoPlayInterval={4000} />
+          </div>
+        </div>
+
+        {/* New Services from Website */}
+        <div className="bg-gray-50 p-8 rounded-lg mb-16">
+          <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">Additional Services</h3>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h4 className="text-xl font-bold text-amber-600 mb-3">Trauma Recovery Coaching</h4>
+              <p className="text-gray-600 mb-4">
+                Specialized support for post-trauma recovery and healing, helping individuals break cycles 
+                and move towards their best future self.
+              </p>
+              <ul className="text-sm text-gray-700 space-y-1">
+                <li>• Individual trauma therapy</li>
+                <li>• Relationship healing</li>
+                <li>• Childhood trauma recovery</li>
+                <li>• Crisis management for leaders</li>
               </ul>
             </div>
-          ))}
+
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h4 className="text-xl font-bold text-amber-600 mb-3">Parenting Support</h4>
+              <p className="text-gray-600 mb-4">
+                Intentional parenting guidance to help fill learning gaps and support healthy 
+                child development academically and emotionally.
+              </p>
+              <ul className="text-sm text-gray-700 space-y-1">
+                <li>• Learning gap assessment</li>
+                <li>• Academic support strategies</li>
+                <li>• Positive parenting techniques</li>
+                <li>• Family dynamics improvement</li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h4 className="text-xl font-bold text-amber-600 mb-3">Online Healing Webinars</h4>
+              <p className="text-gray-600 mb-4">
+                Monthly "Healing Table" webinars covering various trauma healing topics 
+                for women's empowerment and recovery.
+              </p>
+              <ul className="text-sm text-gray-700 space-y-1">
+                <li>• Unwinding trauma cords</li>
+                <li>• Understanding trauma patterns</li>
+                <li>• Mother wound healing</li>
+                <li>• Monthly group sessions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Introduction Forms Section */}
+        <div className="bg-white p-8 rounded-lg shadow-md mb-16">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">Get Started Today</h3>
+            <p className="text-lg text-gray-600 mb-6">
+              Please introduce yourself and let us know exactly what you would like us to offer you. 
+              This clarifies your need and helps us to match you with the best facilitator.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-gray-50 p-6 rounded-lg text-center">
+              <h4 className="font-bold text-gray-900 mb-2">Bella Borsa</h4>
+              <p className="text-sm text-gray-600 mb-4">Success Mindset and Intentional Living</p>
+              <a 
+                href="https://forms.gle/ekuCHQpbHFvpcggi9" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn-primary inline-block px-4 py-2 text-sm"
+              >
+                Introduction Form
+              </a>
+            </div>
+            
+            <div className="bg-gray-50 p-6 rounded-lg text-center">
+              <h4 className="font-bold text-gray-900 mb-2">Mwanicole Consultants</h4>
+              <p className="text-sm text-gray-600 mb-4">Educational Consultancy and Learning Journeys</p>
+              <a 
+                href="https://forms.gle/8xSCKxbnaLmujv2m9" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn-primary inline-block px-4 py-2 text-sm"
+              >
+                Introduction Form
+              </a>
+            </div>
+            
+            <div className="bg-gray-50 p-6 rounded-lg text-center">
+              <h4 className="font-bold text-gray-900 mb-2">Knowell Book Busters</h4>
+              <p className="text-sm text-gray-600 mb-4">Kids Book Club & Writing Workshop</p>
+              <a 
+                href="https://forms.gle/ecVEntkk5U7dxpzn8" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn-primary inline-block px-4 py-2 text-sm"
+              >
+                Introduction Form
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Contact Information */}
+        <div className="text-center mb-16">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Transform?</h3>
+          <p className="text-lg text-gray-600 mb-6">
+            Reach us for in-person or online sessions
+          </p>
+          <div className="space-y-2 text-gray-700">
+            <p><strong>Email:</strong> alphagroupkeoffice@gmail.com</p>
+            <p><strong>Phone:</strong> +254-731308119 or +254-726089109</p>
+            <p><strong>TikTok:</strong> @posttraumacoachke</p>
+          </div>
+        </div>
+
+        {/* Rates Section */}
+        <div className="text-center">
+          <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Rates</h3>
+          <p className="text-lg text-gray-600 mb-8 max-w-4xl mx-auto">
+            Many of our clients have enjoyed the benefits of blending at least 2 of the programs. 
+            This approach caters for holistic growth and supports development and sustainable outcomes.
+          </p>
+          <a 
+            href="https://forms.gle/mAwQY1fCLw9M9Pd97" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="btn-primary inline-block px-8 py-3 text-lg"
+          >
+            View Rates Schedule 2022-2023
+          </a>
         </div>
       </div>
     </div>
   );
 };
-
 // Packages Page Component
 const PackagesPage = () => {
   const packages = [
@@ -867,10 +978,10 @@ const PackagesPage = () => {
         
         <div className="grid md:grid-cols-3 gap-8">
           {packages.map((pkg, index) => (
-            <div key={index} className={`relative bg-white p-8 rounded-lg shadow-md ${pkg.popular ? 'ring-2 ring-yellow-600' : ''}`}>
+            <div key={index} className={`relative bg-white p-8 rounded-lg shadow-md ${pkg.popular ? 'ring-2 ring-amber-600' : ''}`}>
               {pkg.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-yellow-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                  <span className="bg-amber-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
                     Most Popular
                   </span>
                 </div>
@@ -879,7 +990,7 @@ const PackagesPage = () => {
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{pkg.name}</h3>
                 <div className="mb-4">
-                  <span className="text-4xl font-bold text-yellow-600">{pkg.price}</span>
+                  <span className="text-4xl font-bold text-amber-600">{pkg.price}</span>
                   <span className="text-gray-600 ml-2">{pkg.period}</span>
                 </div>
               </div>
@@ -895,7 +1006,7 @@ const PackagesPage = () => {
               
               <button className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors ${
                 pkg.popular 
-                  ? 'bg-yellow-600 text-white hover:bg-yellow-700' 
+                  ? 'bg-amber-600 text-white hover:bg-amber-700' 
                   : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
               }`}>
                 Get Started
@@ -913,6 +1024,173 @@ const PackagesPage = () => {
   );
 };
 
+// Testimonials Page Component (replaces PackagesPage)
+const TestimonialsPage = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const clientJourneys = [
+    {
+      title: "Learning challenge - Reading & Writing",
+      name: "Christine (Age 6)",
+      challenge: "Christine was 6 years old at the time. Her mother was concerned because her cousin, who lived abroad, was more fluent in reading than her. She had spelling challenges as well. At the onset, there were huge gaps in Christine's reading, e.g she was 6 but could not read three-letter words like MAT, PEG, LID! Also, she had spelling mistakes in her written work. Her demeanour was shy, guessing that she had become accustomed to negative remarks about her reading and writing.",
+      outcome: "In approximately 4 months, Christine was a new learner! She could read to herself, her parents and even to her cousin abroad via video calls! She was able to write with few or no mistakes, and one of the notable improvements was that she was pleasant and more outgoing.",
+      tags: ["#reading", "#writing"]
+    },
+    {
+      title: "Learning challenge - Dysgraphia, Dyscalculia, Recall challenges",
+      name: "Michael (Fourth Grade)",
+      challenge: "Michael was in Fourth grade when I met him. His mum was concerned about his handwriting, spelling mistakes and seeming demotivation about school work. In the field, though, he was a soccer champ! His poor academic performance was no match for his soccer skills, leading him to prefer to socialise only regarding soccer.",
+      outcome: "I had to start from the basics with Michael, who slowly and steadily picked up and caught on over nine months. Towards the end of the engagement, Michael had been selected as the school Assistant Games Captain, meaning he had been through an 'interview' with the Games teachers to qualify. We were all overjoyed!",
+      tags: ["#Dysgraphia", "#dyscalculia", "#Recall"]
+    },
+    {
+      title: "Learning Challenge - Trauma born issues",
+      name: "Ariel",
+      challenge: "Ariel was born after the mother had experienced the trauma of losing a close family member. She experienced some delays, e.g she did not speak until 2.6 years, she had difficulty hearing and eventually had challenges socialising. She went to school, and her difficulties placed her behind in performance. Her esteem was very low.....",
+      outcome: "Ariel was enrolled for the #learningintervention program, and she was able to successfully manage to write, read and spell. Her schoolteacher attended her Achievement Day and was moved to tears by the milestones she had achieved in only 3 months!",
+      tags: ["#dysgraphia", "#dyscalculia", "#self-esteem", "#learningintervention"]
+    },
+    {
+      title: "Learning challenge - ADHD & Childhood Trauma",
+      name: "Leon (Age 9)",
+      challenge: "Leon was nine when his parents got a referral from a schoolteacher. They had made several attempts to get him help and were at their lowest. They brought Leon for the consult session desperately on a Sunday, and there was a sign of hope as they learnt about the #learningintervention program. They were concerned that the #ADHD was a challenge and, coupled with dysgraphia, his chances of consistent learning were very low.",
+      outcome: "Leon was eager to learn, and as days went by, the layers of low self-esteem were shed off! The #Masterpiece program was working wonders for him! He owned his learning journey, and there was no looking back. When he resumed his regular school learning, he was position seven! The parents were in shock.....and so were his classmates.",
+      tags: ["#dysgraphia", "#adhd", "#childhoodtrauma"]
+    }
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % clientJourneys.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + clientJourneys.length) % clientJourneys.length);
+  };
+
+  return (
+    <div className="py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold text-gray-900 mb-6">Testimonials</h1>
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+            Real stories of transformation and growth from our learning intervention programs
+          </p>
+        </div>
+
+        {/* Moriah's Story Section */}
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
+          <h2 className="text-3xl font-bold text-amber-600 mb-6">Moriah's Story</h2>
+          <div className="text-gray-700 leading-relaxed space-y-4">
+            <p>
+              My learning journey was quite normal until I was 9 years old, when our family was involved in a terrible car crash! We were headed back to Nairobi from a family vacation; as fate would have it, we did not get home that day. We were rescued by well-wishers who called for an ambulance, which saved our lives.
+            </p>
+            <p>
+              Back then, trauma was not highly considered as a need to be addressed, so each one of us moved on as we hoped to recover. Naturally, my siblings and I had experienced some learning gaps. As schooling continued, we each recovered differently. My experience was that I constantly felt lost in most subjects, a disconnect of sorts.
+            </p>
+            <p>
+              After working for 17 years, good luck knocked on my door...ONCE! I shared my life journey with someone who was deeply moved and immediately committed to paying for my entry-level university education. This was the beginning of a whole new chapter in my life.
+            </p>
+            <p>
+              At 35 years, I joined campus and learning took on new meaning. I loved the library and took up a work-study opportunity there. The books I came across were like portals into an endless tunnel of knowledge.
+            </p>
+            <div className="bg-amber-50 border-l-4 border-amber-600 p-6 my-6">
+              <p className="font-semibold text-amber-800">
+                "Are these your grades?" she asked. "Yes, they are... Am I failing?" was my response. "Not at all, in fact, you qualify for the Vice Chancellor's grant! Your GPA is a consistent 3.6," she answered.
+              </p>
+            </div>
+            <p>
+              I had been on the Dean's list since I joined campus and had no idea at all! That is where I realised that I wanted to teach others <span className="font-semibold text-amber-600">#howtolearn</span>.
+            </p>
+          </div>
+        </div>
+
+        {/* Client Journeys Section */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Client Journeys</h2>
+          
+          {/* Slideshow */}
+          <div className="relative bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="p-8">
+              <div className="flex items-center justify-between mb-6">
+                <button 
+                  onClick={prevSlide}
+                  className="p-2 rounded-full bg-amber-100 hover:bg-amber-200 transition-colors"
+                >
+                  <ChevronLeft size={24} className="text-amber-600" />
+                </button>
+                
+                <h3 className="text-2xl font-bold text-amber-600 text-center flex-1">
+                  {clientJourneys[currentSlide].title}
+                </h3>
+                
+                <button 
+                  onClick={nextSlide}
+                  className="p-2 rounded-full bg-amber-100 hover:bg-amber-200 transition-colors"
+                >
+                  <ChevronRight size={24} className="text-amber-600" />
+                </button>
+              </div>
+              
+              <div className="text-center mb-6">
+                <h4 className="text-xl font-semibold text-gray-800 mb-2">
+                  {clientJourneys[currentSlide].name}
+                </h4>
+                <div className="flex flex-wrap justify-center gap-2 mb-4">
+                  {clientJourneys[currentSlide].tags.map((tag, index) => (
+                    <span key={index} className="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-red-50 border-l-4 border-red-400 p-6 rounded-lg">
+                  <h5 className="font-bold text-red-800 mb-3">Challenge:</h5>
+                  <p className="text-gray-700 leading-relaxed">
+                    {clientJourneys[currentSlide].challenge}
+                  </p>
+                </div>
+                
+                <div className="bg-green-50 border-l-4 border-green-400 p-6 rounded-lg">
+                  <h5 className="font-bold text-green-800 mb-3">Outcome:</h5>
+                  <p className="text-gray-700 leading-relaxed">
+                    {clientJourneys[currentSlide].outcome}
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Slide Indicators */}
+            <div className="flex justify-center space-x-2 pb-6">
+              {clientJourneys.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all ${
+                    index === currentSlide ? 'bg-amber-600' : 'bg-gray-300'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center bg-gradient-to-r from-amber-600 to-gray-900 text-white rounded-lg p-8">
+          <h3 className="text-2xl font-bold mb-4">Ready to Start Your Learning Journey?</h3>
+          <p className="text-xl mb-6">
+            Every brain can be taught, especially if matched with the right learning partner.
+          </p>
+          <button className="bg-white text-amber-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            Get Started Today
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
 // Contact Page Component
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -924,6 +1202,7 @@ const ContactPage = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
 
   const handleInputChange = (e) => {
     setFormData({
@@ -935,27 +1214,34 @@ const ContactPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus({ type: '', message: '' });
     
     try {
-      // This is where you'll connect to your backend API
-      // Example API call:
-      // const response = await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify(formData),
-      // });
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
       
-      // For now, we'll simulate the API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const result = await response.json();
       
-      console.log('Form submitted:', formData);
-      alert('Thank you for your message! We\'ll get back to you within 24 hours.');
-      setFormData({ name: '', email: '', phone: '', message: '', serviceType: '' });
+      if (response.ok) {
+        setSubmitStatus({
+          type: 'success',
+          message: 'Thank you for your message! We\'ll get back to you within 24 hours.'
+        });
+        setFormData({ name: '', email: '', phone: '', message: '', serviceType: '' });
+      } else {
+        throw new Error(result.error || 'Failed to send message');
+      }
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('Sorry, there was an error sending your message. Please try again.');
+      setSubmitStatus({
+        type: 'error',
+        message: error.message || 'Sorry, there was an error sending your message. Please try again.'
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -978,7 +1264,7 @@ const ContactPage = () => {
             
             <div className="space-y-6">
               <div className="flex items-start">
-                <Phone className="w-6 h-6 text-yellow-600 mr-4 mt-1" />
+                <Phone className="w-6 h-6 text-amber-600 mr-4 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900">Phone</h3>
                   <p className="text-gray-600">0726089109</p>
@@ -987,7 +1273,7 @@ const ContactPage = () => {
               </div>
               
               <div className="flex items-start">
-                <Mail className="w-6 h-6 text-yellow-600 mr-4 mt-1" />
+                <Mail className="w-6 h-6 text-amber-600 mr-4 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900">Email</h3>
                   <p className="text-gray-600">alphagroupkedirector@gmail.com</p>
@@ -996,16 +1282,16 @@ const ContactPage = () => {
               </div>
               
               <div className="flex items-start">
-                <MapPin className="w-6 h-6 text-yellow-600 mr-4 mt-1" />
+                <MapPin className="w-6 h-6 text-amber-600 mr-4 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900">Address</h3>
-                  <p className="text-gray-600">123 Wellness Street<br />Suite 456<br />City, State 12345</p>
+                  <p className="text-gray-600">Bukani Road<br />Nairobi West<br />Off Uhuru Highway</p>
                   <p className="text-sm text-gray-500">In-person and online sessions available</p>
                 </div>
               </div>
             </div>
             
-            <div className="mt-8 p-6 bg-yellow-50 rounded-lg">
+            <div className="mt-8 p-6 bg-amber-50 rounded-lg">
               <h3 className="font-semibold text-gray-900 mb-2">Office Hours</h3>
               <div className="text-sm text-gray-600">
                 <p>Monday - Friday: 8:00 AM - 8:00 PM</p>
@@ -1019,7 +1305,18 @@ const ContactPage = () => {
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
             
-            <div className="space-y-6">
+            {/* Status Messages */}
+            {submitStatus.message && (
+              <div className={`mb-6 p-4 rounded-lg ${
+                submitStatus.type === 'success' 
+                  ? 'bg-green-50 text-green-800 border border-green-200' 
+                  : 'bg-red-50 text-red-800 border border-red-200'
+              }`}>
+                {submitStatus.message}
+              </div>
+            )}
+            
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Full Name *
@@ -1030,7 +1327,7 @@ const ContactPage = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="form-input"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
                   placeholder="Enter your full name"
                 />
               </div>
@@ -1045,7 +1342,7 @@ const ContactPage = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-600 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
                   placeholder="Enter your email address"
                 />
               </div>
@@ -1059,7 +1356,7 @@ const ContactPage = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-600 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
                   placeholder="Enter your phone number"
                 />
               </div>
@@ -1072,14 +1369,17 @@ const ContactPage = () => {
                   name="serviceType"
                   value={formData.serviceType}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-600 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
                 >
                   <option value="">Select a service</option>
-                  <option value="individual">Individual Therapy</option>
-                  <option value="couples">Couples Therapy</option>
-                  <option value="group">Group Therapy</option>
-                  <option value="family">Family Therapy</option>
-                  <option value="consultation">General Consultation</option>
+                  <option value="Individual Therapy">Individual Therapy</option>
+                  <option value="Couples Therapy">Couples Therapy</option>
+                  <option value="Group Therapy">Group Therapy</option>
+                  <option value="Family Therapy">Family Therapy</option>
+                  <option value="Amaze-ing Mom Program">Amaze-ing Mom Program</option>
+                  <option value="LIP Program">Learning Intervention Program (LIP)</option>
+                  <option value="Event Management">Event Management & MC Services</option>
+                  <option value="General Consultation">General Consultation</option>
                 </select>
               </div>
               
@@ -1093,7 +1393,7 @@ const ContactPage = () => {
                   onChange={handleInputChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-600 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
                   placeholder="Tell us how we can help you..."
                 />
               </div>
@@ -1104,15 +1404,15 @@ const ContactPage = () => {
                 className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors ${
                   isSubmitting
                     ? 'bg-gray-400 cursor-not-allowed'
-                    : 'bg-yellow-600 hover:bg-yellow-700'
+                    : 'bg-amber-600 hover:bg-amber-700'
                 } text-white`}
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
-            </div>
+            </form>
             
             <p className="text-xs text-gray-500 mt-4">
-              Your information is confidential and protected by HIPAA regulations.
+              Your information is confidential and protected by professional standards.
             </p>
           </div>
         </div>
@@ -1133,18 +1433,18 @@ const Footer = () => {
               <div className="w-8 h-8 mr-2 flex items-center justify-center">
                 <img
                   src="\logo-alpha-consulting-ke.jpg"
-                  alt="Alpha Consultancy KE Logo"
+                  alt="Alpha Coaching KE Logo"
                   className="w-8 h-8 object-contain"
                   onError={(e) => {
                     e.target.style.display = 'none';
                     e.target.nextSibling.style.display = 'flex';
                   }}
                 />
-                <div className="w-8 h-8 bg-yellow-600 rounded-lg flex items-center justify-center" style={{display: 'none'}}>
+                <div className="w-8 h-8 bg-amber-600 rounded-lg flex items-center justify-center" style={{display: 'none'}}>
                   <span className="text-white font-bold text-sm">AC</span>
                 </div>
               </div>
-              <span className="text-lg font-bold">Alpha Consultancy KE</span>
+              <span className="text-lg font-bold">Alpha Coaching KE</span>
             </div>
             <p className="text-gray-400 text-sm">
               Professional therapy services connecting you with licensed mental health professionals.
@@ -1169,7 +1469,7 @@ const Footer = () => {
                   href="https://www.tiktok.com/@posttraumacoachke"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
+                  className="text-gray-400 hover:text-amber-400 transition-colors duration-200"
                 >
                   TikTok: @posttraumacoachke
                 </a>
@@ -1179,9 +1479,39 @@ const Footer = () => {
                   href="https://www.youtube.com/@PosttraumacoachKE"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
+                  className="text-gray-400 hover:text-amber-400 transition-colors duration-200"
                 >
                   YouTube: @PosttraumacoachKE
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/mwanicoleconsult"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-amber-400 transition-colors duration-200"
+                >
+                  Instagram: @mwanicoleconsult
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/alphagroupke"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-amber-400 transition-colors duration-200"
+                >
+                  FaceBook: @PosttraumacoachKE
+                </a>
+              </li>
+              <li>
+                <a
+                  href="t.me/knowellkids"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-amber-400 transition-colors duration-200"
+                >
+                  Telegram:@knowellkids
                 </a>
               </li>
               </ul>
@@ -1191,15 +1521,13 @@ const Footer = () => {
             <h3 className="font-semibold mb-4">Support</h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>Crisis Hotline: 0726089109</li>
-              <li>FAQ</li>
-              <li>Resources</li>
-              <li>Insurance</li>
+              
             </ul>
           </div>
         </div>
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; 2025 Alpha Consultancy KE. All rights reserved.</p>
+          <p>&copy; 2025 Alpha Coaching KE. All rights reserved.</p>
         </div>
       </div>
     </footer>

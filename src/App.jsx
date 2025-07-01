@@ -245,6 +245,16 @@ const HomePage = () => {
       caption: "Join our monthly trauma healing sessions - Every woman is invited to the healing table"
     },
     {
+      src: "/mother wound.jpg",
+      alt: "relationship trauma couching",
+      caption: "Join our monthly trauma healing sessions - Every woman is invited to the healing table"
+    },
+    {
+      src: "/adult book club.jpg",
+      alt: "relationship trauma couching",
+      caption: "Join and connect with other passionate, like-minded individuals"
+    },
+    {
       src: "/child couch.jpg",
       alt: "Psalm 139",
       caption: "You are fearfully and wonderfully made - Psalm 139"
@@ -657,6 +667,16 @@ const ServicesPage = () => {
       src: "/child education.jpg",
       alt: "Mwanicole Consultants Logo",
       caption: "How to book a child consultation."
+    },
+    {
+      src: "/english lessons for kids.jpg",
+      alt: "Mwanicole Consultants Logo",
+      caption: "Child education-English Lessons For Diplomat Kids."
+    },
+    {
+      src: "/education kikuyu for kids.jpg",
+      alt: "Mwanicole Consultants Logo",
+      caption: "Child education- Kikuyu Lessons For Kids."
     },
     {
       src: "/bella-borsa-logo-2.jpg",
@@ -1502,6 +1522,26 @@ const Footer = () => {
                   className="text-gray-400 hover:text-amber-400 transition-colors duration-200"
                 >
                   FaceBook: @PosttraumacoachKE
+                </a>
+              </li>
+              <li>
+                <a
+                  href="t.me/knowellkids"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-amber-400 transition-colors duration-200"
+                >
+                  Telegram:@knowellkids
+                </a>
+              </li>
+              <li>
+                <a
+                  href="t.me/knowellkids"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-amber-400 transition-colors duration-200"
+                >
+                  Telegram:@knowellkids
                 </a>
               </li>
               <li>

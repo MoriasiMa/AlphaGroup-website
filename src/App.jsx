@@ -161,11 +161,11 @@ const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenu
               />
               {/* Fallback logo with gold background */}
               <div className="w-10 h-10 bg-amber-600 rounded-lg flex items-center justify-center" style={{display: 'none'}}>
-                <span className="text-white font-bold text-xl">AC</span>
+                <span className="text-white font-bold text-xl">AG</span>
               </div>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">Alpha Coaching KE</h1>
+              <h1 className="text-xl font-bold text-gray-900">Alpha Group KE</h1>
               <p className="text-sm text-gray-600">Professional Therapy Services</p>
             </div>
           </div>
@@ -341,7 +341,7 @@ const HomePage = () => {
       <p className="text-lg text-gray-700 mb-8">Every woman is invited to the online webinar dubbed 'healing table' with Coach Moriah.</p>
     </div>
 
-    <div className="grid md:grid-cols-3 gap-8 mb-12">
+    {/*<div className="grid md:grid-cols-3 gap-8 mb-12">
       <div className="bg-white p-6 rounded-lg shadow-md text-center">
         <h4 className="text-xl font-bold text-gray-900 mb-2">February Theme</h4>
         <p className="text-amber-600 font-semibold">Unwinding the cord of trauma</p>
@@ -762,6 +762,17 @@ const ServicesPage = () => {
                   <li>• Intentional Living Coaching</li>
                   <li>• Personal Image Consulting</li>
                   <li>• Leadership Transitions</li>
+                
+                  <li>
+                <a
+                  href="https://youtube.com/@bellaborsaconsultants?si=6dWzjtvVIsGnuEHK"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-black hover:text-amber-400 transition-colors duration-200"
+                >
+                  <b>Youtube Link: @bellaborsaconsultants</b>
+                </a>
+              </li>
                 </ul>
               </div>
             </div>
@@ -795,6 +806,14 @@ const ServicesPage = () => {
                   <li>• Writing Workshops</li>
                   <li>• Reading Intervention</li>
                   <li>• Academic Support</li>
+                  <a
+                  href="https://youtube.com/@knowellbookbusters6516?si=L1-9HA3Q8kD7w7dt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-black hover:text-amber-400 transition-colors duration-200"
+                >
+                  <b>Youtube Link: @knowellbookbusters</b>
+                </a>
                 </ul>
               </div>
             </div>
@@ -866,7 +885,7 @@ const ServicesPage = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-gray-50 p-6 rounded-lg text-center">
+            <div className="bg-amber-500 p-6 rounded-lg text-center">
               <h4 className="font-bold text-gray-900 mb-2">Bella Borsa</h4>
               <p className="text-sm text-gray-600 mb-4">Success Mindset and Intentional Living</p>
               <a 
@@ -879,7 +898,7 @@ const ServicesPage = () => {
               </a>
             </div>
             
-            <div className="bg-gray-50 p-6 rounded-lg text-center">
+            <div className="bg-amber-500 p-6 rounded-lg text-center">
               <h4 className="font-bold text-gray-900 mb-2">Mwanicole Consultants</h4>
               <p className="text-sm text-gray-600 mb-4">Educational Consultancy and Learning Journeys</p>
               <a 
@@ -892,7 +911,7 @@ const ServicesPage = () => {
               </a>
             </div>
             
-            <div className="bg-gray-50 p-6 rounded-lg text-center">
+            <div className="bg-amber-500 p-6 rounded-lg text-center">
               <h4 className="font-bold text-gray-900 mb-2">Knowell Book Busters</h4>
               <p className="text-sm text-gray-600 mb-4">Kids Book Club & Writing Workshop</p>
               <a 
@@ -1536,22 +1555,22 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="t.me/knowellkids"
+                  href="https://x.com/AlphaGroupKenya/status/1938157204349100149https://x.com/BellaBorsaKenya/status/1938195032823263433"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-amber-400 transition-colors duration-200"
                 >
-                  Telegram:@knowellkids
+                  X :@AlphaGroupKenya
                 </a>
               </li>
               <li>
                 <a
-                  href="t.me/knowellkids"
+                  href="https://whatsapp.com/channel/0029Va84vul7IUYQowlo2p2l"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-amber-400 transition-colors duration-200"
                 >
-                  Telegram:@knowellkids
+                  WhatsApp Channel: How To Learn
                 </a>
               </li>
               </ul>

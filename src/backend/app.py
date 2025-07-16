@@ -7,13 +7,16 @@ from datetime import datetime
 app = Flask(__name__)
 CORS(app)
 
-# Email configuration
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'mavinmavo2@gmail.com'  # Replace with your email
-app.config['MAIL_PASSWORD'] = REMOVED     # Replace with your app password
-app.config['MAIL_DEFAULT_SENDER'] = 'your-email@gmail.com'
+# Email configuration using environment variables
+app.config['MAIL_SERVER'] = os.environ.get('MAIL_SERVER', 'smtp.gmail.com')
+app.config['MAIL_PORT'] = int(os.environ.get('MAIL_PORT', 587))
+app.config['MAIL_USE_TLS'] = os.environ.get('MAIL_USE_TLS', 'True').lower() == 'true'
+app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
+app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('MAIL_DEFAULT_SENDER')
+
+# Recipient email for contact form
+RECIPIENT_EMAIL = os.environ.get('RECIPIENT_EMAIL', 'mavinmavo2@gmail.com')
 
 mail = Mail(app)
 
@@ -182,7 +185,7 @@ def handle_contact():
         # Create and send email
         msg = Message(
             subject=subject,
-            recipients=['mavinmavo2@gmail.com'],
+            recipients=[RECIPIENT_EMAIL],
             html=html_body,
             body=text_body,
             reply_to=data.get('email')
@@ -200,5 +203,10 @@ def handle_contact():
 def health_check():
     return jsonify({'status': 'Backend is running'}), 200
 
+@app.route('/', methods=['GET'])
+def root():
+    return jsonify({'message': 'Alpha Consulting KE Backend API', 'status': 'running'}), 200
+
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=False, host='0.0.0.0', port=port)

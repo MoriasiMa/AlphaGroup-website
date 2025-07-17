@@ -1232,6 +1232,7 @@ const TestimonialsPage = () => {
 };
 // Contact Page Component
 
+// Contact Page Component
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -1243,13 +1244,6 @@ const ContactPage = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
-
-  // API Configuration - automatically uses correct URL based on environment
-  const API_BASE_URL = import.meta.env.VITE_API_URL || 
-    (import.meta.env.PROD 
-      ? 'https://alphagroup-website.onrender.com'  // Production URL
-      : 'http://localhost:5000'                     // Development URL
-    );
 
   const handleInputChange = (e) => {
     setFormData({
@@ -1264,7 +1258,7 @@ const ContactPage = () => {
     setSubmitStatus({ type: '', message: '' });
     
     try {
-      const response = await fetch(`${API_BASE_URL}/api/contact`, {
+      const response = await fetch('https://alphagroup-website.onrender.com/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -1280,9 +1274,6 @@ const ContactPage = () => {
           message: 'Thank you for your message! We\'ll get back to you within 24 hours.'
         });
         setFormData({ name: '', email: '', phone: '', message: '', serviceType: '' });
-        
-        // Scroll to top to show success message
-        window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         throw new Error(result.error || 'Failed to send message');
       }
@@ -1317,12 +1308,7 @@ const ContactPage = () => {
                 <Phone className="w-6 h-6 text-amber-600 mr-4 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900">Phone</h3>
-                  <a 
-                    href="tel:+254726089109" 
-                    className="text-gray-600 hover:text-amber-600 transition-colors"
-                  >
-                    0726089109
-                  </a>
+                  <p className="text-gray-600">0726089109</p>
                   <p className="text-sm text-gray-500">Available 24/7 for crisis support</p>
                 </div>
               </div>
@@ -1331,12 +1317,7 @@ const ContactPage = () => {
                 <Mail className="w-6 h-6 text-amber-600 mr-4 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900">Email</h3>
-                  <a 
-                    href="mailto:alphagroupkedirector@gmail.com" 
-                    className="text-gray-600 hover:text-amber-600 transition-colors"
-                  >
-                    alphagroupkedirector@gmail.com
-                  </a>
+                  <p className="text-gray-600">alphagroupkedirector@gmail.com</p>
                   <p className="text-sm text-gray-500">We respond within 24 hours</p>
                 </div>
               </div>
@@ -1345,11 +1326,7 @@ const ContactPage = () => {
                 <MapPin className="w-6 h-6 text-amber-600 mr-4 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900">Address</h3>
-                  <p className="text-gray-600">
-                    Bukani Road<br />
-                    Nairobi West<br />
-                    Off Uhuru Highway
-                  </p>
+                  <p className="text-gray-600">Bukani Road<br />Nairobi West<br />Off Uhuru Highway</p>
                   <p className="text-sm text-gray-500">In-person and online sessions available</p>
                 </div>
               </div>
@@ -1362,14 +1339,6 @@ const ContactPage = () => {
                 <p>Saturday: 9:00 AM - 5:00 PM</p>
                 <p>Sunday: 10:00 AM - 4:00 PM</p>
               </div>
-            </div>
-
-            {/* Emergency Contact */}
-            <div className="mt-6 p-4 bg-red-50 border border-red-200 rounded-lg">
-              <h3 className="font-semibold text-red-900 mb-1">Crisis Support</h3>
-              <p className="text-sm text-red-700">
-                If you're experiencing a mental health crisis, please call our emergency line immediately.
-              </p>
             </div>
           </div>
           
@@ -1384,14 +1353,7 @@ const ContactPage = () => {
                   ? 'bg-green-50 text-green-800 border border-green-200' 
                   : 'bg-red-50 text-red-800 border border-red-200'
               }`}>
-                <div className="flex items-center">
-                  <div className={`w-4 h-4 mr-2 ${
-                    submitStatus.type === 'success' ? 'text-green-600' : 'text-red-600'
-                  }`}>
-                    {submitStatus.type === 'success' ? '✓' : '✗'}
-                  </div>
-                  {submitStatus.message}
-                </div>
+                {submitStatus.message}
               </div>
             )}
             
@@ -1406,9 +1368,8 @@ const ContactPage = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
                   placeholder="Enter your full name"
-                  disabled={isSubmitting}
                 />
               </div>
               
@@ -1422,9 +1383,8 @@ const ContactPage = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
                   placeholder="Enter your email address"
-                  disabled={isSubmitting}
                 />
               </div>
               
@@ -1437,9 +1397,8 @@ const ContactPage = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent transition-colors"
-                  placeholder="Enter your phone number (optional)"
-                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+                  placeholder="Enter your phone number"
                 />
               </div>
               
@@ -1451,8 +1410,7 @@ const ContactPage = () => {
                   name="serviceType"
                   value={formData.serviceType}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent transition-colors"
-                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
                 >
                   <option value="">Select a service</option>
                   <option value="Individual Therapy">Individual Therapy</option>
@@ -1476,41 +1434,27 @@ const ContactPage = () => {
                   onChange={handleInputChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent transition-colors resize-vertical"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
                   placeholder="Tell us how we can help you..."
-                  disabled={isSubmitting}
                 />
               </div>
               
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 ${
+                className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors ${
                   isSubmitting
                     ? 'bg-gray-400 cursor-not-allowed'
-                    : 'bg-amber-600 hover:bg-amber-700 transform hover:scale-[1.02]'
-                } text-white shadow-lg hover:shadow-xl`}
+                    : 'bg-amber-600 hover:bg-amber-700'
+                } text-white`}
               >
-                {isSubmitting ? (
-                  <span className="flex items-center justify-center">
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Sending...
-                  </span>
-                ) : (
-                  'Send Message'
-                )}
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
             
-            <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-              <p className="text-xs text-gray-500">
-                <strong>Privacy Notice:</strong> Your information is confidential and protected by professional standards. 
-                We never share your personal details with third parties.
-              </p>
-            </div>
+            <p className="text-xs text-gray-500 mt-4">
+              Your information is confidential and protected by professional standards.
+            </p>
           </div>
         </div>
       </div>

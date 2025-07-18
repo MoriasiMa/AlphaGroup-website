@@ -111,7 +111,8 @@ const App = () => {
       case 'services': return <ServicesPage />;
       case 'testimonials': return <TestimonialsPage />;
       case 'contact': return <ContactPage />;
-      default: return <HomePage />;
+      default: return <HomePage setCurrentPage={setCurrentPage} />;
+    
     }
   };
 
@@ -223,10 +224,14 @@ const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenu
 };
 
 // Home Page Component
-const HomePage = () => {
+const HomePage = ({ setCurrentPage }) => {
   // Add this at the top of your App.jsx file, after the other imports
   // import { ChevronLeft, ChevronRight } from 'lucide-react';
   
+
+  // State for modal
+  const [selectedQuestion, setSelectedQuestion] = useState(null);
+
   // Slideshow images - you can add more images here
   const slideImages = [
     {
@@ -260,6 +265,63 @@ const HomePage = () => {
       caption: "You are fearfully and wonderfully made - Psalm 139"
     }
   ];
+
+
+  
+  // Questions data with answers
+  const questionsData = [
+    {
+      question: "Are my relationships thriving, or do I self-sabotage?",
+      answer: "If you find yourself pushing people away or creating conflict in your relationships, you might be stuck in self-sabotaging patterns. These often stem from past experiences or fear of vulnerability.",
+      actionText: "Get help building healthier relationships"
+    },
+    {
+      question: "Is my work negatively affected by cycles that I just can't seem to break?",
+      answer: "Recurring workplace challenges often reflect deeper patterns related to self-worth, boundary-setting, or unresolved personal issues that impact your professional life.",
+      actionText: "Break through work-related barriers"
+    },
+    {
+      question: "Do I feel like some childhood experiences are constantly triggered in my life?",
+      answer: "Childhood experiences shape our adult responses. When past traumas are triggered repeatedly, it's a sign that healing work can help you move forward with greater freedom.",
+      actionText: "Start your healing journey"
+    },
+    {
+      question: "As a leader, am I equipped to manage the teams I work with during crisis moments?",
+      answer: "Leadership during crisis requires emotional intelligence, clear communication, and the ability to remain calm under pressure. These skills can be developed through intentional coaching and practice.",
+      actionText: "Develop your leadership skills"
+    },
+    {
+      question: "As a parent, am I intentionally helping my child fill any learning gaps they might be facing academically?",
+      answer: "Every child learns differently. Identifying and addressing learning gaps requires understanding your child's unique needs and finding the right support strategies.",
+      actionText: "Get parenting support"
+    },
+    {
+      question: "Do I feel like I am parenting negatively? Do I constantly feel defeated, implosive or explosive about parenting?",
+      answer: "Parenting challenges often trigger our own childhood experiences. Feeling overwhelmed or reactive doesn't make you a bad parent—it means you could benefit from support and healing.",
+      actionText: "Transform your parenting approach"
+    }
+  ];
+
+  // Helper functions
+  const handleQuestionClick = (index) => {
+    setSelectedQuestion(index);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedQuestion(null);
+  };
+
+ // Update the handleContactRedirect function:
+  const handleContactRedirect = () => {
+    //setSelectedQuestion(null); // Close the modal
+    setCurrentPage('contact'); // Navigate to contact page
+  };
+
+
+  
+  
+
+
 
   return (
     <>
@@ -306,30 +368,31 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Self-Assessment Questions */}
+       {/* Self-Assessment Questions */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Questions to Ask Yourself</h2>
-            <p className="text-gray-600 text-lg">Take a moment to reflect on these important questions</p>
+            <p className="text-gray-600 text-lg">Click on any question to explore it further</p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {[
-              "Are my relationships thriving, or do I self-sabotage?",
-              "Is my work negatively affected by cycles that I just can't seem to break?",
-              "Do I feel like some childhood experiences are constantly triggered in my life?",
-              "As a leader, am I equipped to manage the teams I work with during crisis moments?",
-              "As a parent, am I intentionally helping my child fill any learning gaps they might be facing academically?",
-              "Do I feel like I am parenting negatively? Do I constantly feel defeated, implosive or explosive about parenting?"
-            ].map((question, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md border-l-4 border-amber-600">
-                <p className="text-gray-700 font-medium">{question}</p>
+            {questionsData.map((item, index) => (
+              <div 
+                key={index} 
+                className="bg-white p-6 rounded-lg shadow-md border-l-4 border-amber-600 cursor-pointer hover:shadow-lg hover:bg-amber-50 transition-all duration-300 transform hover:scale-105"
+                onClick={() => handleQuestionClick(index)}
+              >
+                <p className="text-gray-700 font-medium">{item.question}</p>
+                <div className="mt-3 text-amber-600 text-sm font-semibold">
+                  Click to explore →
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
 
       {/* Amaze-ing Mom Program */}
       <section className="py-16 bg-amber-50">
@@ -414,7 +477,61 @@ const HomePage = () => {
   </div>
 </section>
 
-      
+
+ {/* Modal Popup */}
+      {selectedQuestion !== null && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            {/* Modal Header */}
+            <div className="flex justify-between items-start p-6 border-b border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 pr-8">
+                {questionsData[selectedQuestion].question}
+              </h3>
+              <button 
+                onClick={handleCloseModal}
+                className="text-gray-400 hover:text-gray-600 transition-colors"
+              >
+                <X size={24} />
+              </button>
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-6">
+              <div className="mb-6">
+                <p className="text-gray-700 text-lg leading-relaxed">
+                  {questionsData[selectedQuestion].answer}
+                </p>
+              </div>
+
+              {/* Call to Action */}
+              <div className="bg-amber-50 p-4 rounded-lg mb-6">
+                <p className="text-amber-800 font-semibold mb-3">
+                  Ready to take the next step?
+                </p>
+                <p className="text-amber-700 text-sm">
+                  We're here to support you on your transformation journey. Let's discuss how we can help you move forward.
+                </p>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3">
+                <button
+                  onClick={handleContactRedirect}
+                  className="flex-1 bg-amber-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-amber-700 transition-colors"
+                >
+                  {questionsData[selectedQuestion].actionText}
+                </button>
+                <button
+                  onClick={handleCloseModal}
+                  className="flex-1 bg-gray-200 text-gray-800 py-3 px-6 rounded-lg font-semibold hover:bg-gray-300 transition-colors"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}      
     </>
   );
 };

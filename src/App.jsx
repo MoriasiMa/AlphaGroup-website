@@ -239,6 +239,11 @@ const HomePage = ({ setCurrentPage }) => {
       caption: "Welcome to Alpha Consulting KE - Your transformation journey begins here"
     },
     {
+      src: "/ntv appearance.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Nation Media Appearance"
+    },
+    {
       src: "/personal couch.jpg",
       alt: "personal trauma couching",
       caption: "Join our monthly trauma healing sessions - Every woman is invited to the healing table"
@@ -262,6 +267,11 @@ const HomePage = ({ setCurrentPage }) => {
       src: "/child couch.jpg",
       alt: "Psalm 139",
       caption: "You are fearfully and wonderfully made - Psalm 139"
+    },
+    {
+      src: "/all flier.jpg",
+      alt: "Check services page",
+      caption: "Programs Available"
     }
   ];
 
@@ -575,6 +585,11 @@ const AboutPage = () => {
 
   const eventImages = [
     {
+      src: "/ntv appearance.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Nation Media Appearance"
+    },
+    {
       src: "/birthday-pic.jpg",
       alt: "Birthday Event",
       caption: "Professional MC services for birthday celebrations"
@@ -793,6 +808,11 @@ const ServicesPage = () => {
       src: "/education kikuyu for kids.jpg",
       alt: "Mwanicole Consultants Logo",
       caption: "Child education- Kikuyu Lessons For Kids."
+    },
+    {
+      src: "/knowell flier.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
     },
     {
       src: "/bella-borsa-logo-2.jpg",
@@ -1041,20 +1061,7 @@ const ServicesPage = () => {
             </div>
           </div>
         </div>
-
-        {/* Contact Information */}
-        <div className="text-center mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Transform?</h3>
-          <p className="text-lg text-gray-600 mb-6">
-            Reach us for in-person or online sessions
-          </p>
-          <div className="space-y-2 text-gray-700">
-            <p><strong>Email:</strong> alphagroupkeoffice@gmail.com</p>
-            <p><strong>Phone:</strong> +254-731308119 or +254-726089109</p>
-            <p><strong>TikTok:</strong> @posttraumacoachke</p>
-          </div>
-        </div>
-
+        
         {/* Rates Section */}
         <div className="text-center">
           <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Rates</h3>

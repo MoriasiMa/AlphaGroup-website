@@ -855,34 +855,41 @@ const ServicesPage = () => {
       </p>
       </div>
       </div>
-      
-        {/* Transformation Services Overview */}
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">Transformation in Hours</h3>
-            <div className="space-y-4 text-gray-600">
-              <p>
-                Our services are ideal for struggling learners. They are also suitable for adults interested in 
-                closing any learning gaps. These gaps may have been experienced along their learning or life journey.
-              </p>
-              <p>
-                The LIP (Learning Intervention Program) has restored the 'alpha' state of the children we have 
-                worked with. It has helped them continue with their learning journey completely transformed!
-              </p>
-              <p>
-                The Masterpiece Program continues to elevate individuals to seek and attain their highest and 
-                best possible outcomes.
-              </p>
-              <p className="text-lg font-semibold text-gray-900">
-                Choosing Alpha Group KE is one of the best decisions our clients have made; make yours today!
-              </p>
-            </div>
-          </div>
-          <div>
-            <ImageSlideshow images={programImages} autoPlay={false} />
-          </div>
-        </div>
 
+        {/* Transformation Services Overview */}
+<div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+  <div>
+    <h3 className="text-3xl font-bold text-gray-900 mb-6">Unlock Your Full Potential</h3>
+    <div className="space-y-4 text-gray-600">
+      <p>
+        Whether you're a student facing learning challenges or an adult ready to break through 
+        barriers that have held you back for years, we specialize in identifying and addressing 
+        the root causes that keep you from thriving.
+      </p>
+      <p>
+        Our signature <span className="font-semibold text-gray-800">Learning Intervention Program (LIP)</span> doesn't 
+        just teach coping strategies—it rewires how your brain processes information, restoring your 
+        natural ability to learn with confidence and joy.
+      </p>
+      <p>
+        The <span className="font-semibold text-gray-800">Masterpiece Program</span> takes high achievers even 
+        further, helping you discover and step into your ultimate potential, creating success that 
+        feels authentic and sustainable.
+      </p>
+      <div className="bg-gray-50 p-4 rounded-lg mt-6">
+        <p className="text-lg font-semibold text-gray-900">
+          Ready to experience what's possible when nothing holds you back?
+        </p>
+        <p className="text-sm text-gray-600 mt-2">
+          Join hundreds of clients who've discovered their breakthrough with Alpha Group KE.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <ImageSlideshow images={programImages} autoPlay={false} />
+  </div>
+</div>
         {/* Service Divisions */}
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Service Divisions</h3>

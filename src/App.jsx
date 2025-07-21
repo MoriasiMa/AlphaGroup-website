@@ -815,6 +815,11 @@ const ServicesPage = () => {
       caption: "Help your child."
     },
     {
+      src: "/knowlell book bursters image.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
       src: "/bella-borsa-logo-2.jpg",
       alt: "Bella Borsa Logo",
       caption: "Bella Borsa Consultants - Image Consultancy"
@@ -828,31 +833,29 @@ const ServicesPage = () => {
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Our Services</h1>
           <h2 className="text-2xl text-amber-600 font-semibold mb-4">
-            Transformational Recovery for Women and Children: A Holistic Approach
+            Transform Your Life, Transform Your Community
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-            At Alpha Group, our services encompass a holistic approach. We focus on life, purpose, and service 
-            to the child and adult to impact the community positively. We value excellence and intentional 
-            approaches towards the success of our clients.
+            At Alpha Group, we believe every person has the power to transform not only their own life, but their entire community. Whether you're seeking clarity in your purpose, healing from life's challenges, or support for your child's growth, we're here to guide you with compassion and expertise. Our personalized approach means we don't just treat symptoms—we help you discover your strengths, unlock your potential, and create lasting positive change that ripples through every relationship and opportunity in your life.
           </p>
         </div>
 
         {/* Main Service Promise */}
-        <div className="bg-amber-50 p-8 rounded-lg mb-16">
-          <div className="text-center">
-            <h3 className="text-3xl font-bold text-amber-600 mb-4">
-              Helping your child Learn.Transform.Repeat ……. in hours!
-            </h3>
-            <blockquote className="text-lg italic text-gray-700 mb-6">
-              "Education is not the learning of facts, but the training of the mind to think."
-              <footer className="text-sm text-gray-600 mt-2">— Albert Einstein</footer>
-            </blockquote>
-            <p className="text-xl font-semibold text-amber-600 mb-4">
-              Children and adults experience a full transformation in hours!
-            </p>
-          </div>
-        </div>
-
+       <div className="bg-amber-50 p-8 rounded-lg mb-16">
+       <div className="text-center">
+       <h3 className="text-3xl font-bold text-amber-600 mb-4">
+       Breakthrough Results That Last: Where Healing Meets Transformation
+       </h3>
+       <blockquote className="text-lg italic text-gray-700 mb-6">
+      "True healing doesn't just address what's broken—it awakens what's possible. When we align mind, heart, and purpose, transformation becomes inevitable."
+      <footer className="text-sm text-gray-600 mt-2">— Moriah, Founder & Lead Therapist</footer>
+      </blockquote>
+      <p className="text-xl font-semibold text-amber-600 mb-4">
+      Experience profound shifts that create lasting change for you and your family.
+      </p>
+      </div>
+      </div>
+      
         {/* Transformation Services Overview */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div>

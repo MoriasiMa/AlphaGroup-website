@@ -109,7 +109,7 @@ const App = () => {
     case 'home': return <HomePage setCurrentPage={setCurrentPage} />;
     case 'about': return <AboutPage />;
     case 'services': return <ServicesPage />;
-    case 'testimonials': return <TestimonialsPage />;
+    case 'testimonials': return <TestimonialsPage setCurrentPage={setCurrentPage} />;
     case 'contact': return <ContactPage />;
     default: return <HomePage setCurrentPage={setCurrentPage} />;
   }
@@ -322,7 +322,7 @@ const HomePage = ({ setCurrentPage }) => {
 
  // Update the handleContactRedirect function:
   const handleContactRedirect = () => {
-    //setSelectedQuestion(null); // Close the modal
+    setSelectedQuestion(null); // Close the modal
     setCurrentPage('contact'); // Navigate to contact page
   };
 
@@ -413,20 +413,7 @@ const HomePage = ({ setCurrentPage }) => {
       <p className="text-lg text-gray-700 mb-8">Every woman is invited to the online webinar dubbed 'healing table' with Coach Moriah.</p>
     </div>
 
-    {/*<div className="grid md:grid-cols-3 gap-8 mb-12">
-      <div className="bg-white p-6 rounded-lg shadow-md text-center">
-        <h4 className="text-xl font-bold text-gray-900 mb-2">February Theme</h4>
-        <p className="text-amber-600 font-semibold">Unwinding the cord of trauma</p>
-      </div>
-      <div className="bg-white p-6 rounded-lg shadow-md text-center">
-        <h4 className="text-xl font-bold text-gray-900 mb-2">March Theme</h4>
-        <p className="text-amber-600 font-semibold">Understanding trauma and starting from the middle</p>
-      </div>
-      <div className="bg-white p-6 rounded-lg shadow-md text-center">
-        <h4 className="text-xl font-bold text-gray-900 mb-2">April Theme</h4>
-        <p className="text-amber-600 font-semibold">Mother wound</p>
-      </div>
-    </div>
+   
 
     {/* Mother Wound Section with Flier */}
     <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
@@ -1092,112 +1079,10 @@ const ServicesPage = () => {
     </div>
   );
 };
-// Packages Page Component
-const PackagesPage = () => {
-  const packages = [
-    {
-      name: "Essential Care",
-      price: "$149",
-      period: "per month",
-      features: [
-        "2 individual therapy sessions",
-        "Email support between sessions",
-        "Access to mental health resources",
-        "Progress tracking tools"
-      ],
-      popular: false
-    },
-    {
-      name: "Comprehensive Care",
-      price: "$249",
-      period: "per month",
-      features: [
-        "4 individual therapy sessions",
-        "24/7 crisis support hotline",
-        "Group therapy sessions",
-        "Personalized treatment plan",
-        "Family session included",
-        "Mobile app access"
-      ],
-      popular: true
-    },
-    {
-      name: "Premium Care",
-      price: "$399",
-      period: "per month",
-      features: [
-        "Unlimited therapy sessions",
-        "Dedicated therapist assignment",
-        "Same-day appointment availability",
-        "All group therapy sessions",
-        "Family & couples sessions",
-        "Priority support",
-        "Wellness coaching included"
-      ],
-      popular: false
-    }
-  ];
 
-  return (
-    <div className="py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">Choose Your Care Package</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Flexible packages designed to meet your mental health needs and budget.
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          {packages.map((pkg, index) => (
-            <div key={index} className={`relative bg-white p-8 rounded-lg shadow-md ${pkg.popular ? 'ring-2 ring-amber-600' : ''}`}>
-              {pkg.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-amber-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                    Most Popular
-                  </span>
-                </div>
-              )}
-              
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{pkg.name}</h3>
-                <div className="mb-4">
-                  <span className="text-4xl font-bold text-amber-600">{pkg.price}</span>
-                  <span className="text-gray-600 ml-2">{pkg.period}</span>
-                </div>
-              </div>
-              
-              <ul className="space-y-3 mb-8">
-                {pkg.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start">
-                    <span className="w-5 h-5 text-green-500 mr-3 mt-0.5">✓</span>
-                    <span className="text-gray-600">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <button className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors ${
-                pkg.popular 
-                  ? 'bg-amber-600 text-white hover:bg-amber-700' 
-                  : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-              }`}>
-                Get Started
-              </button>
-            </div>
-          ))}
-        </div>
-        
-        <div className="text-center mt-12">
-          <p className="text-gray-600 mb-4">All packages include a 7-day free trial</p>
-          <p className="text-sm text-gray-500">Cancel anytime • No long-term contracts • Secure & confidential</p>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 // Testimonials Page Component (replaces PackagesPage)
-const TestimonialsPage = () => {
+const TestimonialsPage = ({ setCurrentPage }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   
   const clientJourneys = [
@@ -1237,6 +1122,10 @@ const TestimonialsPage = () => {
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + clientJourneys.length) % clientJourneys.length);
+  };
+  
+  const handleContactRedirect = () => {
+  setCurrentPage('contact');
   };
 
   return (
@@ -1355,7 +1244,8 @@ const TestimonialsPage = () => {
           <p className="text-xl mb-6">
             Every brain can be taught, especially if matched with the right learning partner.
           </p>
-          <button className="bg-white text-amber-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+          <button onClick={handleContactRedirect}
+          className="bg-white text-amber-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
             Get Started Today
           </button>
         </div>
@@ -1363,7 +1253,7 @@ const TestimonialsPage = () => {
     </div>
   );
 };
-// Contact Page Component
+
 
 // Contact Page Component
 const ContactPage = () => {

@@ -862,8 +862,10 @@ const ServicesPage = ({ setCurrentPage }) => {
               <div className="space-y-2 text-sm text-gray-700">
                 <p><strong>Services:</strong></p>
                 <ul className="text-left space-y-1">
-                  <li>• </li>
-                  
+                  <li>• Mindset transformation and confidence building </li>
+                  <li>• Growth strategy for personal and professional elevation </li>
+                  <li>• Breaking limiting beliefs and self-sabotage patterns </li>
+                  <li>• Trauma-informed empowerment and inner child healing </li>
                 </ul>
               </div>
             </div>

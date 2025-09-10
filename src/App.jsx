@@ -966,6 +966,24 @@ const ServicesPage = ({ setCurrentPage }) => {
                 <li>• Monthly group sessions</li>
               </ul>
             </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h4 className="text-xl font-bold text-amber-600 mb-3">Events MC Services</h4>
+              <p className="text-gray-600 mb-4">
+                Moriah has a 'midas touch' for kids' events:
+            
+              </p>
+              <ul className="text-sm text-gray-700 space-y-1">
+                <li>• New-born</li>
+                <li>• Graduation</li>
+                <li>• Pediatric care hospitalization</li>
+                <li>• Infant maternal death</li>
+                <li>• Birthdays</li>
+                <li>• Baptism</li>
+                <li>• Baby dedication</li>
+  
+              </ul>
+            </div>
           </div>
         </div>
 

@@ -108,7 +108,7 @@ const App = () => {
     switch(currentPage) {
     case 'home': return <HomePage setCurrentPage={setCurrentPage} />;
     case 'about': return <AboutPage />;
-    case 'services': return <ServicesPage />;
+    case 'services': return <ServicesPage setCurrentPage={setCurrentPage} />;
     case 'testimonials': return <TestimonialsPage setCurrentPage={setCurrentPage} />;
     case 'contact': return <ContactPage />;
     default: return <HomePage setCurrentPage={setCurrentPage} />;
@@ -748,8 +748,9 @@ const AboutPage = () => {
 };
 
 // Services Page Component
-const ServicesPage = () => {
+const ServicesPage = ({ setCurrentPage }) => {
   // Service program images
+ 
   const programImages = [
     {
       src: "/transform lives in hours.jpg",
@@ -801,6 +802,10 @@ const ServicesPage = () => {
     }
   ];
 
+  const handleContactRedirect = () => {
+  setCurrentPage('contact');
+  };
+  
   return (
     <div className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -811,60 +816,10 @@ const ServicesPage = () => {
             Transform Your Life, Transform Your Community
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-            At Alpha Group, we believe every person has the power to transform not only their own life, but their entire community. Whether you're seeking clarity in your purpose, healing from life's challenges, or support for your child's growth, we're here to guide you with compassion and expertise. Our personalized approach means we don't just treat symptoms—we help you discover your strengths, unlock your potential, and create lasting positive change that ripples through every relationship and opportunity in your life.
+            At Alpha Group, we believe every person has the power to transform not only their own life, but their entire community. Whether you're seeking clarity in your purpose, healing from life's challenges, or support for your child's growth, we're here to guide you with compassion and expertise. We don't just treat symptoms- we get to the root issue. We help you discover your strengths, unlock your potential, and create lasting positive change that ripples through every relationship and opportunity in your life.
           </p>
         </div>
 
-        {/* Main Service Promise */}
-       <div className="bg-amber-50 p-8 rounded-lg mb-16">
-       <div className="text-center">
-       <h3 className="text-3xl font-bold text-amber-600 mb-4">
-       Breakthrough Results That Last: Where Healing Meets Transformation
-       </h3>
-       <blockquote className="text-lg italic text-gray-700 mb-6">
-      "True healing doesn't just address what's broken—it awakens what's possible. When we align mind, heart, and purpose, transformation becomes inevitable."
-      <footer className="text-sm text-gray-600 mt-2">— Moriah, Founder & Lead Therapist</footer>
-      </blockquote>
-      <p className="text-xl font-semibold text-amber-600 mb-4">
-      Experience profound shifts that create lasting change for you and your family.
-      </p>
-      </div>
-      </div>
-
-        {/* Transformation Services Overview */}
-<div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-  <div>
-    <h3 className="text-3xl font-bold text-gray-900 mb-6">Unlock Your Full Potential</h3>
-    <div className="space-y-4 text-gray-600">
-      <p>
-        Whether you're a student facing learning challenges or an adult ready to break through 
-        barriers that have held you back for years, we specialize in identifying and addressing 
-        the root causes that keep you from thriving.
-      </p>
-      <p>
-        Our signature <span className="font-semibold text-gray-800">Learning Intervention Program (LIP)</span> doesn't 
-        just teach coping strategies—it rewires how your brain processes information, restoring your 
-        natural ability to learn with confidence and joy.
-      </p>
-      <p>
-        The <span className="font-semibold text-gray-800">Masterpiece Program</span> takes high achievers even 
-        further, helping you discover and step into your ultimate potential, creating success that 
-        feels authentic and sustainable.
-      </p>
-      <div className="bg-gray-50 p-4 rounded-lg mt-6">
-        <p className="text-lg font-semibold text-gray-900">
-          Ready to experience what's possible when nothing holds you back?
-        </p>
-        <p className="text-sm text-gray-600 mt-2">
-          Join hundreds of clients who've discovered their breakthrough with Alpha Group KE.
-        </p>
-      </div>
-    </div>
-  </div>
-  <div>
-    <ImageSlideshow images={programImages} autoPlay={false} />
-  </div>
-</div>
         {/* Service Divisions */}
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Service Divisions</h3>
@@ -1047,6 +1002,64 @@ const ServicesPage = () => {
           </div>
         </div>
         
+        
+       
+
+        {/* Transformation Services Overview */}
+<div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+  <div>
+    <h3 className="text-3xl font-bold text-gray-900 mb-6">Unlock Your Full Potential</h3>
+    <div className="space-y-4 text-gray-600">
+      <p>
+        Whether you're a student facing learning challenges or an adult ready to break through 
+        barriers that have held you back for years, we specialize in identifying and addressing 
+        the root causes that keep you from thriving.
+      </p>
+      <p>
+        Our signature <span className="font-semibold text-gray-800">Learning Intervention Program (LIP)</span> doesn't 
+        just teach coping strategies—it rewires how your brain processes information, restoring your 
+        natural ability to learn with confidence and joy.
+      </p>
+      <p>
+        The <span className="font-semibold text-gray-800">Masterpiece Program</span> takes high achievers even 
+        further, helping you discover and step into your ultimate potential, creating success that 
+        feels authentic and sustainable.
+      </p>
+      <div className="bg-gray-50 p-4 rounded-lg mt-6">
+        <p className="text-lg font-semibold text-gray-900">
+          Ready to experience what's possible when nothing holds you back?
+        </p>
+        <p className="text-sm text-gray-600 mt-2">
+          Join hundreds of clients who've discovered their breakthrough with Alpha Group KE.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <ImageSlideshow images={programImages} autoPlay={false} />
+  </div>
+</div>
+
+ {/* Main Service Promise */}
+       <div className="bg-amber-50 p-8 rounded-lg mb-16">
+       <div className="text-center">
+       <h3 className="text-3xl font-bold text-amber-600 mb-4">
+       Breakthrough Results That Last: Where Healing Meets Transformation
+       </h3>
+       <blockquote className="text-lg italic text-gray-700 mb-6">
+      "Transformation is the end result of intentionality,every minute,hour,day,week!"
+      <footer className="text-sm text-gray-600 mt-2">— Moriah, Founder & Lead Therapist</footer>
+      </blockquote>
+      <p className="text-xl font-semibold text-amber-600 mb-4">
+      Experience profound shifts that create lasting change for you and your family.
+      </p>
+      <button onClick={handleContactRedirect}
+          className="bg-black text-amber-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            READY TO EXPERIENCE? CLICK HERE
+          </button>
+      </div>
+      
+      </div>
         {/* Rates Section */}
         <div className="text-center">
           <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Rates</h3>

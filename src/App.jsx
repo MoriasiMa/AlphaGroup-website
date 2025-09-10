@@ -828,7 +828,7 @@ const ServicesPage = ({ setCurrentPage }) => {
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <h4 className="text-xl font-bold text-amber-600 mb-3">Bella Borsa Consultants</h4>
               <p className="text-gray-600 mb-4">
-                An image consultancy that guides individuals and teams seeking successful transitions through 
+                Individuals and teams seeking authentic transitions 
                 <span className="font-semibold text-amber-600"> #intentional living</span>
               </p>
               <div className="space-y-2 text-sm text-gray-700">
@@ -854,9 +854,24 @@ const ServicesPage = ({ setCurrentPage }) => {
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <h4 className="text-xl font-bold text-amber-600 mb-3">Alpha Coaching Ke</h4>
+              <p className="text-gray-600 mb-4">
+                A holistic approach
+                <span className="font-semibold text-amber-600"> #AlphaCoachingKe</span>
+              </p>
+              <div className="space-y-2 text-sm text-gray-700">
+                <p><strong>Services:</strong></p>
+                <ul className="text-left space-y-1">
+                  <li>• </li>
+                  
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <h4 className="text-xl font-bold text-amber-600 mb-3">Mwanicole Consultants</h4>
               <p className="text-gray-600 mb-4">
-                A consulting firm in matters of Education and Psychology. Our clients enjoy 
+                Helping children and adults create a "how to learn" map.
                 <span className="font-semibold text-amber-600"> #howtolearn</span>
               </p>
               <div className="space-y-2 text-sm text-gray-700">
@@ -873,7 +888,7 @@ const ServicesPage = ({ setCurrentPage }) => {
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <h4 className="text-xl font-bold text-amber-600 mb-3">Knowell Book Busters</h4>
               <p className="text-gray-600 mb-4">
-                A learner's experience based on their academic or developmental need towards desired outcomes.
+                Restoring "the joy of learning" to children's academics.
               </p>
               <div className="space-y-2 text-sm text-gray-700">
                 <p><strong>Services:</strong></p>
@@ -882,6 +897,7 @@ const ServicesPage = ({ setCurrentPage }) => {
                   <li>• Writing Workshops</li>
                   <li>• Reading Intervention</li>
                   <li>• Academic Support</li>
+                  <li>• Annual Spelling Bee</li>
                   <a
                   href="https://youtube.com/@knowellbookbusters6516?si=L1-9HA3Q8kD7w7dt"
                   target="_blank"
@@ -916,6 +932,7 @@ const ServicesPage = ({ setCurrentPage }) => {
                 <li>• Individual trauma therapy</li>
                 <li>• Relationship healing</li>
                 <li>• Childhood trauma recovery</li>
+                <li>• Family coaching</li>
                 <li>• Crisis management for leaders</li>
               </ul>
             </div>
@@ -923,7 +940,7 @@ const ServicesPage = ({ setCurrentPage }) => {
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h4 className="text-xl font-bold text-amber-600 mb-3">Parenting Support</h4>
               <p className="text-gray-600 mb-4">
-                Intentional parenting guidance to help fill learning gaps and support healthy 
+                Intentional parenting guidance to help fill learning gaps and support holistic 
                 child development academically and emotionally.
               </p>
               <ul className="text-sm text-gray-700 space-y-1">
@@ -938,7 +955,7 @@ const ServicesPage = ({ setCurrentPage }) => {
               <h4 className="text-xl font-bold text-amber-600 mb-3">Online Healing Webinars</h4>
               <p className="text-gray-600 mb-4">
                 Monthly "Healing Table" webinars covering various trauma healing topics 
-                for women's empowerment and recovery.
+                for childhood trauma,women's empowerment and recovery.
               </p>
               <ul className="text-sm text-gray-700 space-y-1">
                 <li>• Unwinding trauma cords</li>
@@ -989,7 +1006,7 @@ const ServicesPage = ({ setCurrentPage }) => {
             
             <div className="bg-amber-500 p-6 rounded-lg text-center">
               <h4 className="font-bold text-gray-900 mb-2">Knowell Book Busters</h4>
-              <p className="text-sm text-gray-600 mb-4">Kids Book Club & Writing Workshop</p>
+              <p className="text-sm text-gray-600 mb-4">Kids Book Club & Annual Spelling Bee</p>
               <a 
                 href="https://forms.gle/ecVEntkk5U7dxpzn8" 
                 target="_blank" 

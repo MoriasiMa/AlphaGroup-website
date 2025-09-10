@@ -649,20 +649,8 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
-
-
         {/* Events MC Section */}
         <div className="mb-16">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">Events MC Services</h3>
-            <h4 className="text-xl text-amber-600 font-semibold mb-2">What's an event without an MC?</h4>
-            <p className="text-lg text-gray-600">Your anxiety ends here!</p>
-            <p className="text-lg text-gray-700 mt-4">
-              Moriah has a 'midas touch' for kids' events (new-born, graduation, pediatric care hospitalization, 
-              infant maternal death, birthdays, baptism, baby dedication, and more)
-            </p>
-          </div>
-          
           <ImageSlideshow images={eventImages} autoPlay={true} autoPlayInterval={5000} />
         </div>
 
@@ -738,7 +726,7 @@ const AboutPage = () => {
         {/* Training Section */}
         <div className="bg-white p-8 rounded-lg shadow-md">
           <div className="text-center">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">Training for Lasting Transformation</h3>
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">Training for Lasting Transformation Moriah's Method</h3>
             <p className="text-lg text-gray-600 mb-6 max-w-4xl mx-auto">
               Nicole's method of teaching has had an astounding impact. She would like children in Africa and 
               beyond to enjoy the same experience. This training is an opportunity for Educators to learn about 
@@ -1135,7 +1123,7 @@ const TestimonialsPage = ({ setCurrentPage }) => {
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Testimonials</h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-            Real stories of transformation and growth from our learning intervention programs
+            Here is feedback from our various clients
           </p>
         </div>
 
@@ -1240,7 +1228,7 @@ const TestimonialsPage = ({ setCurrentPage }) => {
 
         {/* Call to Action */}
         <div className="text-center bg-gradient-to-r from-amber-600 to-gray-900 text-white rounded-lg p-8">
-          <h3 className="text-2xl font-bold mb-4">Ready to Start Your Learning Journey?</h3>
+          <h3 className="text-2xl font-bold mb-4">Ready to rewrite the story of your child's learning journey?</h3>
           <p className="text-xl mb-6">
             Every brain can be taught, especially if matched with the right learning partner.
           </p>
@@ -1331,7 +1319,8 @@ const ContactPage = () => {
                 <Phone className="w-6 h-6 text-amber-600 mr-4 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900">Phone</h3>
-                  <p className="text-gray-600">0726089109</p>
+                  <p className="text-gray-600">+254726089109</p>
+                  <p className="text-gray-600">+254710484899</p>
                   <p className="text-sm text-gray-500">Available 24/7 for crisis support</p>
                 </div>
               </div>
@@ -1511,7 +1500,7 @@ const Footer = () => {
               <span className="text-lg font-bold">Alpha Coaching KE</span>
             </div>
             <p className="text-gray-400 text-sm">
-              Professional therapy services connecting you with licensed mental health professionals.
+              Professional therapy with certified coaches and proffessional counseling Psychologists
             </p>
           </div>
           
@@ -1570,12 +1559,12 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="t.me/knowellkids"
+                  href="t.me/AlphaCoachingKE"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-amber-400 transition-colors duration-200"
                 >
-                  Telegram:@knowellkids
+                  Telegram:@AlphaCoachingKE
                 </a>
               </li>
               <li>
@@ -1604,14 +1593,14 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Support</h3>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li>Crisis Hotline: 0726089109</li>
-              
+              <li>Crisis Hotline: +254726089109</li>
+              <li>Crisis Hotline: +254726089109</li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; 2025 Alpha Coaching KE. All rights reserved.</p>
+          <p>&copy; 2025 Alpha Group KE. All rights reserved.</p>
         </div>
       </div>
     </footer>

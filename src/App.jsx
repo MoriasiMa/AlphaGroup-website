@@ -544,42 +544,11 @@ const AboutPage = () => {
     }
   ];
 
-  const servicesImages = [
-    {
-      src: "https://alphagroupke.wordpress.com/wp-content/uploads/2022/05/flier-lip-reasons-.jpg",
-      alt: "LIP Program Benefits",
-      caption: "Learning Intervention Program - Transforming lives in hours"
-    }
-  ];
-
-  const programLogos = [
-    {
-      src: "https://alphagroupke.wordpress.com/wp-content/uploads/2022/02/mwanicole-logo.jpg",
-      alt: "Mwanicole Consultants Logo",
-      caption: "Mwanicole Consultants - Education and Psychology"
-    },
-    {
-      src: "https://alphagroupke.wordpress.com/wp-content/uploads/2022/02/alpha-full-logo-1.jpg",
-      alt: "Alpha Group Full Logo",
-      caption: "Alpha Group - Transformational Recovery"
-    },
-    {
-      src: "https://alphagroupke.wordpress.com/wp-content/uploads/2022/02/bella-borsa-logo-2.jpg",
-      alt: "Bella Borsa Logo",
-      caption: "Bella Borsa Consultants - Image Consultancy"
-    }
-  ];
-
   const eventImages = [
     {
       src: "/ntv appearance.jpg",
       alt: "Nation Media Appearance",
       caption: "Nation Media Appearance"
-    },
-    {
-      src: "/birthday-pic.jpg",
-      alt: "Birthday Event",
-      caption: "Professional MC services for birthday celebrations"
     },
     {
       src: "/graduation photo alpha group.jpg",
@@ -787,6 +756,11 @@ const ServicesPage = ({ setCurrentPage }) => {
     },
     {
       src: "/knowell flier.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/knowlell book bursters image.jpg",
       alt: "Nation Media Appearance",
       caption: "Help your child."
     },
@@ -1126,17 +1100,97 @@ const ServicesPage = ({ setCurrentPage }) => {
       caption: "Help your child."
     },
     {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.13_0f0f10b8.jpg",
+      src: "/WhatsApp Image 2025-09-11 at 08.37.15_fd688850.jpg",
       alt: "Nation Media Appearance",
       caption: "Help your child."
     },
     {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.13_0f0f10b8.jpg",
+      src: "/WhatsApp Image 2025-09-11 at 08.37.16_1cc2756d.jpg",
       alt: "Nation Media Appearance",
       caption: "Help your child."
     },
     {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.13_0f0f10b8.jpg",
+      src: "/WhatsApp Image 2025-09-11 at 08.37.16_6ad84f43.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.16_558747ba.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.17_6cfe8d9a.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.17_50b3a6b6.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.17_59942a2a.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.18_9e3fa5f6.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.18_ca209744.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.18_d0afb5ca.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.19_119573e0.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.19_a6bbab6b.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.20_14fcf1f8.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.20_b5728638.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.20_ceb6a512.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.21_40812e5d.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.21_20542367.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.22_0c16f196.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.22_d5af87d1.jpg",
       alt: "Nation Media Appearance",
       caption: "Help your child."
     },
@@ -1541,8 +1595,8 @@ const TestimonialsPage = ({ setCurrentPage }) => {
             <p>
               At 35 years, I joined campus and learning took on new meaning. I loved the library and took up a work-study opportunity there. The books I came across were like portals into an endless tunnel of knowledge.
             </p>
-            <div className="bg-yellow-50 border-l-4 border-yellow-600 p-6 my-6">
-              <p className="font-semibold text-yellow-800">
+            <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 my-6">
+              <p className="font-semibold text-yellow-500">
                 "Are these your grades?" she asked. "Yes, they are... Am I failing?" was my response. "Not at all, in fact, you qualify for the Vice Chancellor's grant! Your GPA is a consistent 3.6," she answered.
               </p>
             </div>
@@ -1778,7 +1832,7 @@ const ContactPage = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-600 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                   placeholder="Enter your full name"
                 />
               </div>
@@ -1793,7 +1847,7 @@ const ContactPage = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-600 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                   placeholder="Enter your email address"
                 />
               </div>
@@ -1807,7 +1861,7 @@ const ContactPage = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-600 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                   placeholder="Enter your phone number"
                 />
               </div>
@@ -1820,7 +1874,7 @@ const ContactPage = () => {
                   name="serviceType"
                   value={formData.serviceType}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-600 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                 >
                   <option value="">Select a service</option>
                   <option value="Individual Therapy">Individual Therapy</option>
@@ -1855,7 +1909,7 @@ const ContactPage = () => {
                 className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors ${
                   isSubmitting
                     ? 'bg-gray-400 cursor-not-allowed'
-                    : 'bg-yellow-600 hover:bg-yellow-700'
+                    : 'bg-yellow-500 hover:bg-yellow-400'
                 } text-white`}
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}

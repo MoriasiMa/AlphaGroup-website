@@ -47,7 +47,7 @@ const ImageSlideshow = ({ images, autoPlay = true, autoPlayInterval = 5000 }) =>
             <img
               src={image.src}
               alt={image.alt || `Slide ${index + 1}`}
-              className="w-full h-full object-contain bg-amber-500"
+              className="w-full h-full object-contain bg-yellow-500"
             />
             {image.caption && (
               <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
@@ -160,7 +160,7 @@ const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenu
                 }}
               />
               {/* Fallback logo with gold background */}
-              <div className="w-10 h-10 bg-amber-600 rounded-lg flex items-center justify-center" style={{display: 'none'}}>
+              <div className="w-10 h-10 bg-yellow-600 rounded-lg flex items-center justify-center" style={{display: 'none'}}>
                 <span className="text-white font-bold text-xl">AG</span>
               </div>
             </div>
@@ -178,8 +178,8 @@ const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenu
                 onClick={() => setCurrentPage(item.id)}
                 className={`px-3 py-2 text-sm font-medium transition-colors ${
                   currentPage === item.id
-                    ? 'text-amber-600 border-b-2 border-amber-600'
-                    : 'text-gray-700 hover:text-amber-600'
+                    ? 'text-yellow-500 border-b-2 border-yellow-500'
+                    : 'text-gray-700 hover:text-yellow-500'
                 }`}
               >
                 {item.label}
@@ -208,8 +208,8 @@ const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenu
                 }}
                 className={`block w-full text-left px-3 py-2 text-sm font-medium ${
                   currentPage === item.id
-                    ? 'text-amber-600 bg-amber-50'
-                    : 'text-gray-700 hover:text-amber-600 hover:bg-gray-50'
+                    ? 'text-yellow-500 bg-yellow-50'
+                    : 'text-gray-700 hover:text-yellow-500 hover:bg-gray-50'
                 }`}
               >
                 {item.label}
@@ -335,7 +335,7 @@ const HomePage = ({ setCurrentPage }) => {
   return (
     <>
       {/* Hero Section with Slideshow */}
-      <section className="bg-gradient-to-r from-amber-600 to-gray-900 text-white py-10">
+      <section className="bg-gradient-to-r from-yellow-500 to-gray-900 text-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Logo and Main Heading */}
           {/*<div className="text-center mb-12">
@@ -369,7 +369,7 @@ const HomePage = ({ setCurrentPage }) => {
               <p className="mb-4">
                 Our role is to support you to stand strong. We help ensure you are not 'pulled down' by intangible or unseen experiences that have previously held you back.
               </p>
-              <p className="text-amber-600 font-semibold text-xl">
+              <p className="text-yellow-500 font-semibold text-xl">
                 Transformation begins when you say 'YES!' to intentionally engage to meet the best version of your future self.
               </p>
             </div>
@@ -389,11 +389,11 @@ const HomePage = ({ setCurrentPage }) => {
             {questionsData.map((item, index) => (
               <div 
                 key={index} 
-                className="bg-white p-6 rounded-lg shadow-md border-l-4 border-amber-600 cursor-pointer hover:shadow-lg hover:bg-amber-50 transition-all duration-300 transform hover:scale-105"
+                className="bg-white p-6 rounded-lg shadow-md border-l-4 border-yellow-500 cursor-pointer hover:shadow-lg hover:bg-yellow-50 transition-all duration-300 transform hover:scale-105"
                 onClick={() => handleQuestionClick(index)}
               >
                 <p className="text-gray-700 font-medium">{item.question}</p>
-                <div className="mt-3 text-amber-600 text-sm font-semibold">
+                <div className="mt-3 text-yellow-500 text-sm font-semibold">
                   Click to explore →
                 </div>
               </div>
@@ -404,11 +404,11 @@ const HomePage = ({ setCurrentPage }) => {
 
 
       {/* Amaze-ing Mom Program */}
-      <section className="py-16 bg-amber-50">
+      <section className="py-16 bg-yellow-50">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="text-center mb-12">
       <h2 className="text-3xl font-bold text-gray-900 mb-4">What's NEW?!</h2>
-      <h3 className="text-2xl font-semibold text-amber-600 mb-6">Amaze-ing Mom Program</h3>
+      <h3 className="text-2xl font-semibold text-yellow-500 mb-6">Amaze-ing Mom Program</h3>
       <p className="text-xl text-gray-600 mb-4">Every month in 2025 is trauma healing month.</p>
       <p className="text-lg text-gray-700 mb-8">Every woman is invited to the online webinar dubbed 'healing table' with Coach Moriah.</p>
     </div>
@@ -435,9 +435,9 @@ const HomePage = ({ setCurrentPage }) => {
             e.target.nextSibling.style.display = 'block';
           }}
         />
-        <div className="hidden bg-amber-100 border-2 border-amber-600 rounded-lg p-8 text-center max-w-md">
-          <h5 className="text-xl font-bold text-amber-700 mb-2">Mother Wound Healing</h5>
-          <p className="text-amber-600">Special healing session - July 2025</p>
+        <div className="hidden bg-yellow-100 border-2 border-yellow-600 rounded-lg p-8 text-center max-w-md">
+          <h5 className="text-xl font-bold text-yellow-700 mb-2">Mother Wound Healing</h5>
+          <p className="text-yellow-500">Special healing session - July 2025</p>
         </div>
       </div>
     </div>
@@ -500,11 +500,11 @@ const HomePage = ({ setCurrentPage }) => {
               </div>
 
               {/* Call to Action */}
-              <div className="bg-amber-50 p-4 rounded-lg mb-6">
-                <p className="text-amber-800 font-semibold mb-3">
+              <div className="bg-yellow-50 p-4 rounded-lg mb-6">
+                <p className="text-yellow-800 font-semibold mb-3">
                   Ready to take the next step?
                 </p>
-                <p className="text-amber-700 text-sm">
+                <p className="text-yellow-700 text-sm">
                   We're here to support you on your transformation journey. Let's discuss how we can help you move forward.
                 </p>
               </div>
@@ -513,7 +513,7 @@ const HomePage = ({ setCurrentPage }) => {
               <div className="flex flex-col sm:flex-row gap-3">
                 <button
                   onClick={handleContactRedirect}
-                  className="flex-1 bg-amber-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-amber-700 transition-colors"
+                  className="flex-1 bg-yellow-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-yellow-700 transition-colors"
                 >
                   {questionsData[selectedQuestion].actionText}
                 </button>
@@ -604,7 +604,7 @@ const AboutPage = () => {
         {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">About Alpha Group KE</h1>
-          <h2 className="text-2xl text-amber-600 font-semibold mb-4">
+          <h2 className="text-2xl text-yellow-500 font-semibold mb-4">
             Transformational Recovery for Women and Children: A Holistic Approach
           </h2>
         </div>
@@ -623,17 +623,17 @@ const AboutPage = () => {
               </p>
               <p>
                 She holds a Degree in Life Coaching and is pursuing her studies as a{' '}
-                <a href="https://www.eaipc.ac.ke/" target="_blank" rel="noopener noreferrer" className="text-amber-600 hover:text-amber-700">
+                <a href="https://www.eaipc.ac.ke/" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-yellow-700">
                   Counsellor
                 </a>{' '}
                 and{' '}
-                <a href="https://www.usiu.ac.ke/" target="_blank" rel="noopener noreferrer" className="text-amber-600 hover:text-amber-700">
+                <a href="https://www.usiu.ac.ke/" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-yellow-700">
                   Psychologist
                 </a>.
               </p>
               <p>
                 Moriah is an alumnus of{' '}
-                <a href="https://strathmore.edu/" target="_blank" rel="noopener noreferrer" className="text-amber-600 hover:text-amber-700">
+                <a href="https://strathmore.edu/" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-yellow-700">
                   Strathmore University
                 </a>, where she took an Accelerated Business Course that transformed her business.
               </p>
@@ -656,7 +656,7 @@ const AboutPage = () => {
 
 
         {/* Media Features Section */}
-        <div className="bg-amber-50 p-8 rounded-lg mb-16">
+        <div className="bg-yellow-50 p-8 rounded-lg mb-16">
           <h3 className="text-3xl font-bold text-gray-900 text-center mb-8">Media Features & Recognition</h3>
           
           <div className="grid md:grid-cols-2 gap-6">
@@ -666,21 +666,21 @@ const AboutPage = () => {
                 <li>
                   <a href="https://www.youtube.com/watch?v=MdTnJTvnXpY&feature=youtu.be" 
                      target="_blank" rel="noopener noreferrer" 
-                     className="text-amber-600 hover:text-amber-700">
+                     className="text-yellow-500 hover:text-yellow-700">
                     Ebru TV - Importance of an Image Consultant
                   </a>
                 </li>
                 <li>
                   <a href="https://www.youtube.com/watch?v=eUz60PEX0no&t=66s" 
                      target="_blank" rel="noopener noreferrer" 
-                     className="text-amber-600 hover:text-amber-700">
+                     className="text-yellow-500 hover:text-yellow-700">
                     Ebru TV - Widows in Kenya and beyond
                   </a>
                 </li>
                 <li>
                   <a href="https://www.facebook.com/watch/live/?ref=search&v=2212548072103552" 
                      target="_blank" rel="noopener noreferrer" 
-                     className="text-amber-600 hover:text-amber-700">
+                     className="text-yellow-500 hover:text-yellow-700">
                     Niusline TV - Successful parenting
                   </a>
                 </li>
@@ -693,14 +693,14 @@ const AboutPage = () => {
                 <li>
                   <a href="https://parentsafrica.com/nicole-ngigi-helping-widows-rebuild-their-lives/" 
                      target="_blank" rel="noopener noreferrer" 
-                     className="text-amber-600 hover:text-amber-700">
+                     className="text-yellow-500 hover:text-yellow-700">
                     Parents Africa Magazine - Helping widows rebuild their lives
                   </a>
                 </li>
                 <li>
                   <a href="https://m.facebook.com/RisingStarKenya/" 
                      target="_blank" rel="noopener noreferrer" 
-                     className="text-amber-600 hover:text-amber-700">
+                     className="text-yellow-500 hover:text-yellow-700">
                     CFC Stanbic Rising Star Kenya - Professional Services Category Finalist
                   </a>
                 </li>
@@ -791,7 +791,352 @@ const ServicesPage = ({ setCurrentPage }) => {
       caption: "Help your child."
     },
     {
-      src: "/knowlell book bursters image.jpg",
+      src: "/WhatsApp Image 2025-09-11 at 08.19.14_f7b266a0.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+        {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.17_2d8f3780.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+        {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.34_5d42fdaf.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+        {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.36_a070b99c.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+        {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.37_c1a5bf06.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+        {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.37_cbf20560.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+        {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.38_7057a483.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+        {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.38_a6f6c63c.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+        {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.38_c99aa7ca.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+        {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.39_323d967f.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+        {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.39_821a62e1.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+        {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.39_cff6b5fe.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+        {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.40_a4358c74.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+        {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.40_cdb9ef23.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+        {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.40_dbeb756f.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+        {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.41_6172c838.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+      {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.41_a90a8ca7.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+      {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.42_01ec4d74.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+      {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.42_1a93d3d5.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+      {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.42_5b63e40b.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+      {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.43_741a37be.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+      {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.43_8151791c.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+      {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.43_d512db77.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+  {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.44_a178753e.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+      {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.44_d3a8eef0.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+      {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.45_736cb72e.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+      {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.45_a538d781.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+      {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.45_fba3667d.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.46_9559118b.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.46_ee5c3f25.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.47_4a606926.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.47_22fc9456.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.47_d436b17f.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.48_af8f7352.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.48_e90f77a6.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.49_7efb0a81.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.49_82942cc9.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.49_f42e9750.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.50_38d7ed40.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.50_df872d6c.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.51_ac36730f.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.51_f32ba00c.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.52_59ae5427.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.19.52_458781f7.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.36.50_6c4c3d6b.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.36.51_539f1bcc.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.36.52_69cf7d89.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.36.53_3fbdfec3.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.36.55_a69f19a4.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.36.56_8d7f47e5.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+     {
+      src: "/WhatsApp Image 2025-09-11 at 08.36.57_ad06abc8.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.36.59_87e0808c.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.00_f592a61c.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.01_19b5d71b.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.03_2e18a2f8.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.04_a680d27c.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.06_c3e552a3.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.07_21fd9c27.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.09_d013169c.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.10_561ab38c.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.11_1927aa23.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.11_09665951.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.12_db6b0890.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.12_ddb04d58.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.13_0f0f10b8.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.13_117a6781.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.15_0175b2f0.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.13_0f0f10b8.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.13_0f0f10b8.jpg",
+      alt: "Nation Media Appearance",
+      caption: "Help your child."
+    },
+    {
+      src: "/WhatsApp Image 2025-09-11 at 08.37.13_0f0f10b8.jpg",
       alt: "Nation Media Appearance",
       caption: "Help your child."
     },
@@ -812,7 +1157,7 @@ const ServicesPage = ({ setCurrentPage }) => {
         {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Our Services</h1>
-          <h2 className="text-2xl text-amber-600 font-semibold mb-4">
+          <h2 className="text-2xl text-yellow-500 font-semibold mb-4">
             Transform Your Life, Transform Your Community
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto">
@@ -820,16 +1165,16 @@ const ServicesPage = ({ setCurrentPage }) => {
           </p>
         </div>
 
-        {/* Service Divisions */}
+       {/* Service Divisions */}
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Service Divisions</h3>
           
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <h4 className="text-xl font-bold text-amber-600 mb-3">Bella Borsa Consultants</h4>
+              <h4 className="text-xl font-bold text-yellow-500 mb-3">Bella Borsa Consultants</h4>
               <p className="text-gray-600 mb-4">
                 Individuals and teams seeking authentic transitions 
-                <span className="font-semibold text-amber-600"> #intentional living</span>
+                <span className="font-semibold text-yellow-500"> #intentional living</span>
               </p>
               <div className="space-y-2 text-sm text-gray-700">
                 <p><strong>Services:</strong></p>
@@ -844,7 +1189,7 @@ const ServicesPage = ({ setCurrentPage }) => {
                   href="https://youtube.com/@bellaborsaconsultants?si=6dWzjtvVIsGnuEHK"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-black hover:text-amber-400 transition-colors duration-200"
+                  className="text-black hover:text-yellow-400 transition-colors duration-200"
                 >
                   <b>Youtube Link: @bellaborsaconsultants</b>
                 </a>
@@ -854,10 +1199,10 @@ const ServicesPage = ({ setCurrentPage }) => {
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <h4 className="text-xl font-bold text-amber-600 mb-3">Alpha Coaching Ke</h4>
+              <h4 className="text-xl font-bold text-yellow-500 mb-3">Alpha Coaching Ke</h4>
               <p className="text-gray-600 mb-4">
                 A holistic approach
-                <span className="font-semibold text-amber-600"> #AlphaCoachingKe</span>
+                <span className="font-semibold text-yellow-500"> #AlphaCoachingKe</span>
               </p>
               <div className="space-y-2 text-sm text-gray-700">
                 <p><strong>Services:</strong></p>
@@ -871,10 +1216,10 @@ const ServicesPage = ({ setCurrentPage }) => {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <h4 className="text-xl font-bold text-amber-600 mb-3">Mwanicole Consultants</h4>
+              <h4 className="text-xl font-bold text-yellow-500 mb-3">Mwanicole Consultants</h4>
               <p className="text-gray-600 mb-4">
                 Helping children and adults create a "how to learn" map.
-                <span className="font-semibold text-amber-600"> #howtolearn</span>
+                <span className="font-semibold text-yellow-500"> #howtolearn</span>
               </p>
               <div className="space-y-2 text-sm text-gray-700">
                 <p><strong>Services:</strong></p>
@@ -886,9 +1231,17 @@ const ServicesPage = ({ setCurrentPage }) => {
                 </ul>
               </div>
             </div>
-            
+          </div>
+
+          {/* Service Logos Slideshow - Moved here after first 3 cards */}
+          <div className="mb-8">
+            <ImageSlideshow images={programLogos} autoPlay={true} autoPlayInterval={4000} />
+          </div>
+          
+          {/* Fourth service card - separate grid */}
+          <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <h4 className="text-xl font-bold text-amber-600 mb-3">Knowell Book Busters</h4>
+              <h4 className="text-xl font-bold text-yellow-500 mb-3">Knowell Book Busters</h4>
               <p className="text-gray-600 mb-4">
                 Restoring "the joy of learning" to children's academics.
               </p>
@@ -904,18 +1257,13 @@ const ServicesPage = ({ setCurrentPage }) => {
                   href="https://youtube.com/@knowellbookbusters6516?si=L1-9HA3Q8kD7w7dt"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-black hover:text-amber-400 transition-colors duration-200"
+                  className="text-black hover:text-yellow-400 transition-colors duration-200"
                 >
                   <b>Youtube Link: @knowellbookbusters</b>
                 </a>
                 </ul>
               </div>
             </div>
-          </div>
-
-          {/* Service Logos Slideshow */}
-          <div className="mb-8">
-            <ImageSlideshow images={programLogos} autoPlay={true} autoPlayInterval={4000} />
           </div>
         </div>
 
@@ -925,7 +1273,7 @@ const ServicesPage = ({ setCurrentPage }) => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h4 className="text-xl font-bold text-amber-600 mb-3">Trauma Recovery Coaching</h4>
+              <h4 className="text-xl font-bold text-yellow-500 mb-3">Trauma Recovery Coaching</h4>
               <p className="text-gray-600 mb-4">
                 Specialized support for post-trauma recovery and healing, helping individuals break cycles 
                 and move towards their best future self.
@@ -940,7 +1288,7 @@ const ServicesPage = ({ setCurrentPage }) => {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h4 className="text-xl font-bold text-amber-600 mb-3">Parenting Support</h4>
+              <h4 className="text-xl font-bold text-yellow-500 mb-3">Parenting Support</h4>
               <p className="text-gray-600 mb-4">
                 Intentional parenting guidance to help fill learning gaps and support holistic 
                 child development academically and emotionally.
@@ -954,7 +1302,7 @@ const ServicesPage = ({ setCurrentPage }) => {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h4 className="text-xl font-bold text-amber-600 mb-3">Online Healing Webinars</h4>
+              <h4 className="text-xl font-bold text-yellow-500 mb-3">Online Healing Webinars</h4>
               <p className="text-gray-600 mb-4">
                 Monthly "Healing Table" webinars covering various trauma healing topics 
                 for childhood trauma,women's empowerment and recovery.
@@ -968,7 +1316,7 @@ const ServicesPage = ({ setCurrentPage }) => {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h4 className="text-xl font-bold text-amber-600 mb-3">Events MC Services</h4>
+              <h4 className="text-xl font-bold text-yellow-500 mb-3">Events MC Services</h4>
               <p className="text-gray-600 mb-4">
                 Moriah has a 'midas touch' for kids' events:
             
@@ -998,7 +1346,7 @@ const ServicesPage = ({ setCurrentPage }) => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-amber-500 p-6 rounded-lg text-center">
+            <div className="bg-yellow-500 p-6 rounded-lg text-center">
               <h4 className="font-bold text-gray-900 mb-2">Bella Borsa</h4>
               <p className="text-sm text-gray-600 mb-4">Success Mindset and Intentional Living</p>
               <a 
@@ -1011,7 +1359,7 @@ const ServicesPage = ({ setCurrentPage }) => {
               </a>
             </div>
             
-            <div className="bg-amber-500 p-6 rounded-lg text-center">
+            <div className="bg-yellow-500 p-6 rounded-lg text-center">
               <h4 className="font-bold text-gray-900 mb-2">Mwanicole Consultants</h4>
               <p className="text-sm text-gray-600 mb-4">Educational Consultancy and Learning Journeys</p>
               <a 
@@ -1024,7 +1372,7 @@ const ServicesPage = ({ setCurrentPage }) => {
               </a>
             </div>
             
-            <div className="bg-amber-500 p-6 rounded-lg text-center">
+            <div className="bg-yellow-500 p-6 rounded-lg text-center">
               <h4 className="font-bold text-gray-900 mb-2">Knowell Book Busters</h4>
               <p className="text-sm text-gray-600 mb-4">Kids Book Club & Annual Spelling Bee</p>
               <a 
@@ -1078,20 +1426,20 @@ const ServicesPage = ({ setCurrentPage }) => {
 </div>
 
  {/* Main Service Promise */}
-       <div className="bg-amber-50 p-8 rounded-lg mb-16">
+       <div className="bg-yellow-50 p-8 rounded-lg mb-16">
        <div className="text-center">
-       <h3 className="text-3xl font-bold text-amber-600 mb-4">
+       <h3 className="text-3xl font-bold text-yellow-500 mb-4">
        Breakthrough Results That Last: Where Healing Meets Transformation
        </h3>
        <blockquote className="text-lg italic text-gray-700 mb-6">
       "Transformation is the end result of intentionality,every minute,hour,day,week!"
       <footer className="text-sm text-gray-600 mt-2">— Moriah, Founder & Lead Therapist</footer>
       </blockquote>
-      <p className="text-xl font-semibold text-amber-600 mb-4">
+      <p className="text-xl font-semibold text-yellow-500 mb-4">
       Experience profound shifts that create lasting change for you and your family.
       </p>
       <button onClick={handleContactRedirect}
-          className="bg-black text-amber-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+          className="bg-black text-yellow-500 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
             READY TO EXPERIENCE? CLICK HERE
           </button>
       </div>
@@ -1179,7 +1527,7 @@ const TestimonialsPage = ({ setCurrentPage }) => {
 
         {/* Moriah's Story Section */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
-          <h2 className="text-3xl font-bold text-amber-600 mb-6">Moriah's Story</h2>
+          <h2 className="text-3xl font-bold text-yellow-500 mb-6">Moriah's Story</h2>
           <div className="text-gray-700 leading-relaxed space-y-4">
             <p>
               My learning journey was quite normal until I was 9 years old, when our family was involved in a terrible car crash! We were headed back to Nairobi from a family vacation; as fate would have it, we did not get home that day. We were rescued by well-wishers who called for an ambulance, which saved our lives.
@@ -1193,13 +1541,13 @@ const TestimonialsPage = ({ setCurrentPage }) => {
             <p>
               At 35 years, I joined campus and learning took on new meaning. I loved the library and took up a work-study opportunity there. The books I came across were like portals into an endless tunnel of knowledge.
             </p>
-            <div className="bg-amber-50 border-l-4 border-amber-600 p-6 my-6">
-              <p className="font-semibold text-amber-800">
+            <div className="bg-yellow-50 border-l-4 border-yellow-600 p-6 my-6">
+              <p className="font-semibold text-yellow-800">
                 "Are these your grades?" she asked. "Yes, they are... Am I failing?" was my response. "Not at all, in fact, you qualify for the Vice Chancellor's grant! Your GPA is a consistent 3.6," she answered.
               </p>
             </div>
             <p>
-              I had been on the Dean's list since I joined campus and had no idea at all! That is where I realised that I wanted to teach others <span className="font-semibold text-amber-600">#howtolearn</span>.
+              I had been on the Dean's list since I joined campus and had no idea at all! That is where I realised that I wanted to teach others <span className="font-semibold text-yellow-500">#howtolearn</span>.
             </p>
           </div>
         </div>
@@ -1214,20 +1562,20 @@ const TestimonialsPage = ({ setCurrentPage }) => {
               <div className="flex items-center justify-between mb-6">
                 <button 
                   onClick={prevSlide}
-                  className="p-2 rounded-full bg-amber-100 hover:bg-amber-200 transition-colors"
+                  className="p-2 rounded-full bg-yellow-100 hover:bg-yellow-200 transition-colors"
                 >
-                  <ChevronLeft size={24} className="text-amber-600" />
+                  <ChevronLeft size={24} className="text-yellow-500" />
                 </button>
                 
-                <h3 className="text-2xl font-bold text-amber-600 text-center flex-1">
+                <h3 className="text-2xl font-bold text-yellow-500 text-center flex-1">
                   {clientJourneys[currentSlide].title}
                 </h3>
                 
                 <button 
                   onClick={nextSlide}
-                  className="p-2 rounded-full bg-amber-100 hover:bg-amber-200 transition-colors"
+                  className="p-2 rounded-full bg-yellow-100 hover:bg-yellow-200 transition-colors"
                 >
-                  <ChevronRight size={24} className="text-amber-600" />
+                  <ChevronRight size={24} className="text-yellow-500" />
                 </button>
               </div>
               
@@ -1237,7 +1585,7 @@ const TestimonialsPage = ({ setCurrentPage }) => {
                 </h4>
                 <div className="flex flex-wrap justify-center gap-2 mb-4">
                   {clientJourneys[currentSlide].tags.map((tag, index) => (
-                    <span key={index} className="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">
+                    <span key={index} className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">
                       {tag}
                     </span>
                   ))}
@@ -1268,7 +1616,7 @@ const TestimonialsPage = ({ setCurrentPage }) => {
                   key={index}
                   onClick={() => setCurrentSlide(index)}
                   className={`w-3 h-3 rounded-full transition-all ${
-                    index === currentSlide ? 'bg-amber-600' : 'bg-gray-300'
+                    index === currentSlide ? 'bg-yellow-600' : 'bg-gray-300'
                   }`}
                 />
               ))}
@@ -1277,13 +1625,13 @@ const TestimonialsPage = ({ setCurrentPage }) => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center bg-gradient-to-r from-amber-600 to-gray-900 text-white rounded-lg p-8">
+        <div className="text-center bg-gradient-to-r from-yellow-500 to-gray-900 text-white rounded-lg p-8">
           <h3 className="text-2xl font-bold mb-4">Ready to rewrite the story of your child's learning journey?</h3>
           <p className="text-xl mb-6">
             Every brain can be taught, especially if matched with the right learning partner.
           </p>
           <button onClick={handleContactRedirect}
-          className="bg-white text-amber-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+          className="bg-white text-yellow-500 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
             Get Started Today
           </button>
         </div>
@@ -1366,7 +1714,7 @@ const ContactPage = () => {
             
             <div className="space-y-6">
               <div className="flex items-start">
-                <Phone className="w-6 h-6 text-amber-600 mr-4 mt-1" />
+                <Phone className="w-6 h-6 text-yellow-500 mr-4 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900">Phone</h3>
                   <p className="text-gray-600">+254726089109</p>
@@ -1376,7 +1724,7 @@ const ContactPage = () => {
               </div>
               
               <div className="flex items-start">
-                <Mail className="w-6 h-6 text-amber-600 mr-4 mt-1" />
+                <Mail className="w-6 h-6 text-yellow-500 mr-4 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900">Email</h3>
                   <p className="text-gray-600">alphagroupkedirector@gmail.com</p>
@@ -1385,7 +1733,7 @@ const ContactPage = () => {
               </div>
               
               <div className="flex items-start">
-                <MapPin className="w-6 h-6 text-amber-600 mr-4 mt-1" />
+                <MapPin className="w-6 h-6 text-yellow-500 mr-4 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900">Address</h3>
                   <p className="text-gray-600">Bukani Road<br />Nairobi West<br />Off Uhuru Highway</p>
@@ -1394,7 +1742,7 @@ const ContactPage = () => {
               </div>
             </div>
             
-            <div className="mt-8 p-6 bg-amber-50 rounded-lg">
+            <div className="mt-8 p-6 bg-yellow-50 rounded-lg">
               <h3 className="font-semibold text-gray-900 mb-2">Office Hours</h3>
               <div className="text-sm text-gray-600">
                 <p>Monday - Friday: 8:00 AM - 8:00 PM</p>
@@ -1430,7 +1778,7 @@ const ContactPage = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-600 focus:border-transparent"
                   placeholder="Enter your full name"
                 />
               </div>
@@ -1445,7 +1793,7 @@ const ContactPage = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-600 focus:border-transparent"
                   placeholder="Enter your email address"
                 />
               </div>
@@ -1459,7 +1807,7 @@ const ContactPage = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-600 focus:border-transparent"
                   placeholder="Enter your phone number"
                 />
               </div>
@@ -1472,7 +1820,7 @@ const ContactPage = () => {
                   name="serviceType"
                   value={formData.serviceType}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-600 focus:border-transparent"
                 >
                   <option value="">Select a service</option>
                   <option value="Individual Therapy">Individual Therapy</option>
@@ -1496,7 +1844,7 @@ const ContactPage = () => {
                   onChange={handleInputChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-600 focus:border-transparent"
                   placeholder="Tell us how we can help you..."
                 />
               </div>
@@ -1507,7 +1855,7 @@ const ContactPage = () => {
                 className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors ${
                   isSubmitting
                     ? 'bg-gray-400 cursor-not-allowed'
-                    : 'bg-amber-600 hover:bg-amber-700'
+                    : 'bg-yellow-600 hover:bg-yellow-700'
                 } text-white`}
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -1543,7 +1891,7 @@ const Footer = () => {
                     e.target.nextSibling.style.display = 'flex';
                   }}
                 />
-                <div className="w-8 h-8 bg-amber-600 rounded-lg flex items-center justify-center" style={{display: 'none'}}>
+                <div className="w-8 h-8 bg-yellow-600 rounded-lg flex items-center justify-center" style={{display: 'none'}}>
                   <span className="text-white font-bold text-sm">AC</span>
                 </div>
               </div>
@@ -1572,7 +1920,7 @@ const Footer = () => {
                   href="https://www.tiktok.com/@posttraumacoachke"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-amber-400 transition-colors duration-200"
+                  className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
                 >
                   TikTok: @posttraumacoachke
                 </a>
@@ -1582,7 +1930,7 @@ const Footer = () => {
                   href="https://www.youtube.com/@PosttraumacoachKE"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-amber-400 transition-colors duration-200"
+                  className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
                 >
                   YouTube: @PosttraumacoachKE
                 </a>
@@ -1592,7 +1940,7 @@ const Footer = () => {
                   href="https://www.instagram.com/mwanicoleconsult"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-amber-400 transition-colors duration-200"
+                  className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
                 >
                   Instagram: @mwanicoleconsult
                 </a>
@@ -1602,7 +1950,7 @@ const Footer = () => {
                   href="https://www.facebook.com/alphagroupke"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-amber-400 transition-colors duration-200"
+                  className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
                 >
                   FaceBook: @PosttraumacoachKE
                 </a>
@@ -1612,7 +1960,7 @@ const Footer = () => {
                   href="t.me/AlphaCoachingKE"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-amber-400 transition-colors duration-200"
+                  className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
                 >
                   Telegram:@AlphaCoachingKE
                 </a>
@@ -1622,7 +1970,7 @@ const Footer = () => {
                   href="https://x.com/AlphaGroupKenya/status/1938157204349100149https://x.com/BellaBorsaKenya/status/1938195032823263433"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-amber-400 transition-colors duration-200"
+                  className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
                 >
                   X :@AlphaGroupKenya
                 </a>
@@ -1632,7 +1980,7 @@ const Footer = () => {
                   href="https://whatsapp.com/channel/0029Va84vul7IUYQowlo2p2l"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-amber-400 transition-colors duration-200"
+                  className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
                 >
                   WhatsApp Channel: How To Learn
                 </a>

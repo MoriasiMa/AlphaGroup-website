@@ -501,10 +501,10 @@ const HomePage = ({ setCurrentPage }) => {
 
               {/* Call to Action */}
               <div className="bg-yellow-50 p-4 rounded-lg mb-6">
-                <p className="text-yellow-800 font-semibold mb-3">
+                <p className="text-yellow-500 font-semibold mb-3">
                   Ready to take the next step?
                 </p>
-                <p className="text-yellow-700 text-sm">
+                <p className="text-yellow-500 text-sm">
                   We're here to support you on your transformation journey. Let's discuss how we can help you move forward.
                 </p>
               </div>
@@ -513,7 +513,7 @@ const HomePage = ({ setCurrentPage }) => {
               <div className="flex flex-col sm:flex-row gap-3">
                 <button
                   onClick={handleContactRedirect}
-                  className="flex-1 bg-yellow-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-yellow-700 transition-colors"
+                  className="flex-1 bg-yellow-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-yellow-400 transition-colors"
                 >
                   {questionsData[selectedQuestion].actionText}
                 </button>

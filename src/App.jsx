@@ -326,38 +326,10 @@ const HomePage = ({ setCurrentPage }) => {
     setCurrentPage('contact'); // Navigate to contact page
   };
 
-
-  
-  
-
-
-
   return (
     <>
-      {/* Hero Section with Slideshow */}
-      <section className="bg-gradient-to-r from-yellow-500 to-gray-900 text-white py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Logo and Main Heading */}
-          {/*<div className="text-center mb-12">
-            
-            {<h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Welcome to Alpha Consulting KE
-            </h1>}
-           
-          </div>*/ }
 
-          {/* Image Slideshow */}
-          <div className="mb-8">
-            <ImageSlideshow images={slideImages} autoPlay={true} autoPlayInterval={6000} />
-          </div>
-
-          <div className="text-center">
-           
-          </div>
-        </div>
-      </section>
-
-      {/* Mission Statement Section */}
+    {/* Mission Statement Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -377,11 +349,28 @@ const HomePage = ({ setCurrentPage }) => {
         </div>
       </section>
 
+      {/* Hero Section with Slideshow */}
+      <section className="bg-gradient-to-r from-yellow-500 to-gray-900 text-white py-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         
+          {/* Image Slideshow */}
+          <div className="mb-8">
+            <ImageSlideshow images={slideImages} autoPlay={true} autoPlayInterval={6000} />
+          </div>
+
+          <div className="text-center">
+           
+          </div>
+        </div>
+      </section>
+
+      
+
        {/* Self-Assessment Questions */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Questions to Ask Yourself</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Start Your Clarity Journey Here</h2>
             <p className="text-gray-600 text-lg">Click on any question to explore it further</p>
           </div>
           
@@ -418,7 +407,7 @@ const HomePage = ({ setCurrentPage }) => {
     {/* Mother Wound Section with Flier */}
     <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
       <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h4 className="text-2xl font-bold text-gray-900 mb-4">July Special: Mother Wound Healing</h4>
+        <h4 className="text-2xl font-bold text-gray-900 mb-4">October Special: Mother Wound Healing</h4>
         <div className="space-y-4 text-gray-700">
           <p className="text-lg">Join us for a transformative session focused on healing the mother wound - one of the most profound healing journeys a woman can undertake.</p>
           <p>This session will help you understand, process, and begin healing generational patterns that may be affecting your relationships, parenting, and self-worth.</p>
@@ -447,7 +436,7 @@ const HomePage = ({ setCurrentPage }) => {
       <div className="space-y-4 text-gray-700">
         <p><strong>Schedule:</strong> Every 2nd and 3rd Saturday at 7:00 PM GMT</p>
         <p><strong>Payment:</strong> MPESA Express to 254-710484899</p>
-        <p><strong>Paybill:</strong> 595607 Account: Amaze-ing Mom</p>
+      
         
         <div className="mt-6">
           <h5 className="font-semibold mb-2">You will need:</h5>
@@ -1679,7 +1668,7 @@ const TestimonialsPage = ({ setCurrentPage }) => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center bg-gradient-to-r from-yellow-500 to-gray-900 text-white rounded-lg p-8">
+        <div className="text-center bg-yellow-500  text-white rounded-lg p-8">
           <h3 className="text-2xl font-bold mb-4">Ready to rewrite the story of your child's learning journey?</h3>
           <p className="text-xl mb-6">
             Every brain can be taught, especially if matched with the right learning partner.
@@ -2046,7 +2035,7 @@ const Footer = () => {
             <h3 className="font-semibold mb-4">Support</h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>Crisis Hotline: +254726089109</li>
-              <li>Crisis Hotline: +254726089109</li>
+              <li>Crisis Hotline: +254710484899</li>
             </ul>
           </div>
         </div>

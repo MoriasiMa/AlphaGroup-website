@@ -434,7 +434,7 @@ const HomePage = ({ setCurrentPage }) => {
     <div className="bg-white p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
       <h4 className="text-2xl font-bold text-gray-900 mb-4 text-center">Join the Healing Table</h4>
       <div className="space-y-4 text-gray-700">
-        <p><strong>Schedule:</strong> Every 2nd and 3rd Saturday at 7:00 PM GMT</p>
+        <p><strong>Schedule:</strong> Every 2nd and 3rd Saturday at 7:00 PM EST</p>
         <p><strong>Payment:</strong> MPESA Express to 254-710484899</p>
       
         
@@ -563,7 +563,7 @@ const AboutPage = () => {
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">About Alpha Group KE</h1>
           <h2 className="text-2xl text-yellow-500 font-semibold mb-4">
-            Transformational Recovery for Women and Children: A Holistic Approach
+            Elevation Coaching For Women And Children A Holistic Approach
           </h2>
         </div>
 
@@ -596,7 +596,7 @@ const AboutPage = () => {
                 </a>, where she took an Accelerated Business Course that transformed her business.
               </p>
               <p>
-                Based in Nairobi, Kenya, she has the joy of working with children with learning disabilities and those 
+                Based in Nairobi,she is an elevation coach consultant and counsellor.She has the joy of working with children with learning disabilities and those 
                 with learning gaps due to the negative effects of various life experiences. She has done Pro bono Coaching 
                 for Moringa School with excellent results for the students.
               </p>

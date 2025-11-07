@@ -2,6 +2,49 @@ import React, { useState, useEffect } from 'react';
 
 import { Menu, X, Phone, Mail, MapPin, Star, Users, Award, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
 
+// Mini slideshow component for each service card
+function MiniSlideshow({ images, autoPlayInterval = 3000 }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (!images || images.length === 0) return;
+    
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, autoPlayInterval);
+
+    return () => clearInterval(interval);
+  }, [images, autoPlayInterval]);
+
+  if (!images || images.length === 0) return null;
+
+  return (
+    <div className="relative w-full h-40 mb-4 rounded-lg overflow-hidden bg-yellow-500">
+      <img
+        src={images[currentIndex].src}
+        alt={images[currentIndex].alt}
+        className="w-full h-full object-contain"
+        onError={(e) => {
+          e.target.style.display = 'none';
+        }}
+      />
+      {images.length > 1 && (
+        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1.5">
+          {images.map((_, idx) => (
+            <div
+              key={idx}
+              className={`w-2 h-2 rounded-full transition-all ${
+                idx === currentIndex ? 'bg-yellow-500 w-6' : 'bg-white/60'
+              }`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+
 // Add this after your imports and before the main App component
 const ImageSlideshow = ({ images, autoPlay = true, autoPlayInterval = 5000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -702,479 +745,30 @@ const ServicesPage = ({ setCurrentPage }) => {
       caption: "Learning Intervention Program - Transforming lives in hours"
     }
   ];
-
-  const programLogos = [
-    {
-      src: "/child talk.jpg",
-      alt: "Mwanicole Consultants Logo",
-      caption: "Mwanicole Consultants - Education and Psychology"
-    },
-    {
-      src: "/annual-writing-workshop-pic.jpg",
-      alt: "Alpha Group Full Logo",
-      caption: "Alpha Group - Transformational Recovery"
-    },
-    {
-      src: "/child education.jpg",
-      alt: "Mwanicole Consultants Logo",
-      caption: "How to book a child consultation."
-    },
-    {
-      src: "/english lessons for kids.jpg",
-      alt: "Mwanicole Consultants Logo",
-      caption: "Child education-English Lessons For Diplomat Kids."
-    },
-    {
-      src: "/education kikuyu for kids.jpg",
-      alt: "Mwanicole Consultants Logo",
-      caption: "Child education- Kikuyu Lessons For Kids."
-    },
-    {
-      src: "/knowell flier.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/knowlell book bursters image.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.14_f7b266a0.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-        {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.17_2d8f3780.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-        {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.34_5d42fdaf.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-        {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.36_a070b99c.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-        {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.37_c1a5bf06.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-        {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.37_cbf20560.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-        {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.38_7057a483.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-        {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.38_a6f6c63c.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-        {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.38_c99aa7ca.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-        {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.39_323d967f.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-        {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.39_821a62e1.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-        {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.39_cff6b5fe.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-        {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.40_a4358c74.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-        {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.40_cdb9ef23.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-        {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.40_dbeb756f.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-        {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.41_6172c838.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-      {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.41_a90a8ca7.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-      {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.42_01ec4d74.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-      {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.42_1a93d3d5.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-      {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.42_5b63e40b.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-      {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.43_741a37be.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-      {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.43_8151791c.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-      {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.43_d512db77.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-  {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.44_a178753e.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-      {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.44_d3a8eef0.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-      {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.45_736cb72e.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-      {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.45_a538d781.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-      {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.45_fba3667d.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.46_9559118b.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.46_ee5c3f25.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.47_4a606926.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.47_22fc9456.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.47_d436b17f.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.48_af8f7352.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.48_e90f77a6.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.49_7efb0a81.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.49_82942cc9.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.49_f42e9750.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.50_38d7ed40.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.50_df872d6c.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.51_ac36730f.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.51_f32ba00c.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.52_59ae5427.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.19.52_458781f7.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.36.50_6c4c3d6b.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.36.51_539f1bcc.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.36.52_69cf7d89.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.36.53_3fbdfec3.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.36.55_a69f19a4.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.36.56_8d7f47e5.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-     {
-      src: "/WhatsApp Image 2025-09-11 at 08.36.57_ad06abc8.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.36.59_87e0808c.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.00_f592a61c.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.01_19b5d71b.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.03_2e18a2f8.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.04_a680d27c.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.06_c3e552a3.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.07_21fd9c27.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.09_d013169c.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.10_561ab38c.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.11_1927aa23.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.11_09665951.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.12_db6b0890.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.12_ddb04d58.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.13_0f0f10b8.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.13_117a6781.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.15_0175b2f0.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.15_fd688850.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.16_1cc2756d.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.16_6ad84f43.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.16_558747ba.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.17_6cfe8d9a.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.17_50b3a6b6.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.17_59942a2a.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.18_9e3fa5f6.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.18_ca209744.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.18_d0afb5ca.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.19_119573e0.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.19_a6bbab6b.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.20_14fcf1f8.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.20_b5728638.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.20_ceb6a512.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.21_40812e5d.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.21_20542367.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.22_0c16f196.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/WhatsApp Image 2025-09-11 at 08.37.22_d5af87d1.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Help your child."
-    },
-    {
-      src: "/bella-borsa-logo-2.jpg",
-      alt: "Bella Borsa Logo",
-      caption: "Bella Borsa Consultants - Image Consultancy"
-    }
+  // Images for each service division
+  const bellaBorsaImages = [
+    { src: "/bella-borsa-logo-2.jpg", alt: "Bella Borsa Logo" },
+    { src: "/transform lives in hours.jpg", alt: "Transform Lives" }
   ];
+
+  const alphaCoachingImages = [
+    { src: "/annual-writing-workshop-pic.jpg", alt: "Alpha Coaching Workshop" },
+    { src: "/child education.jpg", alt: "Child Education" }
+  ];
+
+  const mwanicoleImages = [
+    { src: "/child talk.jpg", alt: "Mwanicole Consultants" },
+    { src: "/child education.jpg", alt: "Child Consultation" },
+    { src: "/english lessons for kids.jpg", alt: "English Lessons" },
+    { src: "/education kikuyu for kids.jpg", alt: "Kikuyu Lessons" }
+  ];
+
+  const knowellImages = [
+    { src: "/knowell flier.jpg", alt: "Knowell Flier" },
+    { src: "/knowlell book bursters image.jpg", alt: "Book Busters" },
+    { src: "/annual-writing-workshop-pic.jpg", alt: "Writing Workshop" }
+  ];
+
 
   const handleContactRedirect = () => {
   setCurrentPage('contact');
@@ -1193,108 +787,123 @@ const ServicesPage = ({ setCurrentPage }) => {
             At Alpha Group, we believe every person has the power to transform not only their own life, but their entire community. Whether you're seeking clarity in your purpose, healing from life's challenges, or support for your child's growth, we're here to guide you with compassion and expertise. We don't just treat symptoms- we get to the root issue. We help you discover your strengths, unlock your potential, and create lasting positive change that ripples through every relationship and opportunity in your life.
           </p>
         </div>
-
-       {/* Service Divisions */}
+     {/* Service Divisions */}
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Service Divisions</h3>
           
           <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <h4 className="text-xl font-bold text-yellow-500 mb-3">Bella Borsa Consultants</h4>
-              <p className="text-gray-600 mb-4">
-                Individuals and teams seeking authentic transitions 
-                <span className="font-semibold text-yellow-500"> #intentional living</span>
-              </p>
-              <div className="space-y-2 text-sm text-gray-700">
-                <p><strong>Services:</strong></p>
-                <ul className="text-left space-y-1">
-                  <li>• Success Mindset Development</li>
-                  <li>• Intentional Living Coaching</li>
-                  <li>• Personal Image Consulting</li>
-                  <li>• Leadership Transitions</li>
-                
-                  <li>
-                <a
-                  href="https://youtube.com/@bellaborsaconsultants?si=6dWzjtvVIsGnuEHK"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-black hover:text-yellow-400 transition-colors duration-200"
-                >
-                  <b>Youtube Link: @bellaborsaconsultants</b>
-                </a>
-              </li>
-                </ul>
+            {/* Bella Borsa Consultants */}
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <MiniSlideshow images={bellaBorsaImages} />
+              
+              <div className="text-center">
+                <h4 className="text-xl font-bold text-yellow-500 mb-3">Bella Borsa Consultants</h4>
+                <p className="text-gray-600 mb-4">
+                  Individuals and teams seeking authentic transitions 
+                  <span className="font-semibold text-yellow-500"> #intentional living</span>
+                </p>
+                <div className="space-y-2 text-sm text-gray-700">
+                  <p><strong>Services:</strong></p>
+                  <ul className="text-left space-y-1">
+                    <li>• Success Mindset Development</li>
+                    <li>• Intentional Living Coaching</li>
+                    <li>• Personal Image Consulting</li>
+                    <li>• Leadership Transitions</li>
+                    <li>
+                      <a
+                        href="https://youtube.com/@bellaborsaconsultants?si=6dWzjtvVIsGnuEHK"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-black hover:text-yellow-400 transition-colors duration-200"
+                      >
+                        <b>Youtube Link: @bellaborsaconsultants</b>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <h4 className="text-xl font-bold text-yellow-500 mb-3">Alpha Coaching Ke</h4>
-              <p className="text-gray-600 mb-4">
-                A holistic approach
-                <span className="font-semibold text-yellow-500"> #AlphaCoachingKe</span>
-              </p>
-              <div className="space-y-2 text-sm text-gray-700">
-                <p><strong>Services:</strong></p>
-                <ul className="text-left space-y-1">
-                  <li>• Mindset transformation and confidence building </li>
-                  <li>• Growth strategy for personal and professional elevation </li>
-                  <li>• Breaking limiting beliefs and self-sabotage patterns </li>
-                  <li>• Trauma-informed empowerment and inner child healing </li>
-                </ul>
+            {/* Alpha Coaching Ke */}
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <MiniSlideshow images={alphaCoachingImages} />
+              
+              <div className="text-center">
+                <h4 className="text-xl font-bold text-yellow-500 mb-3">Alpha Coaching Ke</h4>
+                <p className="text-gray-600 mb-4">
+                  A holistic approach
+                  <span className="font-semibold text-yellow-500"> #AlphaCoachingKe</span>
+                </p>
+                <div className="space-y-2 text-sm text-gray-700">
+                  <p><strong>Services:</strong></p>
+                  <ul className="text-left space-y-1">
+                    <li>• Mindset transformation and confidence building</li>
+                    <li>• Growth strategy for personal and professional elevation</li>
+                    <li>• Breaking limiting beliefs and self-sabotage patterns</li>
+                    <li>• Trauma-informed empowerment and inner child healing</li>
+                  </ul>
+                </div>
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <h4 className="text-xl font-bold text-yellow-500 mb-3">Mwanicole Consultants</h4>
-              <p className="text-gray-600 mb-4">
-                Helping children and adults create a "how to learn" map.
-                <span className="font-semibold text-yellow-500"> #howtolearn</span>
-              </p>
-              <div className="space-y-2 text-sm text-gray-700">
-                <p><strong>Services:</strong></p>
-                <ul className="text-left space-y-1">
-                  <li>• Learning Intervention Program (LIP)</li>
-                  <li>• Educational Consultancy</li>
-                  <li>• Learning Gap Assessment</li>
-                  <li>• Trauma-Informed Learning</li>
-                </ul>
+            {/* Mwanicole Consultants */}
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <MiniSlideshow images={mwanicoleImages} />
+              
+              <div className="text-center">
+                <h4 className="text-xl font-bold text-yellow-500 mb-3">Mwanicole Consultants</h4>
+                <p className="text-gray-600 mb-4">
+                  Helping children and adults create a "how to learn" map.
+                  <span className="font-semibold text-yellow-500"> #howtolearn</span>
+                </p>
+                <div className="space-y-2 text-sm text-gray-700">
+                  <p><strong>Services:</strong></p>
+                  <ul className="text-left space-y-1">
+                    <li>• Learning Intervention Program (LIP)</li>
+                    <li>• Educational Consultancy</li>
+                    <li>• Learning Gap Assessment</li>
+                    <li>• Trauma-Informed Learning</li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-
-          {/* Service Logos Slideshow - Moved here after first 3 cards */}
-          <div className="mb-8">
-            <ImageSlideshow images={programLogos} autoPlay={true} autoPlayInterval={4000} />
           </div>
           
-          {/* Fourth service card - separate grid */}
+          {/* Fourth service card */}
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <h4 className="text-xl font-bold text-yellow-500 mb-3">Knowell Book Busters</h4>
-              <p className="text-gray-600 mb-4">
-                Restoring "the joy of learning" to children's academics.
-              </p>
-              <div className="space-y-2 text-sm text-gray-700">
-                <p><strong>Services:</strong></p>
-                <ul className="text-left space-y-1">
-                  <li>• Kids Book Club</li>
-                  <li>• Writing Workshops</li>
-                  <li>• Reading Intervention</li>
-                  <li>• Academic Support</li>
-                  <li>• Annual Spelling Bee</li>
-                  <a
-                  href="https://youtube.com/@knowellbookbusters6516?si=L1-9HA3Q8kD7w7dt"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-black hover:text-yellow-400 transition-colors duration-200"
-                >
-                  <b>Youtube Link: @knowellbookbusters</b>
-                </a>
-                </ul>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <MiniSlideshow images={knowellImages} />
+              
+              <div className="text-center">
+                <h4 className="text-xl font-bold text-yellow-500 mb-3">Knowell Book Busters</h4>
+                <p className="text-gray-600 mb-4">
+                  Restoring "the joy of learning" to children's academics.
+                </p>
+                <div className="space-y-2 text-sm text-gray-700">
+                  <p><strong>Services:</strong></p>
+                  <ul className="text-left space-y-1">
+                    <li>• Kids Book Club</li>
+                    <li>• Writing Workshops</li>
+                    <li>• Reading Intervention</li>
+                    <li>• Academic Support</li>
+                    <li>• Annual Spelling Bee</li>
+                    <li>
+                      <a
+                        href="https://youtube.com/@knowellbookbusters6516?si=L1-9HA3Q8kD7w7dt"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-black hover:text-yellow-400 transition-colors duration-200"
+                      >
+                        <b>Youtube Link: @knowellbookbusters</b>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
 
         {/* New Services from Website */}
         <div className="bg-gray-50 p-8 rounded-lg mb-16">

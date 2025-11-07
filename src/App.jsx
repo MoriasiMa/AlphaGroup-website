@@ -391,76 +391,62 @@ const HomePage = ({ setCurrentPage }) => {
         </div>
       </section>
 
-
-      {/* Amaze-ing Mom Program */}
+{/* Amaze-ing Mom Program */}
       <section className="py-16 bg-yellow-50">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-12">
-      <h2 className="text-3xl font-bold text-gray-900 mb-4">What's NEW?!</h2>
-      <h3 className="text-2xl font-semibold text-yellow-500 mb-6">Amaze-ing Mom Program</h3>
-      <p className="text-xl text-gray-600 mb-4">Every month in 2025 is trauma healing month.</p>
-      <p className="text-lg text-gray-700 mb-8">Every woman is invited to the online webinar dubbed 'healing table' with Coach Moriah.</p>
-    </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">What's NEW?!</h2>
+          <h3 className="text-2xl font-semibold text-yellow-500 mb-6">Amaze-ing Mom Program</h3>
+          <p className="text-xl text-gray-600 mb-4">Every month in 2025 is trauma healing month.</p>
+          <p className="text-lg text-gray-700 mb-8">Every woman is invited to the online webinar dubbed 'healing table' with Coach Moriah.</p>
+        </div>
 
-   
+        {/* Flier and Payment Details Side by Side */}
+        <div className="grid md:grid-cols-2 gap-8 items-start max-w-6xl mx-auto">
+          
+          {/* Flier */}
+          <div className="flex justify-center">
+            <img 
+              src="/mother wound flier.jpg" 
+              alt="Mother Wound Healing Session Flier" 
+              className="w-full h-auto rounded-lg shadow-lg"
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
+            />
+          </div>
 
-    {/* Mother Wound Section with Flier */}
-    <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h4 className="text-2xl font-bold text-gray-900 mb-4">October Special: Mother Wound Healing</h4>
-        <div className="space-y-4 text-gray-700">
-          <p className="text-lg">Join us for a transformative session focused on healing the mother wound - one of the most profound healing journeys a woman can undertake.</p>
-          <p>This session will help you understand, process, and begin healing generational patterns that may be affecting your relationships, parenting, and self-worth.</p>
+          {/* Payment Details */}
+          <div className="bg-white p-8 rounded-lg shadow-lg">
+            <h4 className="text-2xl font-bold text-gray-900 mb-4 text-center">Join the Healing Table</h4>
+            <div className="space-y-4 text-gray-700">
+              <p><strong>Schedule:</strong> Every 2nd and 3rd Saturday at 7:00 PM EST</p>
+              <p><strong>Payment:</strong> MPESA Express to 254-710484899</p>
+              
+              <div className="mt-6">
+                <h5 className="font-semibold mb-2">You will need:</h5>
+                <ul className="list-disc list-inside space-y-1 text-gray-600">
+                  <li>A notebook and pen</li>
+                  <li>Water or other preferred drink</li>
+                  <li>Look your best (Wear something nice that you haven't worn in a while, and perfume!)</li>
+                </ul>
+              </div>
+              
+              <div className="text-center mt-8">
+                <a 
+                  href="https://forms.gle/a4RezeUf7TaqKXY76" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-block px-8 py-3 bg-yellow-500 text-white font-semibold rounded-lg hover:bg-yellow-600 transition-colors"
+                >
+                  Register Here
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      
-      <div className="flex justify-center">
-        <img 
-          src="/mother wound flier.jpg" 
-          alt="Mother Wound Healing Session Flier" 
-          className="w-full max-w-md h-auto rounded-lg shadow-lg"
-          onError={(e) => {
-            e.target.style.display = 'none';
-            e.target.nextSibling.style.display = 'block';
-          }}
-        />
-        <div className="hidden bg-yellow-100 border-2 border-yellow-600 rounded-lg p-8 text-center max-w-md">
-          <h5 className="text-xl font-bold text-yellow-700 mb-2">Mother Wound Healing</h5>
-          <p className="text-yellow-500">Special healing session - July 2025</p>
-        </div>
-      </div>
-    </div>
-
-    <div className="bg-white p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
-      <h4 className="text-2xl font-bold text-gray-900 mb-4 text-center">Join the Healing Table</h4>
-      <div className="space-y-4 text-gray-700">
-        <p><strong>Schedule:</strong> Every 2nd and 3rd Saturday at 7:00 PM EST</p>
-        <p><strong>Payment:</strong> MPESA Express to 254-710484899</p>
-      
-        
-        <div className="mt-6">
-          <h5 className="font-semibold mb-2">You will need:</h5>
-          <ul className="list-disc list-inside space-y-1 text-gray-600">
-            <li>A notebook and pen</li>
-            <li>Water or other preferred drink</li>
-            <li>Look your best (Wear something nice that you haven't worn in a while, and perfume!)</li>
-          </ul>
-        </div>
-        
-        <div className="text-center mt-8">
-          <a 
-            href="https://forms.gle/a4RezeUf7TaqKXY76" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="btn-primary inline-block px-8 py-3"
-          >
-            Register Here
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
  {/* Modal Popup */}

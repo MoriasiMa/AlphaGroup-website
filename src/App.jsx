@@ -860,8 +860,13 @@ const ServicesPage = ({ setCurrentPage }) => {
                   <p><strong>Services:</strong></p>
                   <ul className="text-left space-y-1">
                     <li>• Learning Intervention Program (LIP)</li>
-                    <li>• Educational Consultancy</li>
+                    <li>• Special Needs Education Consultancy</li>
+                    <li>• Parent Support For Learning Challenges</li>
+                    <li>• School Psychologist Services</li>
+                    <li>• Teacher Training And Development</li>
+                    <li>• Educational Consultancy Services</li>
                     <li>• Learning Gap Assessment</li>
+                    <li>• Inclusive Education Support</li>
                     <li>• Trauma-Informed Learning</li>
                   </ul>
                 </div>
@@ -882,11 +887,17 @@ const ServicesPage = ({ setCurrentPage }) => {
                 <div className="space-y-2 text-sm text-gray-700">
                   <p><strong>Services:</strong></p>
                   <ul className="text-left space-y-1">
+                    <li>• Educational Inervention Programs</li>
+                    <li>• Parent Support For Learning Challenges</li>
+                    <li>• Student Learning Evaluation</li>
+                    <li>• Academic Performance Improvement</li>
+                    <li>• Learning Difficulties Assessment</li>
                     <li>• Kids Book Club</li>
                     <li>• Writing Workshops</li>
                     <li>• Reading Intervention</li>
                     <li>• Academic Support</li>
                     <li>• Annual Spelling Bee</li>
+                    
                     <li>
                       <a
                         href="https://youtube.com/@knowellbookbusters6516?si=L1-9HA3Q8kD7w7dt"

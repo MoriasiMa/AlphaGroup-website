@@ -809,6 +809,10 @@ const ServicesPage = ({ setCurrentPage }) => {
                     <li>• Intentional Living Coaching</li>
                     <li>• Personal Image Consulting</li>
                     <li>• Leadership Transitions</li>
+                    <li>• Business coaching for leaders</li>
+                    <li>• Leadership coaching</li>
+                    <li>• Executive coaching</li>
+                    <li>• Performance coaching</li>
                     <li>
                       <a
                         href="https://youtube.com/@bellaborsaconsultants?si=6dWzjtvVIsGnuEHK"
@@ -841,6 +845,11 @@ const ServicesPage = ({ setCurrentPage }) => {
                     <li>• Growth strategy for personal and professional elevation</li>
                     <li>• Breaking limiting beliefs and self-sabotage patterns</li>
                     <li>• Trauma-informed empowerment and inner child healing</li>
+                    <li>• Professional coaching services</li>
+                    <li>• Personal development coach</li>
+                    <li>• Emotional intelligence coaching</li>
+                    <li>• Life coaching services</li>
+                    <li>• Career growth coaching</li>
                   </ul>
                 </div>
               </div>

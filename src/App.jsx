@@ -1361,7 +1361,7 @@ const ContactPage = () => {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Contact Us</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to start your mental health journey? Get in touch with our team today.
+            Ready to Elevate through your ladder of positive intent? Get in touch with our team today.
           </p>
         </div>
         

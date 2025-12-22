@@ -3,20 +3,37 @@ from flask_cors import CORS
 from flask_mail import Mail, Message
 import os
 from datetime import datetime
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
 
-# Email configuration using environment variables
+# Email configuration using environment variables with SSL (Port 465)
 app.config['MAIL_SERVER'] = os.environ.get('MAIL_SERVER', 'smtp.gmail.com')
-app.config['MAIL_PORT'] = int(os.environ.get('MAIL_PORT', 587))
-app.config['MAIL_USE_TLS'] = os.environ.get('MAIL_USE_TLS', 'True').lower() == 'true'
+app.config['MAIL_PORT'] = int(os.environ.get('MAIL_PORT', 465))
+app.config['MAIL_USE_SSL'] = os.environ.get('MAIL_USE_SSL', 'True').lower() == 'true'
+app.config['MAIL_USE_TLS'] = os.environ.get('MAIL_USE_TLS', 'False').lower() == 'true'
 app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
 app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
 app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('MAIL_DEFAULT_SENDER')
 
 # Recipient email for contact form
 RECIPIENT_EMAIL = os.environ.get('RECIPIENT_EMAIL', 'mavinmavo2@gmail.com')
+
+# Debug: Print configuration (remove password for security)
+print("=" * 50)
+print("Email Configuration Loaded:")
+print(f"MAIL_SERVER: {app.config['MAIL_SERVER']}")
+print(f"MAIL_PORT: {app.config['MAIL_PORT']}")
+print(f"MAIL_USE_SSL: {app.config['MAIL_USE_SSL']}")
+print(f"MAIL_USE_TLS: {app.config['MAIL_USE_TLS']}")
+print(f"MAIL_USERNAME: {app.config['MAIL_USERNAME']}")
+print(f"MAIL_PASSWORD: {'*' * 10 if app.config['MAIL_PASSWORD'] else 'NOT SET'}")
+print(f"RECIPIENT_EMAIL: {RECIPIENT_EMAIL}")
+print("=" * 50)
 
 mail = Mail(app)
 
@@ -191,13 +208,17 @@ def handle_contact():
             reply_to=data.get('email')
         )
         
+        print(f"Attempting to send email to: {RECIPIENT_EMAIL}")
         mail.send(msg)
+        print("Email sent successfully!")
         
         return jsonify({'message': 'Message sent successfully'}), 200
         
     except Exception as e:
         print(f"Error sending email: {str(e)}")
-        return jsonify({'error': 'Failed to send message. Please try again.'}), 500
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': f'Failed to send message: {str(e)}'}), 500
 
 @app.route('/api/health', methods=['GET'])
 def health_check():
@@ -209,4 +230,4 @@ def root():
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
-    app.run(debug=False, host='0.0.0.0', port=port)
+    app.run(debug=True, host='0.0.0.0', port=port)

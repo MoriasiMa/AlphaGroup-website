@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import { API_ENDPOINTS } from './config/api';
 import { Menu, X, Phone, Mail, MapPin, Star, Users, Award, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
 
 // Mini slideshow component for each service card
@@ -1325,7 +1325,10 @@ const ContactPage = () => {
     setSubmitStatus({ type: '', message: '' });
     
     try {
-      const response = await fetch('https://alphagroup-website.onrender.com/api/contact', {
+      console.log('Sending to:', API_ENDPOINTS.CONTACT);
+      console.log('Form data:', formData);
+      
+      const response = await fetch(API_ENDPOINTS.CONTACT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -1333,8 +1336,11 @@ const ContactPage = () => {
         body: JSON.stringify(formData),
       });
       
-      const result = await response.json();
+      console.log('Response status:', response.status);
       
+      const result = await response.json();
+      console.log('Response data:', result);
+
       if (response.ok) {
         setSubmitStatus({
           type: 'success',

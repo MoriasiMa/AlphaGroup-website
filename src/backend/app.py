@@ -58,7 +58,7 @@ def create_styled_email_body(data):
                     <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
                         <!-- Header -->
                         <tr>
-                            <td style="background: linear-gradient(135deg, #D97706 0%, #374151 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
+                            <td style="background:#fbc02d; padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
                                 <h1 style="color: #ffffff; margin: 0; font-size: 24px; font-weight: bold;">
                                     📧 New Contact Form Submission
                                 </h1>

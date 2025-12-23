@@ -1,6 +1,5 @@
-// src/config/api.js
 const API_BASE_URL = import.meta.env.PROD 
-  ? 'https://alphagroup-website.onrender.com'  // Replace with your actual Render URL
+  ? 'https://alphagroup-website.onrender.com'
   : 'http://localhost:5000';
 
 export const API_ENDPOINTS = {

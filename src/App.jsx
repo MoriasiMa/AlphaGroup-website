@@ -1513,12 +1513,6 @@ const ContactPage = () => {
                        className="text-sm text-yellow-500 hover:text-yellow-600">Facebook</a>
                     <a href="https://youtube.com/@bellaborsaconsultants?si=otueLsBJo0gtPZ7X" target="_blank" rel="noopener noreferrer" 
                        className="text-sm text-yellow-500 hover:text-yellow-600">YouTube</a>
-                    <a href="PLACEHOLDER_INSTAGRAM_LINK" target="_blank" rel="noopener noreferrer" 
-                       className="text-sm text-yellow-500 hover:text-yellow-600">Instagram</a>
-                    <a href="PLACEHOLDER_TIKTOK_LINK" target="_blank" rel="noopener noreferrer" 
-                       className="text-sm text-yellow-500 hover:text-yellow-600">TikTok</a>
-                    <a href="PLACEHOLDER_GOOGLE_LINK" target="_blank" rel="noopener noreferrer" 
-                       className="text-sm text-yellow-500 hover:text-yellow-600">Google</a>
                   </div>
                 </div>
                 
@@ -1528,13 +1522,11 @@ const ContactPage = () => {
                   <div className="flex flex-wrap gap-3">
                     <a href="https://www.facebook.com/share/17ehmZdDdB/" target="_blank" rel="noopener noreferrer" 
                        className="text-sm text-yellow-500 hover:text-yellow-600">Facebook</a>
-                    <a href="PLACEHOLDER_YOUTUBE_LINK" target="_blank" rel="noopener noreferrer" 
-                       className="text-sm text-yellow-500 hover:text-yellow-600">YouTube</a>
                     <a href="https://www.instagram.com/mwanicoleconsult?utm_source=qr&igsh=MWFtbTV2M2ZqZG5peA==" target="_blank" rel="noopener noreferrer" 
                        className="text-sm text-yellow-500 hover:text-yellow-600">Instagram</a>
                     <a href="https://www.tiktok.com/@learningcoachmoriah?_r=1&_t=ZM-92Icz2yBi3w" target="_blank" rel="noopener noreferrer" 
                        className="text-sm text-yellow-500 hover:text-yellow-600">TikTok</a>
-                    <a href="Mwanicole Consultants https://share.google/D15Q7V3Wl4OQccrQf" target="_blank" rel="noopener noreferrer" 
+                    <a href="https://share.google/D15Q7V3Wl4OQccrQf" target="_blank" rel="noopener noreferrer" 
                        className="text-sm text-yellow-500 hover:text-yellow-600">Google</a>
                   </div>
                 </div>
@@ -1547,11 +1539,9 @@ const ContactPage = () => {
                        className="text-sm text-yellow-500 hover:text-yellow-600">Facebook</a>
                     <a href="https://youtube.com/@elevationcoachke?si=1-BXLSDClbX1hNbv" target="_blank" rel="noopener noreferrer" 
                        className="text-sm text-yellow-500 hover:text-yellow-600">YouTube</a>
-                    <a href="PLACEHOLDER_INSTAGRAM_LINK" target="_blank" rel="noopener noreferrer" 
+                    <a href="https://www.instagram.com/alphacoachingke?utm_source=qr&igsh=M3o0YTA0MzhrNjNq" target="_blank" rel="noopener noreferrer" 
                        className="text-sm text-yellow-500 hover:text-yellow-600">Instagram</a>
-                    <a href="PLACEHOLDER_TIKTOK_LINK" target="_blank" rel="noopener noreferrer" 
-                       className="text-sm text-yellow-500 hover:text-yellow-600">TikTok</a>
-                    <a href="PLACEHOLDER_GOOGLE_LINK" target="_blank" rel="noopener noreferrer" 
+                    <a href="https://share.google/1TF3vwcLviyxneAmj" target="_blank" rel="noopener noreferrer" 
                        className="text-sm text-yellow-500 hover:text-yellow-600">Google</a>
                   </div>
                 </div>
@@ -1745,7 +1735,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://www.instagram.com/mwanicoleconsult"
+                  href="https://www.instagram.com/mwanicoleconsult?utm_source=qr&igsh=MWFtbTV2M2ZqZG5peA=="
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"

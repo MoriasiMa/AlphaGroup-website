@@ -304,22 +304,12 @@ const HomePage = ({ setCurrentPage }) => {
       caption: "Welcome to Alpha Consulting KE - Your transformation journey begins here"
     },
     {
-      src: "/ntv appearance.jpg",
-      alt: "Nation Media Appearance",
-      caption: "Nation Media Appearance"
-    },
-    {
-      src: "/personal couch.jpg",
+      src: "/home1.jpg",
       alt: "personal trauma couching",
       caption: "Join our monthly trauma healing sessions - Every woman is invited to the healing table"
     },
     {
-      src: "/relationship couch.jpg",
-      alt: "relationship trauma couching",
-      caption: "Join our monthly trauma healing sessions - Every woman is invited to the healing table"
-    },
-    {
-      src: "/mother wound.jpg",
+      src: "/home2.jpg",
       alt: "relationship trauma couching",
       caption: "Join our monthly trauma healing sessions - Every woman is invited to the healing table"
     },
@@ -329,7 +319,7 @@ const HomePage = ({ setCurrentPage }) => {
       caption: "Join and connect with other passionate, like-minded individuals"
     },
     {
-      src: "/child couch.jpg",
+      src: "/home3.jpg",
       alt: "Psalm 139",
       caption: "You are fearfully and wonderfully made - Psalm 139"
     },
@@ -781,7 +771,9 @@ const ServicesPage = ({ setCurrentPage }) => {
   // Images for each service division
   const bellaBorsaImages = [
     { src: "/bella-borsa-logo-2.jpg", alt: "Bella Borsa Logo" },
-    { src: "/transform lives in hours.jpg", alt: "Transform Lives" }
+    { src: "/bella1.jpeg", alt: "Bella Borsa Logo" },
+    { src: "/bella2.jpeg", alt: "Bella Borsa Logo" },
+    { src: "/bella3.jpeg", alt: "Bella Borsa Logo" },
   ];
 
   const alphaCoachingImages = [
@@ -790,16 +782,27 @@ const ServicesPage = ({ setCurrentPage }) => {
   ];
 
   const mwanicoleImages = [
-    { src: "/child talk.jpg", alt: "Mwanicole Consultants" },
-    { src: "/child education.jpg", alt: "Child Consultation" },
-    { src: "/english lessons for kids.jpg", alt: "English Lessons" },
-    { src: "/education kikuyu for kids.jpg", alt: "Kikuyu Lessons" }
+    { src: "/mwanicole1.jpeg", alt: "Writing Workshop" },
+    { src: "/mwanicole2.jpeg", alt: "Writing Workshop" },
+    { src: "/mwanicole3.jpeg", alt: "Writing Workshop" },
+    { src: "/mwanicole4.jpeg", alt: "Writing Workshop" },
+    
   ];
 
   const knowellImages = [
+    { src: "/Knowell1.jpeg", alt: "Writing Workshop" },
+    { src: "/knowell2.jpeg", alt: "Writing Workshop" },
+    { src: "/knowell3.jpeg", alt: "Writing Workshop" },
+    { src: "/knowell4.jpeg", alt: "Writing Workshop" },
+    { src: "/knowell5.jpeg", alt: "Writing Workshop" },
+    { src: "/knowell6.jpeg", alt: "Writing Workshop" },
+    { src: "/knowell7.jpeg", alt: "Writing Workshop" },
+    { src: "/knowell8.jpeg", alt: "Writing Workshop" },
+    { src: "/knowell9.jpeg", alt: "Writing Workshop" },
     { src: "/knowell flier.jpg", alt: "Knowell Flier" },
     { src: "/knowlell book bursters image.jpg", alt: "Book Busters" },
     { src: "/annual-writing-workshop-pic.jpg", alt: "Writing Workshop" }
+    
   ];
 
 

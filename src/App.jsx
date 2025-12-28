@@ -402,7 +402,7 @@ const HomePage = ({ setCurrentPage }) => {
       
       {/* Mission Statement */}
       <div className="max-w-4xl mx-auto mb-10">
-        <h3 className="text-2xl font-semibold text-yellow-500 mb-4">Educational Services Mission Statement</h3>
+        <h3 className="text-2xl font-semibold text-yellow-500 mb-4">Mission Statement</h3>
         <p className="text-lg text-gray-600 leading-relaxed mb-4">
           Our mission is to support schools, educators, parents, and learners through high-quality educational consultancy services that promote inclusive education, effective teaching strategies, learning interventions, and student well-being. We partner with institutions to improve learning outcomes through practical, research-based solutions.
         </p>

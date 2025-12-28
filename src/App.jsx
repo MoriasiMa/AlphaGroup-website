@@ -1158,7 +1158,7 @@ const ServicesPage = ({ setCurrentPage }) => {
 };
 
 
-// Testimonials Page Component (replaces PackagesPage)
+// Testimonials Page Component
 const TestimonialsPage = ({ setCurrentPage }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   
@@ -1404,28 +1404,80 @@ const ContactPage = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="max-w-3xl mx-auto">
           {/* Contact Information */}
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h2>
             
             <div className="space-y-6">
               <div className="flex items-start">
-                <Phone className="w-6 h-6 text-yellow-500 mr-4 mt-1" />
+                <Mail className="w-6 h-6 text-yellow-500 mr-4 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-gray-900">Phone</h3>
-                  <p className="text-gray-600">+254726089109</p>
-                  <p className="text-gray-600">+254710484899</p>
-                  <p className="text-sm text-gray-500">Available 24/7 for crisis support</p>
+                  <h3 className="font-semibold text-gray-900">Email</h3>
+                  <a 
+                    href="mailto:alphagroupkeinfo@gmail.com" 
+                    className="text-gray-600 hover:text-yellow-500 transition-colors"
+                  >
+                    alphagroupkeinfo@gmail.com
+                  </a>
+                  <p className="text-sm text-gray-500">We respond within 24 hours</p>
                 </div>
               </div>
               
               <div className="flex items-start">
-                <Mail className="w-6 h-6 text-yellow-500 mr-4 mt-1" />
+                <Phone className="w-6 h-6 text-yellow-500 mr-4 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-gray-900">Email</h3>
-                  <p className="text-gray-600">alphagroupkedirector@gmail.com</p>
-                  <p className="text-sm text-gray-500">We respond within 24 hours</p>
+                  <h3 className="font-semibold text-gray-900 mb-3">Phone Contacts</h3>
+                  
+                  <div className="space-y-4">
+                    <div>
+                      <p className="font-medium text-gray-800 mb-1">Educational Consultancy & Fun Learning Experiences</p>
+                      <p className="text-sm text-gray-600 mb-1">Knowell Book Busters/Consultants</p>
+                      <a 
+                        href="https://wa.me/254729575224" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-yellow-500 hover:text-yellow-600 transition-colors"
+                      >
+                        +254-729575224
+                      </a>
+                    </div>
+                    
+                    <div>
+                      <p className="font-medium text-gray-800 mb-1">Coaching & Personal Branding</p>
+                      <p className="text-sm text-gray-600 mb-1">Alpha Coaching KE</p>
+                      <div className="space-y-1">
+                        <a 
+                          href="https://wa.me/254731308119" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-yellow-500 hover:text-yellow-600 transition-colors block"
+                        >
+                          +254-731308119
+                        </a>
+                        <a 
+                          href="https://wa.me/254726089109" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-yellow-500 hover:text-yellow-600 transition-colors block"
+                        >
+                          +254-726089109
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <p className="text-sm text-gray-600 mb-1">Bella Borsa Consultants</p>
+                      <a 
+                        href="https://wa.me/254710484899" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-yellow-500 hover:text-yellow-600 transition-colors"
+                      >
+                        +254-710484899
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
               
@@ -1447,13 +1499,71 @@ const ContactPage = () => {
                 <p>Sunday: 10:00 AM - 4:00 PM</p>
               </div>
             </div>
+
+            {/* Social Media Links */}
+            <div className="mt-8 p-6 bg-gray-50 rounded-lg">
+              <h3 className="font-semibold text-gray-900 mb-4">Connect With Us</h3>
+              
+              <div className="space-y-6">
+                {/* Bella Borsa Consultants */}
+                <div>
+                  <h4 className="font-medium text-gray-800 mb-2">Bella Borsa Consultants</h4>
+                  <div className="flex flex-wrap gap-3">
+                    <a href="https://www.facebook.com/share/1AnPZr75qF/" target="_blank" rel="noopener noreferrer" 
+                       className="text-sm text-yellow-500 hover:text-yellow-600">Facebook</a>
+                    <a href="https://youtube.com/@bellaborsaconsultants?si=otueLsBJo0gtPZ7X" target="_blank" rel="noopener noreferrer" 
+                       className="text-sm text-yellow-500 hover:text-yellow-600">YouTube</a>
+                    <a href="PLACEHOLDER_INSTAGRAM_LINK" target="_blank" rel="noopener noreferrer" 
+                       className="text-sm text-yellow-500 hover:text-yellow-600">Instagram</a>
+                    <a href="PLACEHOLDER_TIKTOK_LINK" target="_blank" rel="noopener noreferrer" 
+                       className="text-sm text-yellow-500 hover:text-yellow-600">TikTok</a>
+                    <a href="PLACEHOLDER_GOOGLE_LINK" target="_blank" rel="noopener noreferrer" 
+                       className="text-sm text-yellow-500 hover:text-yellow-600">Google</a>
+                  </div>
+                </div>
+                
+                {/* Mwanicole Consultants */}
+                <div>
+                  <h4 className="font-medium text-gray-800 mb-2">Mwanicole Consultants</h4>
+                  <div className="flex flex-wrap gap-3">
+                    <a href="https://www.facebook.com/share/17ehmZdDdB/" target="_blank" rel="noopener noreferrer" 
+                       className="text-sm text-yellow-500 hover:text-yellow-600">Facebook</a>
+                    <a href="PLACEHOLDER_YOUTUBE_LINK" target="_blank" rel="noopener noreferrer" 
+                       className="text-sm text-yellow-500 hover:text-yellow-600">YouTube</a>
+                    <a href="https://www.instagram.com/mwanicoleconsult?utm_source=qr&igsh=MWFtbTV2M2ZqZG5peA==" target="_blank" rel="noopener noreferrer" 
+                       className="text-sm text-yellow-500 hover:text-yellow-600">Instagram</a>
+                    <a href="https://www.tiktok.com/@learningcoachmoriah?_r=1&_t=ZM-92Icz2yBi3w" target="_blank" rel="noopener noreferrer" 
+                       className="text-sm text-yellow-500 hover:text-yellow-600">TikTok</a>
+                    <a href="Mwanicole Consultants https://share.google/D15Q7V3Wl4OQccrQf" target="_blank" rel="noopener noreferrer" 
+                       className="text-sm text-yellow-500 hover:text-yellow-600">Google</a>
+                  </div>
+                </div>
+                
+                {/* Alpha Coaching KE */}
+                <div>
+                  <h4 className="font-medium text-gray-800 mb-2">Alpha Coaching KE</h4>
+                  <div className="flex flex-wrap gap-3">
+                    <a href="https://www.facebook.com/share/1Zr2Cb34mh/" target="_blank" rel="noopener noreferrer" 
+                       className="text-sm text-yellow-500 hover:text-yellow-600">Facebook</a>
+                    <a href="https://youtube.com/@elevationcoachke?si=1-BXLSDClbX1hNbv" target="_blank" rel="noopener noreferrer" 
+                       className="text-sm text-yellow-500 hover:text-yellow-600">YouTube</a>
+                    <a href="PLACEHOLDER_INSTAGRAM_LINK" target="_blank" rel="noopener noreferrer" 
+                       className="text-sm text-yellow-500 hover:text-yellow-600">Instagram</a>
+                    <a href="PLACEHOLDER_TIKTOK_LINK" target="_blank" rel="noopener noreferrer" 
+                       className="text-sm text-yellow-500 hover:text-yellow-600">TikTok</a>
+                    <a href="PLACEHOLDER_GOOGLE_LINK" target="_blank" rel="noopener noreferrer" 
+                       className="text-sm text-yellow-500 hover:text-yellow-600">Google</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           
-          {/* Contact Form */}
+          {/* Contact Form*/}
+          {/*
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
             
-            {/* Status Messages */}
             {submitStatus.message && (
               <div className={`mb-6 p-4 rounded-lg ${
                 submitStatus.type === 'success' 
@@ -1563,6 +1673,7 @@ const ContactPage = () => {
               Your information is confidential and protected by professional standards.
             </p>
           </div>
+          */}
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { API_ENDPOINTS } from './config/api';
 import { Menu, X, Phone, Mail, MapPin, Star, Users, Award, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 
 // Mini slideshow component for each service card
 function MiniSlideshow({ images, autoPlayInterval = 3000 }) {
@@ -144,30 +145,51 @@ const ImageSlideshow = ({ images, autoPlay = true, autoPlayInterval = 5000 }) =>
 
 // Main App Component
 const App = () => {
-  const [currentPage, setCurrentPage] = useState('home');
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  return (
+    <Router>
+      <AppContent />
+    </Router>
+  );
+};
 
-  const renderPage = () => {
-    switch(currentPage) {
-    case 'home': return <HomePage setCurrentPage={setCurrentPage} />;
-    case 'about': return <AboutPage />;
-    case 'services': return <ServicesPage setCurrentPage={setCurrentPage} />;
-    case 'testimonials': return <TestimonialsPage setCurrentPage={setCurrentPage} />;
-    case 'contact': return <ContactPage />;
-    default: return <HomePage setCurrentPage={setCurrentPage} />;
-  }
+
+const AppContent = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+
+  const getCurrentPage = () => {
+    const path = location.pathname;
+    if (path === '/' || path === '/home') return 'home';
+    if (path === '/about') return 'about';
+    if (path === '/services') return 'services';
+    if (path === '/testimonials') return 'testimonials';
+    if (path === '/contact') return 'contact';
+    return 'home';
+  };
+
+  const setCurrentPage = (page) => {
+    navigate(`/${page === 'home' ? '' : page}`);
   };
 
   return (
     <div className="min-h-screen bg-gray-50">
       <Header 
-        currentPage={currentPage} 
+        currentPage={getCurrentPage()} 
         setCurrentPage={setCurrentPage}
         isMobileMenuOpen={isMobileMenuOpen}
         setIsMobileMenuOpen={setIsMobileMenuOpen}
       />
       <main>
-        {renderPage()}
+        <Routes>
+          <Route path="/" element={<HomePage setCurrentPage={setCurrentPage} />} />
+          <Route path="/home" element={<HomePage setCurrentPage={setCurrentPage} />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage setCurrentPage={setCurrentPage} />} />
+          <Route path="/testimonials" element={<TestimonialsPage setCurrentPage={setCurrentPage} />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
       </main>
       <Footer />
     </div>
@@ -372,25 +394,36 @@ const HomePage = ({ setCurrentPage }) => {
   return (
     <>
 
-    {/* Mission Statement Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
-            <div className="max-w-4xl mx-auto text-lg text-gray-600 leading-relaxed">
-              <p className="mb-4">
-                The intangible or unseen parts of our lives - childhood experiences, relationships, and personal experiences that we are 'stuck' in - often remain unnoticed, unmentioned, or undervalued.
-              </p>
-              <p className="mb-4">
-                Our role is to support you to stand strong. We help ensure you are not 'pulled down' by intangible or unseen experiences that have previously held you back.
-              </p>
-              <p className="text-yellow-500 font-semibold text-xl">
-                Transformation begins when you say 'YES!' to intentionally engage to meet the best version of your future self.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+   {/* Mission Statement Section */}
+<section className="py-16 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission & Vision</h2>
+      
+      {/* Mission Statement */}
+      <div className="max-w-4xl mx-auto mb-10">
+        <h3 className="text-2xl font-semibold text-yellow-500 mb-4">Educational Services Mission Statement</h3>
+        <p className="text-lg text-gray-600 leading-relaxed mb-4">
+          Our mission is to support schools, educators, parents, and learners through high-quality educational consultancy services that promote inclusive education, effective teaching strategies, learning interventions, and student well-being. We partner with institutions to improve learning outcomes through practical, research-based solutions.
+        </p>
+      </div>
+      
+      {/* Vision Statement */}
+      <div className="max-w-4xl mx-auto">
+        <h3 className="text-2xl font-semibold text-yellow-500 mb-4">Vision Statement</h3>
+        <p className="text-lg text-gray-600 leading-relaxed">
+          Our vision is to be a trusted educational consultancy in Kenya and across Africa, recognized for advancing inclusive, learner-centered, and future-ready education that supports diverse learning needs and empowers educators and students to succeed.
+        </p>
+      </div>
+      
+      <div className="mt-8">
+        <p className="text-yellow-500 font-semibold text-xl">
+          Transformation begins when you say 'YES!' to intentionally engage to meet the best version of your future self.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Hero Section with Slideshow */}
       <section className="bg-gradient-to-r from-yellow-500 to-gray-900 text-white py-10">

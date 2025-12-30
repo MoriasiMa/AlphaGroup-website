@@ -703,7 +703,7 @@ const AboutPage = () => {
                 for{''}<a href="https://moringaschool.com/" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-yellow-700"> Moringa School </a>with excellent results for the students.
               </p>
               <p>
-                She is a certified 'White belt' of Lean Six Sigma. She benefits from the Cherie Blair Foundation and has 
+                She is a certified 'White belt' of Lean Six Sigma. She benefits from the{''}<a href="https://cherieblairfoundation.org/" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-yellow-700">  Cherie Blair Foundation</a> and has 
                 received valuable mentorship from{''}<a href="https://share.google/U03bbofjjnDASkk5T" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-yellow-700"> Cheryl Pullins</a>  and {''}<a href="https://share.google/gkVC20znda4PYymme" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-yellow-700">Naomi McLaughlan</a>.
               </p>
             </div>

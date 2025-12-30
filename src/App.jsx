@@ -862,7 +862,6 @@ const ServicesPage = ({ setCurrentPage }) => {
     { src: "/knowell7.jpeg", alt: "Writing Workshop" },
     { src: "/knowell8.jpeg", alt: "Writing Workshop" },
     { src: "/knowell9.jpeg", alt: "Writing Workshop" }
-    
   ];
 
 

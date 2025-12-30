@@ -299,32 +299,82 @@ const HomePage = ({ setCurrentPage }) => {
   // Slideshow images - you can add more images here
   const slideImages = [
     {
-      src: "/logo-alpha-consulting-ke.jpg",
+      src: "/home1.jpeg",
       alt: "Alpha Consulting KE Logo",
       caption: "Welcome to Alpha Consulting KE - Your transformation journey begins here"
     },
     {
-      src: "/home1.jpg",
+      src: "/home2.jpeg",
       alt: "personal trauma couching",
       caption: "Join our monthly trauma healing sessions - Every woman is invited to the healing table"
     },
     {
-      src: "/home2.jpg",
+      src: "/home3.jpeg",
       alt: "relationship trauma couching",
       caption: "Join our monthly trauma healing sessions - Every woman is invited to the healing table"
     },
     {
-      src: "/adult book club.jpg",
+      src: "/home4.jpeg",
       alt: "relationship trauma couching",
       caption: "Join and connect with other passionate, like-minded individuals"
     },
     {
-      src: "/home3.jpg",
+      src: "/home5.jpeg",
       alt: "Psalm 139",
       caption: "You are fearfully and wonderfully made - Psalm 139"
     },
     {
-      src: "/all flier.jpg",
+      src: "/home6.jpeg",
+      alt: "Check services page",
+      caption: "Programs Available"
+    },
+    {
+      src: "/home7.jpeg",
+      alt: "Check services page",
+      caption: "Programs Available"
+    },
+    {
+      src: "/home9.jpeg",
+      alt: "Check services page",
+      caption: "Programs Available"
+    },
+    {
+      src: "/home10.jpeg",
+      alt: "Check services page",
+      caption: "Programs Available"
+    },
+    {
+      src: "/home11.jpeg",
+      alt: "Check services page",
+      caption: "Programs Available"
+    },
+    {
+      src: "/home12.jpeg",
+      alt: "Check services page",
+      caption: "Programs Available"
+    },
+    {
+      src: "/home13.jpeg",
+      alt: "Check services page",
+      caption: "Programs Available"
+    },
+    {
+      src: "/home14.jpeg",
+      alt: "Check services page",
+      caption: "Programs Available"
+    },
+    {
+      src: "/home15.jpeg",
+      alt: "Check services page",
+      caption: "Programs Available"
+    },
+    {
+      src: "/home16.jpeg",
+      alt: "Check services page",
+      caption: "Programs Available"
+    },
+    {
+      src: "/home17.jpeg",
       alt: "Check services page",
       caption: "Programs Available"
     }
@@ -615,7 +665,7 @@ const AboutPage = () => {
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">About Alpha Group KE</h1>
           <h2 className="text-2xl text-yellow-500 font-semibold mb-4">
-            Elevation Coaching For Women And Children A Holistic Approach
+            The Gold Standard Of Human Elevation
           </h2>
         </div>
 
@@ -648,13 +698,13 @@ const AboutPage = () => {
                 </a>, where she took an Accelerated Business Course that transformed her business.
               </p>
               <p>
-                Based in Nairobi,she is an elevation coach consultant and counsellor.She has the joy of working with children with learning disabilities and those 
+                Based in Nairobi,she is an elevation coach consultant and counsellor. She has the joy of working with children with learning disabilities and those 
                 with learning gaps due to the negative effects of various life experiences. She has done Pro bono Coaching 
-                for Moringa School with excellent results for the students.
+                for{''}<a href="https://moringaschool.com/" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-yellow-700"> Moringa School </a>with excellent results for the students.
               </p>
               <p>
                 She is a certified 'White belt' of Lean Six Sigma. She benefits from the Cherie Blair Foundation and has 
-                received valuable mentorship from Cheryl Pullins and Naomi McLaughlan.
+                received valuable mentorship from{''}<a href="https://share.google/U03bbofjjnDASkk5T" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-yellow-700"> Cheryl Pullins</a>  and {''}<a href="https://share.google/gkVC20znda4PYymme" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-yellow-700">Naomi McLaughlan</a>.
               </p>
             </div>
           </div>
@@ -786,11 +836,24 @@ const ServicesPage = ({ setCurrentPage }) => {
     { src: "/mwanicole2.jpeg", alt: "Writing Workshop" },
     { src: "/mwanicole3.jpeg", alt: "Writing Workshop" },
     { src: "/mwanicole4.jpeg", alt: "Writing Workshop" },
-    
+    { src: "/mwanicole5.jpeg", alt: "Writing Workshop" },
+    { src: "/mwanicole6.jpeg", alt: "Writing Workshop" },
+    { src: "/mwanicole7.jpeg", alt: "Writing Workshop" },
+    { src: "/mwanicole8.jpeg", alt: "Writing Workshop" },
+    { src: "/mwanicole9.jpeg", alt: "Writing Workshop" },
+    { src: "/mwanicole10.jpeg", alt: "Writing Workshop" },
+    { src: "/mwanicole11.jpeg", alt: "Writing Workshop" },
+    { src: "/mwanicole12.jpeg", alt: "Writing Workshop" },
+    { src: "/mwanicole13.jpeg", alt: "Writing Workshop" },
+    { src: "/mwanicole14.jpeg", alt: "Writing Workshop" },
+    { src: "/mwanicole15.jpeg", alt: "Writing Workshop" },
+    { src: "/mwanicole16.jpeg", alt: "Writing Workshop" },
+    { src: "/mwanicole17.jpeg", alt: "Writing Workshop" },
+    { src: "/mwanicole18.jpeg", alt: "Writing Workshop" },
   ];
 
   const knowellImages = [
-    { src: "/Knowell1.jpeg", alt: "Writing Workshop" },
+    { src: "/knowell1.jpeg", alt: "Writing Workshop" },
     { src: "/knowell2.jpeg", alt: "Writing Workshop" },
     { src: "/knowell3.jpeg", alt: "Writing Workshop" },
     { src: "/knowell4.jpeg", alt: "Writing Workshop" },
@@ -798,10 +861,7 @@ const ServicesPage = ({ setCurrentPage }) => {
     { src: "/knowell6.jpeg", alt: "Writing Workshop" },
     { src: "/knowell7.jpeg", alt: "Writing Workshop" },
     { src: "/knowell8.jpeg", alt: "Writing Workshop" },
-    { src: "/knowell9.jpeg", alt: "Writing Workshop" },
-    { src: "/knowell flier.jpg", alt: "Knowell Flier" },
-    { src: "/knowlell book bursters image.jpg", alt: "Book Busters" },
-    { src: "/annual-writing-workshop-pic.jpg", alt: "Writing Workshop" }
+    { src: "/knowell9.jpeg", alt: "Writing Workshop" }
     
   ];
 
@@ -1044,7 +1104,7 @@ const ServicesPage = ({ setCurrentPage }) => {
               <h4 className="font-bold text-gray-900 mb-2">Bella Borsa</h4>
               <p className="text-sm text-gray-600 mb-4">Success Mindset and Intentional Living</p>
               <a 
-                href="https://forms.gle/ekuCHQpbHFvpcggi9" 
+                href="https://www.alphagroupke.co.ke/contact" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn-primary inline-block px-4 py-2 text-sm"
@@ -1057,7 +1117,7 @@ const ServicesPage = ({ setCurrentPage }) => {
               <h4 className="font-bold text-gray-900 mb-2">Mwanicole Consultants</h4>
               <p className="text-sm text-gray-600 mb-4">Educational Consultancy and Learning Journeys</p>
               <a 
-                href="https://forms.gle/8xSCKxbnaLmujv2m9" 
+                href="https://www.alphagroupke.co.ke/contact" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn-primary inline-block px-4 py-2 text-sm"
@@ -1070,7 +1130,7 @@ const ServicesPage = ({ setCurrentPage }) => {
               <h4 className="font-bold text-gray-900 mb-2">Knowell Book Busters</h4>
               <p className="text-sm text-gray-600 mb-4">Kids Book Club & Annual Spelling Bee</p>
               <a 
-                href="https://forms.gle/ecVEntkk5U7dxpzn8" 
+                href="https://www.alphagroupke.co.ke/contact" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn-primary inline-block px-4 py-2 text-sm"
@@ -1134,7 +1194,7 @@ const ServicesPage = ({ setCurrentPage }) => {
       </p>
       <button onClick={handleContactRedirect}
           className="bg-black text-yellow-500 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-            READY TO EXPERIENCE? CLICK HERE
+            READY TO ELEVATE? CLICK HERE
           </button>
       </div>
       
@@ -1497,9 +1557,8 @@ const ContactPage = () => {
             <div className="mt-8 p-6 bg-yellow-50 rounded-lg">
               <h3 className="font-semibold text-gray-900 mb-2">Office Hours</h3>
               <div className="text-sm text-gray-600">
-                <p>Monday - Friday: 8:00 AM - 8:00 PM</p>
-                <p>Saturday: 9:00 AM - 5:00 PM</p>
-                <p>Sunday: 10:00 AM - 4:00 PM</p>
+                <p>Monday - Saturday: 4:30 AM - 10:00 PM</p>
+                <p>Sunday: Exclusive Rate Applies </p>
               </div>
             </div>
 
@@ -1718,22 +1777,32 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href="https://www.tiktok.com/@posttraumacoachke"
+                  href="https://www.facebook.com/share/1AnPZr75qF/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
                 >
-                  TikTok: @posttraumacoachke
+                  Facebook: Bella Borsa Consultants
                 </a>
               </li>
               <li>
                 <a
-                  href="https://www.youtube.com/@PosttraumacoachKE"
+                  href="https://youtube.com/@bellaborsaconsultants?si=otueLsBJo0gtPZ7X"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
                 >
-                  YouTube: @PosttraumacoachKE
+                  YouTube: Bella Borsa Consultants
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/share/17ehmZdDdB/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
+                >
+                  Facebook: Mwanicole Consultants
                 </a>
               </li>
               <li>
@@ -1743,37 +1812,67 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
                 >
-                  Instagram: @mwanicoleconsult
+                  Instagram: Mwanicole Consultants
                 </a>
               </li>
               <li>
                 <a
-                  href="https://www.facebook.com/alphagroupke"
+                  href="https://www.tiktok.com/@learningcoachmoriah?_r=1&_t=ZM-92Icz2yBi3w"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
                 >
-                  FaceBook: @PosttraumacoachKE
+                  TikTok: Mwanicole Consultants
                 </a>
               </li>
               <li>
                 <a
-                  href="t.me/AlphaCoachingKE"
+                  href="https://share.google/D15Q7V3Wl4OQccrQf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
                 >
-                  Telegram:@AlphaCoachingKE
+                  Google: Mwanicole Consultants
                 </a>
               </li>
               <li>
                 <a
-                  href="https://x.com/AlphaGroupKenya/status/1938157204349100149https://x.com/BellaBorsaKenya/status/1938195032823263433"
+                  href="https://www.facebook.com/share/1Zr2Cb34mh/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
                 >
-                  X :@AlphaGroupKenya
+                  Facebook: Alpha Coaching KE
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/alphacoachingke?utm_source=qr&igsh=M3o0YTA0MzhrNjNq"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
+                >
+                  Instagram: Alpha Coaching KE
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://youtube.com/@elevationcoachke?si=1-BXLSDClbX1hNbv"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
+                >
+                  Youtube: Alpha Coaching KE
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://share.google/1TF3vwcLviyxneAmj"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
+                >
+                  Google: Alpha Coaching KE
                 </a>
               </li>
               <li>

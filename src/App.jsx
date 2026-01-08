@@ -3,7 +3,7 @@ import { API_ENDPOINTS } from './config/api';
 import { Menu, X, Phone, Mail, MapPin, Star, Users, Award, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 
-// Mini slideshow component for each service card
+// Mini slideshow component
 function MiniSlideshow({ images, autoPlayInterval = 3000 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -45,8 +45,31 @@ function MiniSlideshow({ images, autoPlayInterval = 3000 }) {
   );
 }
 
+// Video Component
+const VideoPlayer = ({ src, poster, title, autoPlay = false, controls = true }) => {
+  return (
+    <div className="relative w-full rounded-lg overflow-hidden bg-gray-900">
+      <video
+        className="w-full h-auto"
+        controls={controls}
+        autoPlay={autoPlay}
+        muted={autoPlay}
+        poster={poster}
+        playsInline
+      >
+        <source src={src} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      {title && (
+        <div className="bg-gray-800 text-white px-4 py-2">
+          <p className="text-sm font-medium">{title}</p>
+        </div>
+      )}
+    </div>
+  );
+};
 
-// Add this after your imports and before the main App component
+//Main SLide Show
 const ImageSlideshow = ({ images, autoPlay = true, autoPlayInterval = 5000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -1507,6 +1530,13 @@ const ContactPage = () => {
     }
   ];
 
+  // Video Data
+  const videoData = {
+    src: "/Speech.mp4",
+    poster: "/strathmore address.jpg",
+    title: "I enjoy meaningful conversations🥳🥳. Class Rep speech on Graduation Day."
+  };
+
   return (
 
     <div className="py-16">
@@ -1579,6 +1609,16 @@ const ContactPage = () => {
                         >
                           +254-726089109
                         </a>
+                        {/* Video */}
+                          <div className="mt-4">
+                            <VideoPlayer 
+                            src={videoData.src}
+                            poster={videoData.poster}
+                            title={videoData.title}
+                            autoPlay={false}
+                            controls={true}
+                           />
+                        </div>
                       </div>
                     </div>
                     

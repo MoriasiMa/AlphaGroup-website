@@ -513,15 +513,16 @@ const HomePage = ({ setCurrentPage }) => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">What's NEW?!</h2>
           <h3 className="text-2xl font-semibold text-yellow-500 mb-6">Amaze-ing Mom Program</h3>
-          <p className="text-xl text-gray-600 mb-4">Every month in 2025 is trauma healing month.</p>
+          <p className="text-xl text-gray-600 mb-4">Every month in 2026 is trauma healing month.</p>
           <p className="text-lg text-gray-700 mb-8">Every woman is invited to the online webinar dubbed 'healing table' with Coach Moriah.</p>
         </div>
 
-        {/* Flier and Payment Details Side by Side */}
-        <div className="grid md:grid-cols-2 gap-8 items-start max-w-6xl mx-auto">
+        {/* Flier and Payment Details Side by Side 
+        <div className="grid md:grid-cols-2 gap-8 items-start max-w-6xl mx-auto">*/}
+        <div className="flex justify-center items-center max-w-6xl mx-auto">
           
           {/* Flier */}
-          <div className="flex justify-center">
+          {/*<div className="flex justify-center">
             <img 
               src="/mother wound flier.jpg" 
               alt="Mother Wound Healing Session Flier" 
@@ -530,7 +531,7 @@ const HomePage = ({ setCurrentPage }) => {
                 e.target.style.display = 'none';
               }}
             />
-          </div>
+          </div>*/}
 
           {/* Payment Details */}
           <div className="bg-white p-8 rounded-lg shadow-lg">
@@ -682,13 +683,13 @@ const AboutPage = () => {
                 She is also passionate about Learning processes and Community Development using an Eclectic Psychology approach.
               </p>
               <p>
-                She holds a Degree in Life Coaching and is pursuing her studies as a{' '}
+                She is a registered{' '}
                 <a href="https://www.eaipc.ac.ke/" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-yellow-700">
-                  Counsellor
+                  Coach
                 </a>{' '}
                 and{' '}
                 <a href="https://www.usiu.ac.ke/" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-yellow-700">
-                  Psychologist
+                  Counseling Pyschologist
                 </a>.
               </p>
               <p>
@@ -850,6 +851,10 @@ const ServicesPage = ({ setCurrentPage }) => {
     { src: "/mwanicole16.jpeg", alt: "Writing Workshop" },
     { src: "/mwanicole17.jpeg", alt: "Writing Workshop" },
     { src: "/mwanicole18.jpeg", alt: "Writing Workshop" },
+    { src: "/mwanicole19.jpeg", alt: "Writing Workshop" },
+    { src: "/mwanicole20.jpeg", alt: "Writing Workshop" },
+    { src: "/mwanicole22.jpeg", alt: "Writing Workshop" },
+    { src: "/mwanicole23.jpeg", alt: "Writing Workshop" },
   ];
 
   const knowellImages = [
@@ -1454,9 +1459,56 @@ const ContactPage = () => {
     } finally {
       setIsSubmitting(false);
     }
+
   };
 
+  
+  // Slideshow images - you can add more images here
+  const slideImages = [
+    {
+      src: "/CSR1.jpeg",
+      alt: "Alpha Consulting KE Logo",
+      caption: "Welcome to Alpha Consulting KE - Your transformation journey begins here"
+    },
+    {
+      src: "/CSR2.jpeg",
+      alt: "personal trauma couching",
+      caption: "Join our monthly trauma healing sessions - Every woman is invited to the healing table"
+    },
+    {
+      src: "/CSR3.jpeg",
+      alt: "relationship trauma couching",
+      caption: "Join our monthly trauma healing sessions - Every woman is invited to the healing table"
+    },
+    {
+      src: "/CSR4.jpeg",
+      alt: "relationship trauma couching",
+      caption: "Join and connect with other passionate, like-minded individuals"
+    },
+    {
+      src: "/CSR5.jpeg",
+      alt: "Psalm 139",
+      caption: "You are fearfully and wonderfully made - Psalm 139"
+    },
+    {
+      src: "/CSR6.jpeg",
+      alt: "Check services page",
+      caption: "Programs Available"
+    },
+    {
+      src: "/CSR7.jpeg",
+      alt: "Check services page",
+      caption: "Programs Available"
+    },
+    {
+      src: "/CSR8.jpeg",
+      alt: "Check services page",
+      caption: "Programs Available"
+    }
+  ];
+
   return (
+
     <div className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
@@ -1466,6 +1518,8 @@ const ContactPage = () => {
           </p>
         </div>
         
+        
+
         <div className="max-w-3xl mx-auto">
           {/* Contact Information */}
           <div>
@@ -1538,6 +1592,12 @@ const ContactPage = () => {
                       >
                         +254-710484899
                       </a>
+                      
+                      {/* Image Slideshow */}
+                      <div className="mb-8">
+                      <ImageSlideshow images={slideImages} autoPlay={true} autoPlayInterval={6000} />
+                      </div>
+                      
                     </div>
                   </div>
                 </div>

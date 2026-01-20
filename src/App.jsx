@@ -322,82 +322,67 @@ const HomePage = ({ setCurrentPage }) => {
   // Slideshow images - you can add more images here
   const slideImages = [
     {
-      src: "/home1.jpeg",
+      src: "/h1.jpeg",
       alt: "Alpha Consulting KE Logo",
-      caption: "Welcome to Alpha Consulting KE - Your transformation journey begins here"
+      caption: "Programs Available"
     },
     {
-      src: "/home2.jpeg",
+      src: "/h2.jpeg",
       alt: "personal trauma couching",
-      caption: "Join our monthly trauma healing sessions - Every woman is invited to the healing table"
+      caption: "Programs Available"
     },
     {
-      src: "/home3.jpeg",
+      src: "/h3.jpeg",
       alt: "relationship trauma couching",
-      caption: "Join our monthly trauma healing sessions - Every woman is invited to the healing table"
+      caption: "Programs Available"
     },
     {
-      src: "/home4.jpeg",
+      src: "/h4.jpeg",
       alt: "relationship trauma couching",
-      caption: "Join and connect with other passionate, like-minded individuals"
+      caption: "Programs Available"
     },
     {
-      src: "/home5.jpeg",
+      src: "/h5.jpeg",
       alt: "Psalm 139",
-      caption: "You are fearfully and wonderfully made - Psalm 139"
+      caption: "Programs Available"
     },
     {
-      src: "/home6.jpeg",
+      src: "/h6.jpeg",
       alt: "Check services page",
       caption: "Programs Available"
     },
     {
-      src: "/home7.jpeg",
+      src: "/h7.jpeg",
       alt: "Check services page",
       caption: "Programs Available"
     },
     {
-      src: "/home9.jpeg",
+      src: "/h9.jpeg",
       alt: "Check services page",
       caption: "Programs Available"
     },
     {
-      src: "/home10.jpeg",
+      src: "/h10.jpeg",
       alt: "Check services page",
       caption: "Programs Available"
     },
     {
-      src: "/home11.jpeg",
+      src: "/h11.jpeg",
       alt: "Check services page",
       caption: "Programs Available"
     },
     {
-      src: "/home12.jpeg",
+      src: "/h12.jpeg",
       alt: "Check services page",
       caption: "Programs Available"
     },
     {
-      src: "/home13.jpeg",
+      src: "/h13.jpeg",
       alt: "Check services page",
       caption: "Programs Available"
     },
     {
-      src: "/home14.jpeg",
-      alt: "Check services page",
-      caption: "Programs Available"
-    },
-    {
-      src: "/home15.jpeg",
-      alt: "Check services page",
-      caption: "Programs Available"
-    },
-    {
-      src: "/home16.jpeg",
-      alt: "Check services page",
-      caption: "Programs Available"
-    },
-    {
-      src: "/home17.jpeg",
+      src: "/h14.jpeg",
       alt: "Check services page",
       caption: "Programs Available"
     }

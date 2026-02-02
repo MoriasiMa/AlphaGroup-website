@@ -254,7 +254,7 @@ const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenu
             </div>
             <div>
               <h1 className="text-xl font-bold text-gray-900">Alpha Group KE</h1>
-              <p className="text-sm text-gray-600">Professional Therapy Services</p>
+              <p className="text-sm text-gray-600">Personalized Coaching, Learning Psychology & Human Development <br /> Consulting in Kenya and Globally</p>
             </div>
           </div>
 

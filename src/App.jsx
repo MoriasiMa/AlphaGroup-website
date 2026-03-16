@@ -478,9 +478,9 @@ const HomePage = ({ setCurrentPage }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
          
           {/* Image Slideshow */}
-          <div className="mb-8">
+          {/*<div className="mb-8">
             <ImageSlideshow images={slideImages} autoPlay={true} autoPlayInterval={6000} />
-          </div>
+          </div>*/}
 
           <div className="text-center">
            

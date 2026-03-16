@@ -388,7 +388,38 @@ const HomePage = ({ setCurrentPage }) => {
     }
   ];
 
-
+const slideImages2 = [
+    {
+      src: "/h1.jpeg",
+      alt: "Alpha Consulting KE Logo",
+      caption: "Programs Available"
+    },
+    {
+      src: "/h2.jpeg",
+      alt: "personal trauma couching",
+      caption: "Programs Available"
+    },
+    {
+      src: "/h3.jpeg",
+      alt: "relationship trauma couching",
+      caption: "Programs Available"
+    },
+    {
+      src: "/h4.jpeg",
+      alt: "relationship trauma couching",
+      caption: "Programs Available"
+    },
+    {
+      src: "/h5.jpeg",
+      alt: "Psalm 139",
+      caption: "Programs Available"
+    },
+   {
+      src: "/h14.jpeg",
+      alt: "Check services page",
+      caption: "Programs Available"
+    }
+  ];
   
   // Questions data with answers
   const questionsData = [
@@ -520,9 +551,6 @@ const HomePage = ({ setCurrentPage }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">What's NEW?!</h2>
-          <h3 className="text-2xl font-semibold text-yellow-500 mb-6">Amaze-ing Mom Program</h3>
-          <p className="text-xl text-gray-600 mb-4">Every month in 2026 is trauma healing month.</p>
-          <p className="text-lg text-gray-700 mb-8">Every woman is invited to the online webinar dubbed 'healing table' with Coach Moriah.</p>
         </div>
 
         {/* Flier and Payment Details Side by Side 
@@ -546,7 +574,7 @@ const HomePage = ({ setCurrentPage }) => {
           <div className="bg-white p-8 rounded-lg shadow-lg">
             {/* Image Slideshow */}
           <div className="mb-8">
-            <ImageSlideshow images={slideImages} autoPlay={true} autoPlayInterval={6000} />
+            <ImageSlideshow images={slideImages2} autoPlay={true} autoPlayInterval={6000} />
           </div>
           
             <h4 className="text-2xl font-bold text-gray-900 mb-4 text-center">Join the Healing Table</h4>

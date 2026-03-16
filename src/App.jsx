@@ -541,6 +541,11 @@ const HomePage = ({ setCurrentPage }) => {
             />
           </div>*/}
 
+          {/* Image Slideshow */}
+          <div className="mb-8">
+            <ImageSlideshow images={slideImages} autoPlay={true} autoPlayInterval={6000} />
+          </div>
+          
           {/* Payment Details */}
           <div className="bg-white p-8 rounded-lg shadow-lg">
             <h4 className="text-2xl font-bold text-gray-900 mb-4 text-center">Join the Healing Table</h4>

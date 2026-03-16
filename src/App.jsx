@@ -478,9 +478,9 @@ const HomePage = ({ setCurrentPage }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
          
           {/* Image Slideshow */}
-          {/*<div className="mb-8">
+          <div className="mb-8">
             <ImageSlideshow images={slideImages} autoPlay={true} autoPlayInterval={6000} />
-          </div>*/}
+          </div>
 
           <div className="text-center">
            
@@ -541,13 +541,14 @@ const HomePage = ({ setCurrentPage }) => {
             />
           </div>*/}
 
-          {/* Image Slideshow */}
+          
+          {/* Payment Details */}
+          <div className="bg-white p-8 rounded-lg shadow-lg">
+            {/* Image Slideshow */}
           <div className="mb-8">
             <ImageSlideshow images={slideImages} autoPlay={true} autoPlayInterval={6000} />
           </div>
           
-          {/* Payment Details */}
-          <div className="bg-white p-8 rounded-lg shadow-lg">
             <h4 className="text-2xl font-bold text-gray-900 mb-4 text-center">Join the Healing Table</h4>
             <div className="space-y-4 text-gray-700">
               <p><strong>Schedule:</strong> Every 2nd and 3rd Saturday at 7:00 PM EST</p>

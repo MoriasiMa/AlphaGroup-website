@@ -661,6 +661,26 @@ const AboutPage = () => {
       caption: "Graduation ceremonies and milestone celebrations"
     },
     {
+      src: "/events MC 2026.jpg",
+      alt: "Event MC",
+      caption: "Event MC"
+    },
+    {
+      src: "/Elevation Coaching to Empower  Growth.jpg",
+      alt: "Elevation Coaching to Empower Growth",
+      caption: "Elevation Coaching to Empower  Growth"
+    },
+    {
+      src: "/Diplomats support flier.jpg",
+      alt: "Diplomats support flier",
+      caption: "Diplomats support flier"
+    },
+    {
+      src: "/child minding poster.jpg",
+      alt: "child minding poster",
+      caption: "child minding poster"
+    },
+    {
       src: "/mc.jpg",
       alt: "Kids Birthday Party",
       caption: "Specialized kids' events with the 'midas touch'"

@@ -388,7 +388,38 @@ const HomePage = ({ setCurrentPage }) => {
     }
   ];
 
-
+const slideImages2 = [
+    {
+      src: "/WhatsApp Image 2026-03-08 at 10.46.48 AM.jpeg",
+      alt: "Alpha Consulting KE Logo",
+      caption: "Programs Available"
+    },
+    {
+      src: "/WhatsApp Image 2026-03-08 at 10.47.22 AM.jpeg",
+      alt: "personal trauma couching",
+      caption: "Programs Available"
+    },
+    {
+      src: "/WhatsApp Image 2026-03-08 at 10.47.23 AM (1).jpeg",
+      alt: "relationship trauma couching",
+      caption: "Programs Available"
+    },
+    {
+      src: "/WhatsApp Image 2026-03-08 at 10.47.23 AM (2).jpeg",
+      alt: "relationship trauma couching",
+      caption: "Programs Available"
+    },
+    {
+      src: "/WhatsApp Image 2026-03-08 at 10.47.23 AM (3).jpeg",
+      alt: "Psalm 139",
+      caption: "Programs Available"
+    },
+   {
+      src: "/WhatsApp Image 2026-03-08 at 10.47.23 AM.jpeg",
+      alt: "Check services page",
+      caption: "Programs Available"
+    }
+  ];
   
   // Questions data with answers
   const questionsData = [
@@ -520,56 +551,18 @@ const HomePage = ({ setCurrentPage }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">What's NEW?!</h2>
-          <h3 className="text-2xl font-semibold text-yellow-500 mb-6">Amaze-ing Mom Program</h3>
-          <p className="text-xl text-gray-600 mb-4">Every month in 2026 is trauma healing month.</p>
-          <p className="text-lg text-gray-700 mb-8">Every woman is invited to the online webinar dubbed 'healing table' with Coach Moriah.</p>
         </div>
-
-        {/* Flier and Payment Details Side by Side 
-        <div className="grid md:grid-cols-2 gap-8 items-start max-w-6xl mx-auto">*/}
-        <div className="flex justify-center items-center max-w-6xl mx-auto">
-          
-          {/* Flier */}
-          {/*<div className="flex justify-center">
-            <img 
-              src="/mother wound flier.jpg" 
-              alt="Mother Wound Healing Session Flier" 
-              className="w-full h-auto rounded-lg shadow-lg"
-              onError={(e) => {
-                e.target.style.display = 'none';
-              }}
-            />
-          </div>*/}
-
-          {/* Payment Details */}
+        
           <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h4 className="text-2xl font-bold text-gray-900 mb-4 text-center">Join the Healing Table</h4>
-            <div className="space-y-4 text-gray-700">
-              <p><strong>Schedule:</strong> Every 2nd and 3rd Saturday at 7:00 PM EST</p>
-              <p><strong>Payment:</strong> MPESA Express to 254-710484899</p>
-              
-              <div className="mt-6">
-                <h5 className="font-semibold mb-2">You will need:</h5>
-                <ul className="list-disc list-inside space-y-1 text-gray-600">
-                  <li>A notebook and pen</li>
-                  <li>Water or other preferred drink</li>
-                  <li>Look your best (Wear something nice that you haven't worn in a while, and perfume!)</li>
-                </ul>
-              </div>
-              
-              <div className="text-center mt-8">
-                <a 
-                  href="https://forms.gle/a4RezeUf7TaqKXY76" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-block px-8 py-3 bg-yellow-500 text-white font-semibold rounded-lg hover:bg-yellow-600 transition-colors"
-                >
-                  Register Here
-                </a>
-              </div>
-            </div>
+            
+            {/* Image Slideshow */}
+          <div className="mb-8">
+            <ImageSlideshow images={slideImages2} autoPlay={true} autoPlayInterval={6000} />
           </div>
-        </div>
+            
+          </div>
+        
+        
       </div>
     </section>
 

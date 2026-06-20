@@ -255,7 +255,7 @@ const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenu
   const servicesDropdownItems = [
     { id: 'educational-consultancy', label: 'Educational Consultancy' },
     { id: 'elevation-coaching', label: 'Elevation Coaching' },
-    { id: 'programs', label: 'Programs' },
+    { id: 'services', label: 'Programs' },
   ];
 
   const isServicesActive = servicesDropdownItems.some((item) => item.id === currentPage);
@@ -988,7 +988,7 @@ const ServicesPage = ({ setCurrentPage }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">Our Services</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-6">Our Programs</h1>
           <h2 className="text-2xl text-yellow-500 font-semibold mb-4">
             Transform Your Life, Transform Your Community
           </h2>
@@ -998,7 +998,7 @@ const ServicesPage = ({ setCurrentPage }) => {
         </div>
      {/* Service Divisions */}
         <div className="mb-16">
-          <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Service Divisions</h3>
+          <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Programs Divisions</h3>
           
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             {/* Bella Borsa Consultants */}
@@ -1136,7 +1136,7 @@ const ServicesPage = ({ setCurrentPage }) => {
 
         {/* New Services from Website */}
         <div className="bg-gray-50 p-8 rounded-lg mb-16">
-          <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">Additional Services</h3>
+          <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">Additional Programs</h3>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md">

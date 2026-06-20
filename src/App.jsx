@@ -742,12 +742,12 @@ const AboutPage = () => {
       caption: "Graduation ceremonies and milestone celebrations"
     },
     {
-      src: "/events MC 2026.jpg",
+      src: "/events MC 2026.png",
       alt: "Event MC",
       caption: "Event MC"
     },
     {
-      src: "/Elevation Coaching to Empower  Growth.jpg",
+      src: "/Elevation Coaching to Empower  Growth.png",
       alt: "Elevation Coaching to Empower Growth",
       caption: "Elevation Coaching to Empower  Growth"
     },

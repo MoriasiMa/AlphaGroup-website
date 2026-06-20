@@ -183,18 +183,22 @@ const AppContent = () => {
   
 
   const getCurrentPage = () => {
-    const path = location.pathname;
-    if (path === '/' || path === '/home') return 'home';
-    if (path === '/about') return 'about';
-    if (path === '/services') return 'services';
-    if (path === '/testimonials') return 'testimonials';
-    if (path === '/contact') return 'contact';
-    return 'home';
-  };
+  const path = location.pathname;
+  if (path === '/' || path === '/home') return 'home';
+  if (path === '/about') return 'about';
+  if (path === '/educational-consultancy') return 'educational-consultancy';
+  if (path === '/elevation-coaching') return 'elevation-coaching';
+  if (path === '/programs') return 'programs';
+  if (path === '/testimonials') return 'testimonials';
+  if (path === '/blog') return 'blog';
+  if (path === '/resources') return 'resources';
+  if (path === '/contact') return 'contact';
+  return 'home';
+};
 
   const setCurrentPage = (page) => {
-    navigate(`/${page === 'home' ? '' : page}`);
-  };
+  navigate(`/${page === 'home' ? '' : page}`);
+};
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -206,12 +210,17 @@ const AppContent = () => {
       />
       <main>
         <Routes>
-          <Route path="/" element={<HomePage setCurrentPage={setCurrentPage} />} />
-          <Route path="/home" element={<HomePage setCurrentPage={setCurrentPage} />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/services" element={<ServicesPage setCurrentPage={setCurrentPage} />} />
-          <Route path="/testimonials" element={<TestimonialsPage setCurrentPage={setCurrentPage} />} />
-          <Route path="/contact" element={<ContactPage />} />
+        <Route path="/" element={<HomePage setCurrentPage={setCurrentPage} />} />
+        <Route path="/home" element={<HomePage setCurrentPage={setCurrentPage} />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/services" element={<ServicesPage setCurrentPage={setCurrentPage} />} />
+        <Route path="/educational-consultancy" element={<EducationalConsultancyPage setCurrentPage={setCurrentPage} />} />
+        <Route path="/elevation-coaching" element={<ElevationCoachingPage setCurrentPage={setCurrentPage} />} />
+        <Route path="/programs" element={<ProgramsPage setCurrentPage={setCurrentPage} />} />
+        <Route path="/testimonials" element={<TestimonialsPage setCurrentPage={setCurrentPage} />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/resources" element={<ResourcesPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </main>
       <Footer />
@@ -219,66 +228,133 @@ const AppContent = () => {
   );
 };
 
-// Header Component
 const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenuOpen }) => {
-  const navItems = [
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const dropdownRef = React.useRef(null);
+
+  // Close dropdown when clicking outside
+  React.useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setServicesDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const mainNavItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About Us' },
-    { id: 'services', label: 'Services' },
     { id: 'testimonials', label: 'Testimonials' },
-    { id: 'contact', label: 'Contact' }
+    { id: 'blog', label: 'Blog' },
+    { id: 'resources', label: 'Resources' },
+    { id: 'contact', label: 'Contact / Book' },
   ];
+
+  const servicesDropdownItems = [
+    { id: 'educational-consultancy', label: 'Educational Consultancy' },
+    { id: 'elevation-coaching', label: 'Elevation Coaching' },
+    { id: 'programs', label: 'Programs' },
+  ];
+
+  const isServicesActive = servicesDropdownItems.some((item) => item.id === currentPage);
+
+  const handleNavClick = (id) => {
+    setCurrentPage(id);
+    setServicesDropdownOpen(false);
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
+
           {/* Logo */}
-          <div className="flex items-center">
-            {/* Option 1: Using logo from public folder */}
+          <div className="flex items-center flex-shrink-0">
             <div className="w-10 h-10 mr-3 flex items-center justify-center">
-              <img 
-                src="\logo-alpha-consulting-ke.jpg" 
-                alt="Alpha Coaching KE Logo" 
+              <img
+                src="\logo-alpha-consulting-ke.jpg"
+                alt="Alpha Coaching KE Logo"
                 className="w-10 h-10 object-contain"
                 onError={(e) => {
-                  // Fallback if logo doesn't exist - show initials
                   e.target.style.display = 'none';
                   e.target.nextSibling.style.display = 'flex';
                 }}
               />
-              {/* Fallback logo with gold background */}
-              <div className="w-10 h-10 bg-yellow-600 rounded-lg flex items-center justify-center" style={{display: 'none'}}>
+              <div className="w-10 h-10 bg-yellow-600 rounded-lg items-center justify-center" style={{ display: 'none' }}>
                 <span className="text-white font-bold text-xl">AG</span>
               </div>
             </div>
             <div>
               <h1 className="text-xl font-bold text-gray-900">Alpha Group KE</h1>
-              <p className="text-sm text-gray-600">Personalized Coaching, Learning Psychology & Human Development <br /> Consulting in Kenya and Globally</p>
+              <p className="text-xs text-gray-600 hidden sm:block">
+                Transforming Lives Through Psychology, <br /> Education & Personal Growth in Africa and beyond
+              </p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
+          <nav className="hidden lg:flex items-center space-x-1">
+            {mainNavItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => setCurrentPage(item.id)}
-                className={`px-3 py-2 text-sm font-medium transition-colors ${
+                onClick={() => handleNavClick(item.id)}
+                className={`px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap rounded-md ${
                   currentPage === item.id
                     ? 'text-yellow-500 border-b-2 border-yellow-500'
-                    : 'text-gray-700 hover:text-yellow-500'
+                    : 'text-gray-700 hover:text-yellow-500 hover:bg-yellow-50'
                 }`}
               >
                 {item.label}
               </button>
             ))}
+
+            {/* Services Dropdown */}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+                className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors rounded-md whitespace-nowrap ${
+                  isServicesActive
+                    ? 'text-yellow-500 border-b-2 border-yellow-500'
+                    : 'text-gray-700 hover:text-yellow-500 hover:bg-yellow-50'
+                }`}
+              >
+                Services
+                <svg
+                  className={`w-4 h-4 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''}`}
+                  fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {servicesDropdownOpen && (
+                <div className="absolute right-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-gray-100 py-1 z-50">
+                  {servicesDropdownItems.map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => handleNavClick(item.id)}
+                      className={`w-full text-left px-4 py-2.5 text-sm transition-colors ${
+                        currentPage === item.id
+                          ? 'text-yellow-500 bg-yellow-50 font-semibold'
+                          : 'text-gray-700 hover:text-yellow-500 hover:bg-yellow-50'
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </nav>
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2"
+            className="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -286,15 +362,12 @@ const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenu
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t">
-            {navItems.map((item) => (
+          <div className="lg:hidden py-3 border-t border-gray-100">
+            {mainNavItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => {
-                  setCurrentPage(item.id);
-                  setIsMobileMenuOpen(false);
-                }}
-                className={`block w-full text-left px-3 py-2 text-sm font-medium ${
+                onClick={() => handleNavClick(item.id)}
+                className={`block w-full text-left px-4 py-2.5 text-sm font-medium rounded-md transition-colors ${
                   currentPage === item.id
                     ? 'text-yellow-500 bg-yellow-50'
                     : 'text-gray-700 hover:text-yellow-500 hover:bg-gray-50'
@@ -303,19 +376,34 @@ const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenu
                 {item.label}
               </button>
             ))}
+
+            {/* Mobile Services Group */}
+            <div className="mt-1 border-t border-gray-100 pt-1">
+              <p className="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                Services
+              </p>
+              {servicesDropdownItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => handleNavClick(item.id)}
+                  className={`block w-full text-left px-6 py-2.5 text-sm font-medium rounded-md transition-colors ${
+                    currentPage === item.id
+                      ? 'text-yellow-500 bg-yellow-50'
+                      : 'text-gray-700 hover:text-yellow-500 hover:bg-gray-50'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
           </div>
         )}
       </div>
     </header>
   );
 };
-
 // Home Page Component
 const HomePage = ({ setCurrentPage }) => {
-  // Add this at the top of your App.jsx file, after the other imports
-  // import { ChevronLeft, ChevronRight } from 'lucide-react';
-  
-
   // State for modal
   const [selectedQuestion, setSelectedQuestion] = useState(null);
 
@@ -1245,6 +1333,330 @@ const ServicesPage = ({ setCurrentPage }) => {
   );
 };
 
+const EducationalConsultancyPage = ({ setCurrentPage }) => {
+  const [activeSegment, setActiveSegment] = useState('academic');
+
+  const segments = [
+    { id: 'academic', label: 'A. Academic Coaching', icon: '🎓' },
+    { id: 'neurodiverse', label: 'B. Neurodiverse Support', icon: '🧠' },
+    { id: 'consultancy', label: 'C. Educational Consultancy', icon: '🗺️' },
+  ];
+
+  const segmentContent = {
+    academic: {
+      title: 'Academic Coaching (Exams)',
+      subtitle: 'A-Level · KCSE · Cambridge',
+      description:
+        'We support students preparing for final exams with structured strategies, time management skills, and personalized coaching that improves performance and builds confidence.',
+      services: [
+        'KCSE exam preparation and strategy',
+        'A-Level structured coaching',
+        'Cambridge curriculum support',
+        'Time management and study skills',
+        'Confidence building for high-stakes exams',
+        'Personalized performance tracking',
+      ],
+      image: '/Candidate preparation-All systems.jpg',
+      imageAlt: 'Candidate preparation - All systems',
+      cta: 'Start Exam Coaching',
+    },
+    neurodiverse: {
+      title: 'Neurodiverse Parent Support',
+      subtitle: 'GDD · ADHD · Learning Differences',
+      description:
+        'We work with parents of children with learning differences, including Global Developmental Delay (GDD), providing clarity, structure, and practical tools to support both learning and behaviour.',
+      services: [
+        'Global Developmental Delay (GDD) support',
+        'ADHD coaching for children and parents',
+        'Learning differences assessment and strategy',
+        'Behavioural support frameworks',
+        'Parent coaching and empowerment',
+        'School-home communication bridges',
+      ],
+      image: '/neurodiverse flier -leaks- march 2026.jpg',
+      imageAlt: 'Neurodiverse learning support',
+      cta: 'Get Neurodiverse Support',
+    },
+    consultancy: {
+      title: 'Educational Consultancy',
+      subtitle: 'School Placement · Learning Pathways · Strategy',
+      description:
+        'We help parents make informed decisions about schools, learning pathways, and academic direction — ensuring each child is placed in an environment where they can truly thrive.',
+      services: [
+        'School placement guidance in Nairobi and Kenya',
+        'Learning pathway mapping',
+        'Academic strategy for mainstream learners',
+        'Inclusive education planning',
+        'Transition support (primary to secondary)',
+        'Progress reviews and outcome tracking',
+      ],
+      image: '/Inclusive Learning Workshop Promotion.png',
+      imageAlt: 'Inclusive Learning Workshop',
+      cta: 'Book a Consultation',
+    },
+  };
+
+  const active = segmentContent[activeSegment];
+
+  const outcomes = [
+    { label: 'Students improve grades and exam confidence' },
+    { label: 'Parents gain clarity on their child\'s learning needs' },
+    { label: 'Families move from stress and confusion to structured progress' },
+    { label: 'Children develop self-belief alongside academic skills' },
+  ];
+
+  const differentiators = [
+    {
+      title: 'Personalized Approach',
+      desc: 'Every coaching plan is tailored to the individual student\'s needs, not a one-size-fits-all curriculum.',
+    },
+    {
+      title: 'Integrated Counseling',
+      desc: 'We combine academic coaching with counseling psychology for whole-child development.',
+    },
+    {
+      title: 'Neurodiverse Expertise',
+      desc: 'Deep understanding of how different brains learn, applied practically in every session.',
+    },
+    {
+      title: 'Proven Outcomes',
+      desc: 'Real results: students move from struggling to thriving, with documented academic improvements.',
+    },
+  ];
+
+  return (
+    <div className="py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Hero */}
+        <div className="text-center mb-16">
+          <p className="text-sm font-semibold text-yellow-500 uppercase tracking-widest mb-3">
+            Education Division
+          </p>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            Educational Consultancy
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
+            Transforming Lives Through Psychology, Education & Personal Growth in Africa and beyond
+          </p>
+          <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 max-w-3xl mx-auto rounded-r-lg text-left">
+            <p className="text-gray-700 font-medium">
+              "We support learning, behaviour, and development through structured programs."
+            </p>
+            <p className="text-sm text-gray-500 mt-1">
+              A bridge between education and life development — especially for neurodiverse and mainstream learners.
+            </p>
+          </div>
+        </div>
+
+        {/* Segment Tabs */}
+        <div className="mb-12">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
+            {segments.map((seg) => (
+              <button
+                key={seg.id}
+                onClick={() => setActiveSegment(seg.id)}
+                className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
+                  activeSegment === seg.id
+                    ? 'bg-yellow-500 text-white shadow-md'
+                    : 'bg-white text-gray-700 border border-gray-200 hover:border-yellow-400 hover:text-yellow-500'
+                }`}
+              >
+                <span className="mr-2">{seg.icon}</span>
+                {seg.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Segment Content */}
+          <div className="grid md:grid-cols-2 gap-12 items-center bg-white rounded-xl shadow-md p-8">
+            <div>
+              <p className="text-sm font-semibold text-yellow-500 uppercase tracking-wider mb-2">
+                {active.subtitle}
+              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{active.title}</h2>
+              <p className="text-gray-600 mb-6 leading-relaxed">{active.description}</p>
+              <ul className="space-y-2 mb-8">
+                {active.services.map((s, i) => (
+                  <li key={i} className="flex items-start gap-3 text-gray-700 text-sm">
+                    <span className="mt-1 w-2 h-2 rounded-full bg-yellow-500 flex-shrink-0" />
+                    {s}
+                  </li>
+                ))}
+              </ul>
+              <button
+                onClick={() => setCurrentPage('contact')}
+                className="bg-yellow-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition-colors"
+              >
+                {active.cta}
+              </button>
+            </div>
+            <div className="rounded-lg overflow-hidden bg-yellow-50">
+              <img
+                src={active.image}
+                alt={active.imageAlt}
+                className="w-full h-80 object-contain"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                }}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* What Makes Us Different */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-10">
+            What Makes Us Different
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {differentiators.map((d, i) => (
+              <div
+                key={i}
+                className="bg-white p-6 rounded-lg shadow-sm border-t-4 border-yellow-500"
+              >
+                <h3 className="font-bold text-gray-900 mb-2">{d.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{d.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Real Outcomes */}
+        <div className="bg-gray-900 text-white rounded-xl p-10 mb-16">
+          <h2 className="text-3xl font-bold text-center mb-2">Real Outcomes</h2>
+          <p className="text-center text-gray-400 mb-8 text-sm">
+            From A… to B' — results our families have lived
+          </p>
+          <div className="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+            {outcomes.map((o, i) => (
+              <div
+                key={i}
+                className="flex items-start gap-3 bg-white/10 rounded-lg p-4"
+              >
+                <span className="text-yellow-400 font-bold text-lg mt-0.5">✓</span>
+                <p className="text-gray-200 text-sm leading-relaxed">{o.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Additional program images */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-10">
+            Our Programs in Action
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { src: '/LIP flier-march 2026.jpg', label: 'Learning Intervention Program' },
+              { src: '/Inclusive programs poster.jpg', label: 'Inclusive Programs' },
+              { src: '/Professional Coaching for teachers.png', label: 'Professional Coaching for Teachers' },
+              { src: '/Kids book club.jpg', label: 'Kids Book Club' },
+              { src: '/Spelling Bee Logo.jpg', label: 'Annual Spelling Bee' },
+              { src: '/adult book club poster.jpg', label: 'Adult Book Club' },
+            ].map((item, i) => (
+              <div key={i} className="bg-white rounded-lg shadow-sm overflow-hidden">
+                <div className="h-48 bg-yellow-50 flex items-center justify-center">
+                  <img
+                    src={item.src}
+                    alt={item.label}
+                    className="w-full h-full object-contain"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                    }}
+                  />
+                </div>
+                <div className="p-4">
+                  <p className="text-sm font-semibold text-gray-800 text-center">{item.label}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA Banner */}
+        <div className="bg-yellow-500 rounded-xl p-10 text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Clarity for Your Child's Academic and Life Success
+          </h2>
+          <p className="text-yellow-900 mb-6 max-w-2xl mx-auto">
+            If your child is struggling academically, preparing for KCSE or A-Level exams, or
+            facing learning challenges such as GDD or other neurodiverse needs — you are not alone,
+            and you do not have to navigate it alone.
+          </p>
+          <button
+            onClick={() => setCurrentPage('contact')}
+            className="bg-white text-yellow-600 px-8 py-3 rounded-lg font-bold hover:bg-yellow-50 transition-colors"
+          >
+            Book a Free Discovery Call
+          </button>
+        </div>
+
+      </div>
+    </div>
+  );
+};
+
+const ElevationCoachingPage = ({ setCurrentPage }) => (
+  <div className="py-16">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p className="text-sm font-semibold text-yellow-500 uppercase tracking-widest mb-3">Life Success Division</p>
+      <h1 className="text-4xl font-bold text-gray-900 mb-4">Elevation Coaching Framework</h1>
+      <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+        "We help children and parents build emotional strength, structure, and confidence for everyday life."
+      </p>
+      <p className="text-gray-500 mb-8">Full content coming soon. Contact us to learn more.</p>
+      <button
+        onClick={() => setCurrentPage('contact')}
+        className="bg-yellow-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition-colors"
+      >
+        Get in Touch
+      </button>
+    </div>
+  </div>
+);
+
+const ProgramsPage = ({ setCurrentPage }) => (
+  <div className="py-16">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p className="text-sm font-semibold text-yellow-500 uppercase tracking-widest mb-3">What We Offer</p>
+      <h1 className="text-4xl font-bold text-gray-900 mb-4">Programs</h1>
+      <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+        From the Learning Intervention Program to the Amaze-ing Mom Program — full program details coming soon.
+      </p>
+      <button
+        onClick={() => setCurrentPage('contact')}
+        className="bg-yellow-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition-colors"
+      >
+        Ask About a Program
+      </button>
+    </div>
+  </div>
+);
+
+const BlogPage = () => (
+  <div className="py-16">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p className="text-sm font-semibold text-yellow-500 uppercase tracking-widest mb-3">Insights & Updates</p>
+      <h1 className="text-4xl font-bold text-gray-900 mb-4">Blog</h1>
+      <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+        Articles, tips, and stories on learning, healing, and human development. Coming soon.
+      </p>
+    </div>
+  </div>
+);
+
+const ResourcesPage = () => (
+  <div className="py-16">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p className="text-sm font-semibold text-yellow-500 uppercase tracking-widest mb-3">Tools & Guides</p>
+      <h1 className="text-4xl font-bold text-gray-900 mb-4">Resources</h1>
+      <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+        Downloadable guides, webinar recordings, and support materials. Coming soon.
+      </p>
+    </div>
+  </div>
+);
 
 // Testimonials Page Component
 const TestimonialsPage = ({ setCurrentPage }) => {

@@ -1634,17 +1634,475 @@ const ProgramsPage = ({ setCurrentPage }) => (
   </div>
 );
 
-const BlogPage = () => (
-  <div className="py-16">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p className="text-sm font-semibold text-yellow-500 uppercase tracking-widest mb-3">Insights & Updates</p>
-      <h1 className="text-4xl font-bold text-gray-900 mb-4">Blog</h1>
-      <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-        Articles, tips, and stories on learning, healing, and human development. Coming soon.
-      </p>
+const blogPosts = [
+  {
+    id: 'school-audits',
+    title: 'How School Performance Audits Can Transform Educational Institutions',
+    excerpt: 'A structured evaluation of academic performance, teaching quality, leadership effectiveness and operational systems can reveal exactly where your institution is leaking potential.',
+    tag: 'School Leadership',
+    content: [
+      {
+        heading: 'What is a School Performance Audit?',
+        blocks: [
+          { type: 'text', text: 'It is a structured evaluation of both the tangible and intangible aspects of a learning institution. This includes:' },
+          { type: 'list', items: ['Academic performance', 'Teaching quality', 'Leadership effectiveness', 'Operational systems'] },
+          { type: 'text', text: 'Many schools operate without fully understanding where their performance gaps lie.' },
+        ],
+      },
+      {
+        heading: 'Why Audits Are Essential',
+        blocks: [
+          { type: 'text', text: 'Without an audit:' },
+          { type: 'list', items: ['Problems remain unidentified', 'Growth is limited', 'Decision-making lacks data'] },
+          { type: 'text', text: 'With an audit:' },
+          { type: 'list', items: ['Clear insights emerge', 'Strategic improvements are possible', 'Institutions can scale effectively'] },
+        ],
+      },
+      {
+        heading: 'What an Audit Reveals',
+        blocks: [
+          { type: 'list', items: ['Gaps in learner experience and teaching strategies', 'Leadership misalignment', 'Inefficiencies in systems', 'Opportunities for growth'] },
+        ],
+      },
+      {
+        heading: 'Driving Institutional Excellence',
+        blocks: [
+          { type: 'text', text: 'Schools that invest in audits:' },
+          { type: 'list', items: ['Improve performance outcomes', 'Strengthen internal systems', 'Build credibility and trust'] },
+        ],
+      },
+      {
+        heading: 'Elevate Your Institution',
+        blocks: [
+          { type: 'text', text: 'At Mwanicole Consultants, we provide in-depth audits that lead to actionable, measurable improvements. Book an institutional consultation today and take your school to the next level.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'exam-prep',
+    title: 'Exam Preparation Strategies That Actually Work',
+    excerpt: 'True performance improvement comes from strategy, not stress. Students who perform well are not necessarily those who study more, but those who study smarter.',
+    tag: 'Academic Coaching',
+    content: [
+      {
+        heading: 'Why Many Students Struggle',
+        blocks: [
+          { type: 'text', text: 'Common issues include:' },
+          { type: 'list', items: ['Lack of structured study plans', 'Poor time management', 'Limited understanding of exam techniques', 'High anxiety and low confidence'] },
+          { type: 'text', text: 'These factors significantly impact performance.' },
+        ],
+      },
+      {
+        heading: 'Effective Exam Preparation Strategies',
+        blocks: [
+          { type: 'text', text: 'To improve results, students need:' },
+          { type: 'list', items: ['Structured revision schedules', 'Active learning techniques (not passive reading)', 'Understanding the learner\u2019s learning style', 'Strong exam technique (analysis, structure, clarity)'] },
+        ],
+      },
+      {
+        heading: 'The Role of Schools and Parents',
+        blocks: [
+          { type: 'text', text: 'Support systems matter. Students perform better when:' },
+          { type: 'list', items: ['Schools provide differentiated learning frameworks', 'Parents create supportive environments', 'Teachers focus on both content and exam skills'] },
+        ],
+      },
+      {
+        heading: 'Beyond Exams: Building Confidence',
+        blocks: [
+          { type: 'text', text: 'Preparation should not only focus on grades, but also:' },
+          { type: 'list', items: ['Confidence', 'Resilience', 'Critical thinking'] },
+          { type: 'text', text: 'These skills have long-term impact.' },
+        ],
+      },
+      {
+        heading: 'Professional Support Makes the Difference',
+        blocks: [
+          { type: 'text', text: 'At Mwanicole Consultants, we support students, parents, and schools with structured exam preparation strategies that improve both performance, confidence and holistic success. Book a session today and help your students achieve their full potential.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'inclusive-edu',
+    title: 'Inclusive Education in Kenya: Moving from Policy to Practice',
+    excerpt: 'Inclusive education is no longer just a policy requirement — it is a necessity for schools that aim to provide equitable, high-quality learning for every student.',
+    tag: 'Inclusive Education',
+    content: [
+      {
+        heading: 'What is Inclusive Education Really About?',
+        blocks: [
+          { type: 'text', text: 'Inclusive education goes beyond placing learners in the same classroom. It involves creating systems, teaching strategies, and environments that support diverse learning needs. This includes:' },
+          { type: 'list', items: ['Learners with developmental delays', 'Neurodiverse students', 'Different learning styles and abilities'] },
+        ],
+      },
+      {
+        heading: 'Why Schools Struggle with Implementation',
+        blocks: [
+          { type: 'text', text: 'Despite good intentions, schools often face:' },
+          { type: 'list', items: ['Limited teacher training in inclusive practices', 'Overcrowded classrooms', 'Lack of individualized learning strategies', 'Minimal institutional support structures'] },
+          { type: 'text', text: 'These gaps lead to frustration for both educators and learners.' },
+        ],
+      },
+      {
+        heading: 'Practical Strategies for Schools',
+        blocks: [
+          { type: 'text', text: 'To implement inclusive education effectively, schools need:' },
+          { type: 'list', items: ['Teacher training in differentiated instruction', 'Structured intervention programs', 'Classroom support systems', 'Ongoing monitoring and evaluation'] },
+        ],
+      },
+      {
+        heading: 'The Role of Leadership',
+        blocks: [
+          { type: 'text', text: 'School leadership plays a critical role in driving inclusivity by:' },
+          { type: 'list', items: ['Setting clear policies', 'Investing in training', 'Creating a culture of support'] },
+        ],
+      },
+      {
+        heading: 'Partnering for Sustainable Impact',
+        blocks: [
+          { type: 'text', text: 'Inclusive education requires more than intention—it requires expertise and structured systems. At Mwanicole Consultants, we support schools in designing and implementing inclusive education frameworks that are practical, sustainable, and results-driven. Book a consultation today to build an inclusive, high-performing learning environment.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'learning-assessments',
+    title: 'Why Educational Assessments Are Critical for Student Success',
+    excerpt: 'Many learning challenges go unnoticed — not because they are absent, but because they are not properly identified. Assessments provide clarity.',
+    tag: 'Learning Assessments',
+    content: [
+      {
+        heading: 'What Are Educational Assessments?',
+        blocks: [
+          { type: 'text', text: 'Assessments are structured evaluations used to understand a student\u2019s:' },
+          { type: 'list', items: ['Academic level', 'Cognitive abilities', 'Behavioral patterns', 'Learning challenges'] },
+        ],
+      },
+      {
+        heading: 'Why Assessments Matter',
+        blocks: [
+          { type: 'text', text: 'Without proper assessment:' },
+          { type: 'list', items: ['Learning gaps remain hidden', 'Incorrect strategies are applied', 'Students become frustrated and disengaged'] },
+          { type: 'text', text: 'With assessment:' },
+          { type: 'list', items: ['Interventions become targeted', 'Progress becomes measurable', 'Support becomes effective'] },
+        ],
+      },
+      {
+        heading: 'Types of Assessments',
+        blocks: [
+          { type: 'list', items: ['Academic assessments', 'Behavioral and emotional assessments', 'Developmental evaluations'] },
+          { type: 'text', text: 'Each assessment plays a critical role in understanding the whole child.' },
+        ],
+      },
+      {
+        heading: 'The Power of Early Intervention',
+        blocks: [
+          { type: 'text', text: 'Early identification leads to:' },
+          { type: 'list', items: ['Faster improvement', 'Reduced long-term challenges', 'Increased confidence and performance'] },
+        ],
+      },
+      {
+        heading: 'Take the First Step Toward Clarity',
+        blocks: [
+          { type: 'text', text: 'At Mwanicole Consultants, we guide parents and schools through the assessment process and provide actionable recommendations. Book an assessment consultation today and unlock your child\u2019s potential.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'neurodiversity-guide',
+    title: 'Understanding Neurodiversity: A Guide for Parents and Schools',
+    excerpt: 'Neurodiversity is not a challenge to be fixed — it is a reality to be understood, supported, and nurtured.',
+    tag: 'Neurodiversity',
+    content: [
+      {
+        heading: 'What is Neurodiversity?',
+        blocks: [
+          { type: 'text', text: 'Neurodiversity recognizes that every brain functions differently. Some children process information, emotions, and experiences in unique ways, and this requires intentional support. Across Kenya, more parents and schools are encountering children with diverse learning profiles, including developmental delays, ADHD, autism, GDD, and other cognitive differences.' },
+        ],
+      },
+      {
+        heading: 'The Hidden Struggles',
+        blocks: [
+          { type: 'text', text: 'Parents and schools often face:' },
+          { type: 'list', items: ['Misunderstood behavior', 'Emotional outbursts linked to anxiety or fear', 'Learning gaps that traditional methods cannot address', 'Frustration from both educators and caregivers'] },
+          { type: 'text', text: 'Without the right support, these challenges can escalate.' },
+        ],
+      },
+      {
+        heading: 'The Importance of Early Assessment',
+        blocks: [
+          { type: 'text', text: 'One of the most critical steps is proper assessment. Understanding a neurodiverse child\u2019s needs allows for:' },
+          { type: 'list', items: ['Targeted interventions', 'Appropriate learning strategies', 'Better emotional support', 'Clear guidance for both parents and teachers'] },
+        ],
+      },
+      {
+        heading: 'Supporting Neurodiverse Learners Effectively',
+        blocks: [
+          { type: 'text', text: 'Support for these learners requires the following:' },
+          { type: 'list', items: ['Individualized learning approaches', 'Structured routines and safe environments', 'Collaboration between parents, teachers, and specialists', 'Ongoing coaching and guidance'] },
+        ],
+      },
+      {
+        heading: 'You Don\u2019t Have to Navigate This Alone',
+        blocks: [
+          { type: 'text', text: 'At Mwanicole Consultants, we work with families and schools to provide assessment guidance, intervention strategies, and ongoing support tailored to each child\u2019s needs. Reach out today for professional guidance and support your child\u2019s growth with confidence.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'parenting-today',
+    title: 'Parenting in Today\u2019s Education System: Supporting Your Child\u2019s Learning Journey',
+    excerpt: 'Parenting today goes far beyond ensuring children attend school and complete homework. It requires active involvement in academic, social and emotional development.',
+    tag: 'Parenting',
+    content: [
+      {
+        heading: 'The Changing Role of Parents',
+        blocks: [
+          { type: 'text', text: 'Today\u2019s parents must navigate:' },
+          { type: 'list', items: ['Academic pressure', 'Emotional well-being', 'Digital and social distractions', 'Diverse learning needs'] },
+          { type: 'text', text: 'This can feel overwhelming without the right guidance.' },
+        ],
+      },
+      {
+        heading: 'Supporting Neurotypical and Neurodiverse Children',
+        blocks: [
+          { type: 'text', text: 'Every child learns differently. While some thrive in traditional systems, others require tailored support. Parents should focus on:' },
+          { type: 'list', items: ['Understanding their child\u2019s learning style', 'Creating structured routines', 'Providing holistic support', 'Seeking professional guidance when needed'] },
+        ],
+      },
+      {
+        heading: 'Common Parenting Challenges',
+        blocks: [
+          { type: 'text', text: 'Many parents face:' },
+          { type: 'list', items: ['Frustration with inconsistent performance', 'Difficulty managing behavior', 'Uncertainty about when to seek help', 'Balancing support without pressure'] },
+        ],
+      },
+      {
+        heading: 'When to Seek Professional Support',
+        blocks: [
+          { type: 'text', text: 'If your child is:' },
+          { type: 'list', items: ['Struggling academically despite effort', 'Showing behavioral or emotional challenges', 'Falling behind peers'] },
+          { type: 'text', text: 'It may be time to consider assessment and intervention.' },
+        ],
+      },
+      {
+        heading: 'You Are Not Alone in This Journey',
+        blocks: [
+          { type: 'text', text: 'At Mwanicole Consultants, we work with parents to provide clarity, strategies, and ongoing support tailored to each child\u2019s needs. Reach out today for expert guidance and support your child with confidence.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'holistic-education',
+    title: 'Holistic Education: Preparing Learners for Life, Not Just Exams',
+    excerpt: 'Academic success alone is no longer enough. Today\u2019s world requires learners who are emotionally intelligent, adaptable, and capable of critical thinking.',
+    tag: 'Holistic Education',
+    content: [
+      {
+        heading: 'What is Holistic Education?',
+        blocks: [
+          { type: 'text', text: 'Holistic education focuses on developing the whole child:' },
+          { type: 'list', items: ['Academic ability', 'Emotional intelligence', 'Social skills', 'Life competencies'] },
+        ],
+      },
+      {
+        heading: 'Why It Matters',
+        blocks: [
+          { type: 'text', text: 'Students who receive holistic education are:' },
+          { type: 'list', items: ['More confident', 'Better problem-solvers', 'More resilient', 'Prepared for real-world challenges'] },
+        ],
+      },
+      {
+        heading: 'The Role of Schools and Parents',
+        blocks: [
+          { type: 'text', text: 'Holistic development requires collaboration:' },
+          { type: 'list', items: ['Schools must integrate relevant life skills into learning', 'Parents must support emotional and mental growth at home'] },
+        ],
+      },
+      {
+        heading: 'Common Gaps in the Current System',
+        blocks: [
+          { type: 'text', text: 'Many institutions focus heavily on exams, neglecting:' },
+          { type: 'list', items: ['Emotional and mental well-being', 'Social development', 'Critical thinking skills'] },
+        ],
+      },
+      {
+        heading: 'Building Future-Ready Learners',
+        blocks: [
+          { type: 'text', text: 'To truly prepare learners, education must evolve. At Mwanicole Consultants, we support schools and families in integrating holistic development strategies that create balanced, high-performing individuals. Partner with us to build learners who thrive beyond the classroom.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'educational-consultancy',
+    title: 'Why Educational Consultancy is Essential for Schools Today',
+    excerpt: 'Schools in Kenya face increasing pressure to deliver not just academic results, but well-rounded, future-ready learners.',
+    tag: 'Educational Consultancy',
+    content: [
+      {
+        heading: 'A Landscape Under Pressure',
+        blocks: [
+          { type: 'text', text: 'In today\u2019s rapidly evolving education landscape, schools in Kenya are facing increasing pressure to deliver not just academic results, but well-rounded, future-ready learners. However, many institutions struggle with outdated teaching strategies, misaligned leadership, and limited support systems for diverse learners. This is where educational consultancy becomes not just valuable, but essential — providing schools with expert guidance to identify gaps, improve teaching practices, and implement sustainable systems that enhance both student performance and teacher effectiveness.' },
+        ],
+      },
+      {
+        heading: 'The Growing Challenges in Schools',
+        blocks: [
+          { type: 'text', text: 'Many schools today face:' },
+          { type: 'list', items: ['Inconsistent academic performance', 'Limited strategies for inclusive education', 'Teacher burnout and low morale', 'Lack of structured intervention systems', 'Minimal alignment between leadership and classroom delivery'] },
+          { type: 'text', text: 'Without addressing these challenges, schools risk stagnation.' },
+        ],
+      },
+      {
+        heading: 'How Educational Consultancy Transforms Schools',
+        blocks: [
+          { type: 'text', text: 'A professional educational consultancy offers:' },
+          { type: 'list', items: ['Institutional audits to identify performance gaps', 'Teacher training in effective and inclusive methodologies', 'Leadership coaching for school administrators', 'Tailored learning interventions for students', 'Systems that support long-term improvement'] },
+          { type: 'text', text: 'The goal is not just short-term fixes, but sustainable transformation.' },
+        ],
+      },
+      {
+        heading: 'Why This Matters for Your School',
+        blocks: [
+          { type: 'text', text: 'Schools that invest in consultancy services experience:' },
+          { type: 'list', items: ['Improved student outcomes', 'Stronger teaching practices', 'Better alignment across departments', 'Increased parent trust and satisfaction'] },
+        ],
+      },
+      {
+        heading: 'Partnering for Impact',
+        blocks: [
+          { type: 'text', text: 'At Mwanicole Consultants (Div III of Alpha Group KE), we partner with schools to design practical, research-based solutions that address real challenges in the classroom and beyond. If your institution is ready to elevate performance, strengthen teaching, and create meaningful impact, now is the time to act. Book a consultation today and take the first step toward transformation.' },
+        ],
+      },
+    ],
+  },
+];
+
+const BlogPage = () => {
+  const [selectedPost, setSelectedPost] = useState(null);
+
+  // Block right-click, text selection and copy inside the reading modal
+  // so content can be read but not easily lifted out as a file/text dump.
+  const guardProps = {
+    onCopy: (e) => e.preventDefault(),
+    onContextMenu: (e) => e.preventDefault(),
+    style: { userSelect: 'none', WebkitUserSelect: 'none' },
+  };
+
+  return (
+    <div className="py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <p className="text-sm font-semibold text-yellow-500 uppercase tracking-widest mb-3">
+            Insights & Updates
+          </p>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Blog</h1>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Articles, tips, and strategies on learning, inclusive education, parenting, and
+            institutional growth — from the Mwanicole Consultants team.
+          </p>
+        </div>
+
+        {/* Blog Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {blogPosts.map((post) => (
+            <div
+              key={post.id}
+              onClick={() => setSelectedPost(post)}
+              className="bg-white rounded-lg shadow-md border-t-4 border-yellow-500 p-6 cursor-pointer hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 flex flex-col"
+            >
+              <span className="inline-block text-xs font-semibold text-yellow-600 bg-yellow-50 px-3 py-1 rounded-full mb-4 self-start">
+                {post.tag}
+              </span>
+              <h3 className="text-lg font-bold text-gray-900 mb-3 leading-snug">
+                {post.title}
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-4 flex-1">
+                {post.excerpt}
+              </p>
+              <span className="text-yellow-500 text-sm font-semibold mt-auto">
+                Read article →
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Reading Modal — read-only, no download/print/copy */}
+      {selectedPost && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4"
+          onClick={() => setSelectedPost(null)}
+        >
+          <div
+            className="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[85vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex justify-between items-start p-6 border-b border-gray-200 sticky top-0 bg-white">
+              <div>
+                <span className="inline-block text-xs font-semibold text-yellow-600 bg-yellow-50 px-3 py-1 rounded-full mb-3">
+                  {selectedPost.tag}
+                </span>
+                <h2 className="text-2xl font-bold text-gray-900 pr-8 leading-snug">
+                  {selectedPost.title}
+                </h2>
+              </div>
+              <button
+                onClick={() => setSelectedPost(null)}
+                className="text-gray-400 hover:text-gray-600 transition-colors flex-shrink-0"
+                aria-label="Close article"
+              >
+                <X size={24} />
+              </button>
+            </div>
+
+            {/* Modal Content - read only */}
+            <div className="p-6 space-y-6" {...guardProps}>
+              {selectedPost.content.map((section, i) => (
+  <div key={i}>
+    <h3 className="text-lg font-bold text-yellow-500 mb-2">
+      {section.heading}
+    </h3>
+    <div className="space-y-2">
+      {section.blocks.map((block, j) =>
+        block.type === 'list' ? (
+          <ul key={j} className="space-y-2 mb-3">
+            {block.items.map((item, k) => (
+              <li key={k} className="flex items-start gap-3 text-gray-700 leading-relaxed">
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p key={j} className="text-gray-700 leading-relaxed">{block.text}</p>
+        )
+      )}
     </div>
   </div>
-);
+))}
+            
+
+              <div className="bg-yellow-50 p-4 rounded-lg mt-8">
+                <p className="text-gray-700 text-sm">
+                  Want to talk through how this applies to your school or family? Reach out
+                  to our team via the Contact page and we'll help you take the next step.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
 
 const ResourcesPage = () => (
   <div className="py-16">
@@ -2407,7 +2865,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; 2025 Alpha Group KE. All rights reserved.</p>
+          <p>&copy; 2026 Alpha Group KE. All rights reserved.</p>
         </div>
       </div>
     </footer>

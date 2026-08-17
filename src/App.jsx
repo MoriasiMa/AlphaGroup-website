@@ -403,11 +403,14 @@ const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenu
   );
 };
 // Home Page Component
+
+
 const HomePage = ({ setCurrentPage }) => {
   // State for modal
   const [selectedQuestion, setSelectedQuestion] = useState(null);
 
-  // Slideshow images - you can add more images here
+  // Slideshow images — now includes the images that used to be in the
+  // second gallery (slideImages2), merged in at the end.
   const slideImages = [
     {
       src: "/h1.jpeg",
@@ -473,10 +476,8 @@ const HomePage = ({ setCurrentPage }) => {
       src: "/h14.jpeg",
       alt: "Check services page",
       caption: "Programs Available"
-    }
-  ];
-
-const slideImages2 = [
+    },
+    // --- merged in from the former second gallery (slideImages2) ---
     {
       src: "/WhatsApp Image 2026-03-08 at 10.46.48 AM.jpeg",
       alt: "Alpha Consulting KE Logo",
@@ -502,13 +503,13 @@ const slideImages2 = [
       alt: "Psalm 139",
       caption: "Programs Available"
     },
-   {
+    {
       src: "/WhatsApp Image 2026-03-08 at 10.47.23 AM.jpeg",
       alt: "Check services page",
       caption: "Programs Available"
     }
   ];
-  
+
   // Questions data with answers
   const questionsData = [
     {
@@ -552,7 +553,7 @@ const slideImages2 = [
     setSelectedQuestion(null);
   };
 
- // Update the handleContactRedirect function:
+  // Update the handleContactRedirect function:
   const handleContactRedirect = () => {
     setSelectedQuestion(null); // Close the modal
     setCurrentPage('contact'); // Navigate to contact page
@@ -561,66 +562,74 @@ const slideImages2 = [
   return (
     <>
 
-   {/* Mission Statement Section */}
-<section className="py-16 bg-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-12">
-      <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission & Vision</h2>
-      
-      {/* Mission Statement */}
-      <div className="max-w-4xl mx-auto mb-10">
-        <h3 className="text-2xl font-semibold text-yellow-500 mb-4">Mission Statement</h3>
-        <p className="text-lg text-gray-600 leading-relaxed mb-4">
-          Our mission is to support schools, educators, parents, and learners through high-quality educational consultancy services that promote inclusive education, effective teaching strategies, learning interventions, and student well-being. We partner with institutions to improve learning outcomes through practical, research-based solutions.
-        </p>
-      </div>
-      
-      {/* Vision Statement */}
-      <div className="max-w-4xl mx-auto">
-        <h3 className="text-2xl font-semibold text-yellow-500 mb-4">Vision Statement</h3>
-        <p className="text-lg text-gray-600 leading-relaxed">
-          Our vision is to be a trusted educational consultancy in Kenya and across Africa, recognized for advancing inclusive, learner-centered, and future-ready education that supports diverse learning needs and empowers educators and students to succeed.
-        </p>
-      </div>
-      
-      <div className="mt-8">
-        <p className="text-yellow-500 font-semibold text-xl">
-          Transformation begins when you say 'YES!' to intentionally engage to meet the best version of your future self.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+      {/* Mission Statement Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission & Vision</h2>
+
+            {/* Mission Statement */}
+            <div className="max-w-4xl mx-auto mb-10">
+              <h3 className="text-2xl font-semibold text-yellow-500 mb-4">Mission Statement</h3>
+              <img
+                src="/missionpic.jpg"
+                alt="Our Mission"
+                className="w-full max-w-md mx-auto rounded-lg shadow-md mb-6"
+              />
+              <p className="text-lg text-gray-600 leading-relaxed mb-4">
+                Our mission is to support schools, educators, parents, and learners through high-quality educational consultancy services that promote inclusive education, effective teaching strategies, learning interventions, and student well-being. We partner with institutions to improve learning outcomes through practical, research-based solutions.
+              </p>
+            </div>
+
+            {/* Vision Statement */}
+            <div className="max-w-4xl mx-auto">
+              <h3 className="text-2xl font-semibold text-yellow-500 mb-4">Vision Statement</h3>
+              <img
+                src="/visionpic.jpg"
+                alt="Our Vision"
+                className="w-full max-w-md mx-auto rounded-lg shadow-md mb-6"
+              />
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Our vision is to be a trusted educational consultancy in Kenya and across Africa, recognized for advancing inclusive, learner-centered, and future-ready education that supports diverse learning needs and empowers educators and students to succeed.
+              </p>
+            </div>
+
+            <div className="mt-8">
+              <p className="text-yellow-500 font-semibold text-xl">
+                Transformation begins when you say 'YES!' to intentionally engage to meet the best version of your future self.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Hero Section with Slideshow */}
       <section className="bg-gradient-to-r from-yellow-500 to-gray-900 text-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-         
+
           {/* Image Slideshow */}
           <div className="mb-8">
             <ImageSlideshow images={slideImages} autoPlay={true} autoPlayInterval={6000} />
           </div>
 
           <div className="text-center">
-           
+
           </div>
         </div>
       </section>
 
-      
-
-       {/* Self-Assessment Questions */}
+      {/* Self-Assessment Questions */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Start Your Clarity Journey Here</h2>
             <p className="text-gray-600 text-lg">Click on any question to explore it further</p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {questionsData.map((item, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white p-6 rounded-lg shadow-md border-l-4 border-yellow-500 cursor-pointer hover:shadow-lg hover:bg-yellow-50 transition-all duration-300 transform hover:scale-105"
                 onClick={() => handleQuestionClick(index)}
               >
@@ -634,28 +643,65 @@ const slideImages2 = [
         </div>
       </section>
 
-{/* Amaze-ing Mom Program */}
+      {/* What Makes Us Different (formerly "What's NEW?!") */}
       <section className="py-16 bg-yellow-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">What's NEW?!</h2>
-        </div>
-        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">What Makes Us Different</h2>
+          </div>
+
           <div className="bg-white p-8 rounded-lg shadow-lg">
-            
-            {/* Image Slideshow */}
-          <div className="mb-8">
-            <ImageSlideshow images={slideImages2} autoPlay={true} autoPlayInterval={6000} />
-          </div>
-            
-          </div>
-        
-        
-      </div>
-    </section>
+            <div className="grid md:grid-cols-2 gap-10">
 
+              {/* What Makes Us Different */}
+              <div>
+                <h3 className="text-xl font-semibold text-yellow-500 mb-4">What Makes Us Different</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-yellow-500 mr-3 mt-1">✓</span>
+                    <span className="text-gray-700">Personalized academic coaching tailored to each student</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-yellow-500 mr-3 mt-1">✓</span>
+                    <span className="text-gray-700">Integrated counseling and coaching approach</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-yellow-500 mr-3 mt-1">✓</span>
+                    <span className="text-gray-700">Deep understanding of neurodiverse learning needs</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-yellow-500 mr-3 mt-1">✓</span>
+                    <span className="text-gray-700">Proven ability to improve academic outcomes and clarity for families</span>
+                  </li>
+                </ul>
+              </div>
 
- {/* Modal Popup */}
+              {/* Real Outcomes */}
+              <div>
+                <h3 className="text-xl font-semibold text-yellow-500 mb-4">Real Outcomes</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-yellow-500 mr-3 mt-1">✓</span>
+                    <span className="text-gray-700">Students improve grades and exam confidence</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-yellow-500 mr-3 mt-1">✓</span>
+                    <span className="text-gray-700">Parents gain clarity on their child's learning needs</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-yellow-500 mr-3 mt-1">✓</span>
+                    <span className="text-gray-700">Families move from stress and confusion to structured progress</span>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* Modal Popup */}
       {selectedQuestion !== null && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
@@ -664,7 +710,7 @@ const slideImages2 = [
               <h3 className="text-xl font-bold text-gray-900 pr-8">
                 {questionsData[selectedQuestion].question}
               </h3>
-              <button 
+              <button
                 onClick={handleCloseModal}
                 className="text-gray-400 hover:text-gray-600 transition-colors"
               >
@@ -708,11 +754,10 @@ const slideImages2 = [
             </div>
           </div>
         </div>
-      )}      
+      )}
     </>
   );
 };
-
 
 // About Page Component
 const AboutPage = () => {

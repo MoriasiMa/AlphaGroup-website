@@ -448,11 +448,6 @@ const HomePage = ({ setCurrentPage }) => {
       caption: "Programs Available"
     },
     {
-      src: "/h9.jpeg",
-      alt: "Check services page",
-      caption: "Programs Available"
-    },
-    {
       src: "/h10.jpeg",
       alt: "Check services page",
       caption: "Programs Available"

@@ -1477,9 +1477,7 @@ const EducationalConsultancyPage = ({ setCurrentPage }) => {
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Educational Consultancy
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-            Transforming Lives Through Psychology, Education & Personal Growth in Africa and beyond
-          </p>
+          
           <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 max-w-3xl mx-auto rounded-r-lg text-left">
             <p className="text-gray-700 font-medium">
               "We support learning, behaviour, and development through structured programs."
@@ -1567,7 +1565,7 @@ const EducationalConsultancyPage = ({ setCurrentPage }) => {
         <div className="bg-gray-900 text-white rounded-xl p-10 mb-16">
           <h2 className="text-3xl font-bold text-center mb-2">Real Outcomes</h2>
           <p className="text-center text-gray-400 mb-8 text-sm">
-            From A… to B' — results our families have lived
+            Results our families have lived
           </p>
           <div className="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
             {outcomes.map((o, i) => (

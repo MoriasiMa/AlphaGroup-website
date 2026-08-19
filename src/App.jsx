@@ -472,7 +472,16 @@ const HomePage = ({ setCurrentPage }) => {
       alt: "Check services page",
       caption: "Programs Available"
     },
-    // --- merged in from the former second gallery (slideImages2) ---
+    {
+      src: "/h15.jpeg",
+      alt: "Check services page",
+      caption: "Programs Available"
+    },
+    {
+      src: "/h16.jpeg",
+      alt: "Check services page",
+      caption: "Programs Available"
+    },
     {
       src: "/WhatsApp Image 2026-03-08 at 10.46.48 AM.jpeg",
       alt: "Alpha Consulting KE Logo",
@@ -757,25 +766,12 @@ const HomePage = ({ setCurrentPage }) => {
 
 // About Page Component
 const AboutPage = () => {
-  // Images for slideshow sections
-  const moriahImages = [
-    {
-      src: "/about profile pic.jpg",
-      alt: "Moriah - Founder of Alpha Group KE",
-      caption: "Moriah - Multi-gifted businesswoman passionate about Personal Development and Healing Trauma"
-    }
-  ];
-
+  
   const eventImages = [
     {
       src: "/ntv appearance.jpg",
       alt: "Nation Media Appearance",
       caption: "Nation Media Appearance"
-    },
-    {
-      src: "/graduation photo alpha group.jpg",
-      alt: "Graduation Event",
-      caption: "Graduation ceremonies and milestone celebrations"
     },
     {
       src: "/strathmore address.jpg",
@@ -801,116 +797,87 @@ const AboutPage = () => {
       src: "/child minding poster.jpg",
       alt: "child minding poster",
       caption: "child minding poster"
-    },
-    {
-      src: "/mc.jpg",
-      alt: "Kids Birthday Party",
-      caption: "Specialized kids' events with the 'midas touch'"
     }
   ];
 
-  return (
+   return (
     <div className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ 
+        
+ 
         {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">About Alpha Group KE</h1>
           <h2 className="text-2xl text-yellow-500 font-semibold mb-4">
             The Gold Standard Of Human Elevation
+            <p className="text-1xl text-blue-500 font-semibold mb-4">
+            Coaching . Education . Personal Growth . Psychology</p>
+          
+          
           </h2>
+          
         </div>
 
-        {/* Moriah's Profile Section */}
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <div>
-            <ImageSlideshow images={moriahImages} autoPlay={false} />
-          </div>
-          <div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">Meet Moriah</h3>
-            <div className="space-y-4 text-gray-600">
-              <p>
-                Moriah is a multi-gifted businesswoman with a passion for Personal Development and Healing Trauma. 
-                She is also passionate about Learning processes and Community Development using an Eclectic Psychology approach.
-              </p>
-              <p>
-                She is a registered{' '}
-                <a href="https://www.eaipc.ac.ke/" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-yellow-700">
-                  Coach
-                </a>{' '}
-                and{' '}
-                <a href="https://www.usiu.ac.ke/" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-yellow-700">
-                  Counseling Pyschologist
-                </a>.
-              </p>
-              <p>
-                Moriah is an alumnus of{' '}
-                <a href="https://strathmore.edu/" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-yellow-700">
-                  Strathmore University
-                </a>, where she took an Accelerated Business Course that transformed her business.
-              </p>
-              <p>
-                Based in Nairobi,she is an elevation coach consultant and counsellor. She has the joy of working with children with learning disabilities and those 
-                with learning gaps due to the negative effects of various life experiences. She has done Pro bono Coaching 
-                for{''}<a href="https://moringaschool.com/" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-yellow-700"> Moringa School </a>with excellent results for the students.
-              </p>
-              <p>
-                She is a certified 'White belt' of Lean Six Sigma. She benefits from the{''}<a href="https://cherieblairfoundation.org/" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-yellow-700">  Cherie Blair Foundation</a> and has 
-                received valuable mentorship from{''}<a href="https://share.google/U03bbofjjnDASkk5T" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-yellow-700"> Cheryl Pullins</a>  and {''}<a href="https://share.google/gkVC20znda4PYymme" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-yellow-700">Naomi McLaughlan</a>.
-              </p>
-            </div>
-          </div>
+        {/* Umbrella Image — top of page */}
+        <div className="mb-16 flex justify-center">
+          <img
+            src="/website-pic-alpha-grp-umbrella.jpeg"
+            alt="Alpha Group KE — One Vision, Two Powerful Divisions"
+            className="w-full max-w-2xl rounded-lg shadow-md"
+          />
         </div>
+ 
         {/* Events MC Section */}
         <div className="mb-16">
           <ImageSlideshow images={eventImages} autoPlay={true} autoPlayInterval={5000} />
         </div>
-
-
+ 
         {/* Media Features Section */}
         <div className="bg-yellow-50 p-8 rounded-lg mb-16">
           <h3 className="text-3xl font-bold text-gray-900 text-center mb-8">Media Features & Recognition</h3>
-          
+ 
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <h4 className="text-xl font-bold text-gray-900 mb-4">TV & Media Appearances</h4>
               <ul className="space-y-3">
                 <li>
-                  <a href="https://www.youtube.com/watch?v=MdTnJTvnXpY&feature=youtu.be" 
-                     target="_blank" rel="noopener noreferrer" 
+                  <a href="https://www.youtube.com/watch?v=MdTnJTvnXpY&feature=youtu.be"
+                     target="_blank" rel="noopener noreferrer"
                      className="text-yellow-500 hover:text-yellow-700">
                     Ebru TV - Importance of an Image Consultant
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.youtube.com/watch?v=eUz60PEX0no&t=66s" 
-                     target="_blank" rel="noopener noreferrer" 
+                  <a href="https://www.youtube.com/watch?v=eUz60PEX0no&t=66s"
+                     target="_blank" rel="noopener noreferrer"
                      className="text-yellow-500 hover:text-yellow-700">
                     Ebru TV - Widows in Kenya and beyond
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.facebook.com/watch/live/?ref=search&v=2212548072103552" 
-                     target="_blank" rel="noopener noreferrer" 
+                  <a href="https://www.facebook.com/watch/live/?ref=search&v=2212548072103552"
+                     target="_blank" rel="noopener noreferrer"
                      className="text-yellow-500 hover:text-yellow-700">
                     Niusline TV - Successful parenting
                   </a>
                 </li>
               </ul>
             </div>
-            
+ 
             <div>
               <h4 className="text-xl font-bold text-gray-900 mb-4">Publications & Awards</h4>
               <ul className="space-y-3">
                 <li>
-                  <a href="https://parentsafrica.com/nicole-ngigi-helping-widows-rebuild-their-lives/" 
-                     target="_blank" rel="noopener noreferrer" 
+                  <a href="https://parentsafrica.com/nicole-ngigi-helping-widows-rebuild-their-lives/"
+                     target="_blank" rel="noopener noreferrer"
                      className="text-yellow-500 hover:text-yellow-700">
                     Parents Africa Magazine - Helping widows rebuild their lives
                   </a>
                 </li>
                 <li>
-                  <a href="https://m.facebook.com/RisingStarKenya/" 
-                     target="_blank" rel="noopener noreferrer" 
+                  <a href="https://m.facebook.com/RisingStarKenya/"
+                     target="_blank" rel="noopener noreferrer"
                      className="text-yellow-500 hover:text-yellow-700">
                     CFC Stanbic Rising Star Kenya - Professional Services Category Finalist
                   </a>
@@ -919,33 +886,35 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
-
+ 
         {/* Newsletter Signup */}
         <div className="text-center mb-16">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">Stay Updated</h3>
           <p className="text-lg text-gray-600 mb-6">Join our mailing list for the latest updates and resources</p>
-          <a 
-            href="https://forms.gle/cnSmGWsxg3F8wBPs8" 
-            target="_blank" 
+          <a
+            href="https://forms.gle/cnSmGWsxg3F8wBPs8"
+            target="_blank"
             rel="noopener noreferrer"
             className="btn-primary inline-block px-8 py-3"
           >
             Join Our Mailing List
           </a>
         </div>
-
+ 
         {/* Training Section */}
         <div className="bg-white p-8 rounded-lg shadow-md">
           <div className="text-center">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">Training for Lasting Transformation Moriah's Method</h3>
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              Transformation Through The Elevation Framework<sup className="text-base">™</sup>
+            </h3>
             <p className="text-lg text-gray-600 mb-6 max-w-4xl mx-auto">
-              Nicole's method of teaching has had an astounding impact. She would like children in Africa and 
-              beyond to enjoy the same experience. This training is an opportunity for Educators to learn about 
+              Nicole's method of teaching has had an astounding impact. She would like children in Africa and
+              beyond to enjoy the same experience. This training is an opportunity for Educators to learn about
               alternative learning solutions for children in the classroom and beyond.
             </p>
-            <a 
-              href="https://forms.gle/s7ccJzZeicrFXyYS7" 
-              target="_blank" 
+            <a
+              href="https://forms.gle/s7ccJzZeicrFXyYS7"
+              target="_blank"
               rel="noopener noreferrer"
               className="btn-primary inline-block px-8 py-3"
             >

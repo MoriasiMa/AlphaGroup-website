@@ -1195,7 +1195,7 @@ const ServicesPage = ({ setCurrentPage }) => {
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h4 className="text-xl font-bold text-yellow-500 mb-3">Events MC Services</h4>
               <p className="text-gray-600 mb-4">
-                Moriah has a 'midas touch' for kids' events:
+                Coach Moriah has a 'midas touch' for kids' events:
             
               </p>
               <ul className="text-sm text-gray-700 space-y-1">
@@ -1310,7 +1310,7 @@ const ServicesPage = ({ setCurrentPage }) => {
        </h3>
        <blockquote className="text-lg italic text-gray-700 mb-6">
       "Transformation is the end result of intentionality,every minute,hour,day,week!"
-      <footer className="text-sm text-gray-600 mt-2">— Moriah, Founder & Lead Therapist</footer>
+      <footer className="text-sm text-gray-600 mt-2">— Coach Moriah, Founder & Lead Therapist</footer>
       </blockquote>
       <p className="text-xl font-semibold text-yellow-500 mb-4">
       Experience profound shifts that create lasting change for you and your family.
@@ -1642,7 +1642,42 @@ const ProgramsPage = ({ setCurrentPage }) => (
   </div>
 );
 
+ 
 const blogPosts = [
+  {
+    id: 'meet-moriah',
+    title: 'Meet Coach Moriah — Founder of Alpha Group KE',
+    excerpt: 'The story, credentials, and mission behind Alpha Group KE\u2019s founder — coach, counseling psychologist, and advocate for trauma healing and inclusive learning.',
+    tag: 'About the Founder',
+    content: [
+      {
+        heading: 'A Multi-Gifted Force for Change',
+        blocks: [
+          { type: 'image', src: '/about profile pic.jpg', alt: 'Coach Moriah - Founder of Alpha Group KE' },
+          { type: 'text', text: 'Coach Moriah is a multi-gifted businesswoman with a passion for Personal Development and Healing Trauma. She is also passionate about Learning processes and Community Development using an Eclectic Psychology approach.' },
+        ],
+      },
+      {
+        heading: 'Credentials & Training',
+        blocks: [
+          { type: 'text', text: 'She is a registered {{Coach|https://www.eaipc.ac.ke/}} and {{Counseling Psychologist|https://www.usiu.ac.ke/}}.' },
+          { type: 'text', text: 'Coach Moriah is an alumnus of {{Strathmore University|https://strathmore.edu/}}, where she took an Accelerated Business Course that transformed her business.' },
+        ],
+      },
+      {
+        heading: 'Work in the Community',
+        blocks: [
+          { type: 'text', text: 'Based in Nairobi, she is an elevation coach consultant and counsellor. She has the joy of working with children with learning disabilities and those with learning gaps due to the negative effects of various life experiences. She has done pro bono coaching for {{Moringa School|https://moringaschool.com/}} with excellent results for the students.' },
+        ],
+      },
+      {
+        heading: 'Recognition & Mentorship',
+        blocks: [
+          { type: 'text', text: 'She is a certified \u2018White belt\u2019 of Lean Six Sigma. She benefits from the {{Cherie Blair Foundation|https://cherieblairfoundation.org/}} and has received valuable mentorship from {{Cheryl Pullins|https://share.google/U03bbofjjnDASkk5T}} and {{Naomi McLaughlan|https://share.google/gkVC20znda4PYymme}}.' },
+        ],
+      },
+    ],
+  },
   {
     id: 'school-audits',
     title: 'How School Performance Audits Can Transform Educational Institutions',
@@ -1990,10 +2025,34 @@ const blogPosts = [
     ],
   },
 ];
-
+ 
+// Renders a text block, turning any {{link text|https://url}} markers
+// into real clickable links (styled like the rest of the article).
+const renderTextWithLinks = (text) => {
+  const parts = text.split(/(\{\{[^|]+\|[^}]+\}\})/g);
+  return parts.map((part, i) => {
+    const match = part.match(/^\{\{([^|]+)\|([^}]+)\}\}$/);
+    if (match) {
+      const [, label, url] = match;
+      return (
+        <a
+          key={i}
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-yellow-500 hover:text-yellow-700 underline"
+        >
+          {label}
+        </a>
+      );
+    }
+    return <React.Fragment key={i}>{part}</React.Fragment>;
+  });
+};
+ 
 const BlogPage = () => {
   const [selectedPost, setSelectedPost] = useState(null);
-
+ 
   // Block right-click, text selection and copy inside the reading modal
   // so content can be read but not easily lifted out as a file/text dump.
   const guardProps = {
@@ -2001,7 +2060,7 @@ const BlogPage = () => {
     onContextMenu: (e) => e.preventDefault(),
     style: { userSelect: 'none', WebkitUserSelect: 'none' },
   };
-
+ 
   return (
     <div className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -2016,7 +2075,7 @@ const BlogPage = () => {
             institutional growth — from the Mwanicole Consultants team.
           </p>
         </div>
-
+ 
         {/* Blog Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
@@ -2041,7 +2100,7 @@ const BlogPage = () => {
           ))}
         </div>
       </div>
-
+ 
       {/* Reading Modal — read-only, no download/print/copy */}
       {selectedPost && (
         <div
@@ -2070,34 +2129,52 @@ const BlogPage = () => {
                 <X size={24} />
               </button>
             </div>
-
+ 
             {/* Modal Content - read only */}
             <div className="p-6 space-y-6" {...guardProps}>
               {selectedPost.content.map((section, i) => (
-  <div key={i}>
-    <h3 className="text-lg font-bold text-yellow-500 mb-2">
-      {section.heading}
-    </h3>
-    <div className="space-y-2">
-      {section.blocks.map((block, j) =>
-        block.type === 'list' ? (
-          <ul key={j} className="space-y-2 mb-3">
-            {block.items.map((item, k) => (
-              <li key={k} className="flex items-start gap-3 text-gray-700 leading-relaxed">
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p key={j} className="text-gray-700 leading-relaxed">{block.text}</p>
-        )
-      )}
-    </div>
-  </div>
-))}
-            
-
+                <div key={i}>
+                  <h3 className="text-lg font-bold text-yellow-500 mb-2">
+                    {section.heading}
+                  </h3>
+                  <div className="space-y-2">
+                    {section.blocks.map((block, j) => {
+                      if (block.type === 'list') {
+                        return (
+                          <ul key={j} className="space-y-2 mb-3">
+                            {block.items.map((item, k) => (
+                              <li key={k} className="flex items-start gap-3 text-gray-700 leading-relaxed">
+                                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0" />
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        );
+                      }
+                      if (block.type === 'image') {
+                        return (
+                          <img
+                            key={j}
+                            src={block.src}
+                            alt={block.alt || ''}
+                            draggable={false}
+                            className="w-full max-w-sm mx-auto rounded-lg shadow-md mb-3"
+                            onError={(e) => {
+                              e.target.style.display = 'none';
+                            }}
+                          />
+                        );
+                      }
+                      return (
+                        <p key={j} className="text-gray-700 leading-relaxed">
+                          {renderTextWithLinks(block.text)}
+                        </p>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+ 
               <div className="bg-yellow-50 p-4 rounded-lg mt-8">
                 <p className="text-gray-700 text-sm">
                   Want to talk through how this applies to your school or family? Reach out
@@ -2111,7 +2188,6 @@ const BlogPage = () => {
     </div>
   );
 };
-
 const ResourcesPage = () => (
   <div className="py-16">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -2184,7 +2260,7 @@ const TestimonialsPage = ({ setCurrentPage }) => {
 
         {/* Moriah's Story Section */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
-          <h2 className="text-3xl font-bold text-yellow-500 mb-6">Moriah's Story</h2>
+          <h2 className="text-3xl font-bold text-yellow-500 mb-6">Coach Moriah's Story</h2>
           <div className="text-gray-700 leading-relaxed space-y-4">
             <p>
               My learning journey was quite normal until I was 9 years old, when our family was involved in a terrible car crash! We were headed back to Nairobi from a family vacation; as fate would have it, we did not get home that day. We were rescued by well-wishers who called for an ambulance, which saved our lives.

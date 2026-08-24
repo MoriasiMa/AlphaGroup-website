@@ -419,17 +419,17 @@ const HomePage = ({ setCurrentPage }) => {
     },
     {
       src: "/h2.jpeg",
-      alt: "personal trauma couching",
+      alt: "personal trauma coaching",
       caption: "Programs Available"
     },
     {
       src: "/h3.jpeg",
-      alt: "relationship trauma couching",
+      alt: "relationship trauma coaching",
       caption: "Programs Available"
     },
     {
       src: "/h4.jpeg",
-      alt: "relationship trauma couching",
+      alt: "relationship trauma coaching",
       caption: "Programs Available"
     },
     {
@@ -489,17 +489,17 @@ const HomePage = ({ setCurrentPage }) => {
     },
     {
       src: "/WhatsApp Image 2026-03-08 at 10.47.22 AM.jpeg",
-      alt: "personal trauma couching",
+      alt: "personal trauma coaching",
       caption: "Programs Available"
     },
     {
       src: "/WhatsApp Image 2026-03-08 at 10.47.23 AM (1).jpeg",
-      alt: "relationship trauma couching",
+      alt: "relationship trauma coaching",
       caption: "Programs Available"
     },
     {
       src: "/WhatsApp Image 2026-03-08 at 10.47.23 AM (2).jpeg",
-      alt: "relationship trauma couching",
+      alt: "relationship trauma coaching",
       caption: "Programs Available"
     },
     {
@@ -2447,17 +2447,17 @@ const ContactPage = () => {
     },
     {
       src: "/CSR2.jpeg",
-      alt: "personal trauma couching",
+      alt: "personal trauma coaching",
       caption: "Join our monthly trauma healing sessions - Every woman is invited to the healing table"
     },
     {
       src: "/CSR3.jpeg",
-      alt: "relationship trauma couching",
+      alt: "relationship trauma coaching",
       caption: "Join our monthly trauma healing sessions - Every woman is invited to the healing table"
     },
     {
       src: "/CSR4.jpeg",
-      alt: "relationship trauma couching",
+      alt: "relationship trauma coaching",
       caption: "Join and connect with other passionate, like-minded individuals"
     },
     {

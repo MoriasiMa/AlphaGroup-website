@@ -2809,7 +2809,7 @@ const Footer = () => {
               <span className="text-lg font-bold">Alpha Coaching KE</span>
             </div>
             <p className="text-gray-400 text-sm">
-              Professional therapy with certified coaches and proffessional counseling Psychologists
+              Professional therapy with certified coaches and professional counseling Psychologists
             </p>
           </div>
           

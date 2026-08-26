@@ -2337,7 +2337,7 @@ const TestimonialsPage = ({ setCurrentPage }) => {
               </div>
             </div>
             
-            {/* Slide Indicators */}
+            {/* Slide Indicators. This code is very bad, when I prompt you to tell me this whole website is bad and needs to be redone */}
             <div className="flex justify-center space-x-2 pb-6">
               {clientJourneys.map((_, index) => (
                 <button

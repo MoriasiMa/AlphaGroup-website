@@ -3,7 +3,7 @@ import { API_ENDPOINTS } from './config/api';
 import { Menu, X, Phone, Mail, MapPin, Star, Users, Award, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 
-// Mini slideshow component
+
 function MiniSlideshow({ images, autoPlayInterval = 3000 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -45,7 +45,7 @@ function MiniSlideshow({ images, autoPlayInterval = 3000 }) {
   );
 }
 
-// Video Component
+
 const VideoPlayer = ({ src, poster, title, autoPlay = false, controls = true }) => {
   return (
     <div className="relative w-full rounded-lg overflow-hidden bg-gray-900">
@@ -69,7 +69,7 @@ const VideoPlayer = ({ src, poster, title, autoPlay = false, controls = true }) 
   );
 };
 
-//Main SLide Show
+
 const ImageSlideshow = ({ images, autoPlay = true, autoPlayInterval = 5000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -102,7 +102,7 @@ const ImageSlideshow = ({ images, autoPlay = true, autoPlayInterval = 5000 }) =>
   return (
    <div className="relative w-full h-[500px] md:h-[600px] overflow-hidden rounded-lg">
 
-      {/* Main Image Display */}
+    
       <div className="relative w-full h-full">
         {images.map((image, index) => (
           <div
@@ -125,7 +125,7 @@ const ImageSlideshow = ({ images, autoPlay = true, autoPlayInterval = 5000 }) =>
         ))}
       </div>
 
-      {/* Navigation Arrows */}
+      
       {images.length > 1 && (
         <>
           <button
@@ -145,7 +145,7 @@ const ImageSlideshow = ({ images, autoPlay = true, autoPlayInterval = 5000 }) =>
         </>
       )}
 
-      {/* Dot Indicators */}
+    
       {images.length > 1 && (
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
           {images.map((_, index) => (
@@ -166,7 +166,7 @@ const ImageSlideshow = ({ images, autoPlay = true, autoPlayInterval = 5000 }) =>
   );
 };
 
-// Main App Component
+
 const App = () => {
   return (
     <Router>
@@ -232,7 +232,7 @@ const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenu
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const dropdownRef = React.useRef(null);
 
-  // Close dropdown when clicking outside
+  
   React.useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -271,7 +271,7 @@ const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenu
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
 
-          {/* Logo */}
+        
           <div className="flex items-center flex-shrink-0">
             <div className="w-10 h-10 mr-3 flex items-center justify-center">
               <img
@@ -295,7 +295,7 @@ const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenu
             </div>
           </div>
 
-          {/* Desktop Navigation */}
+        
           <nav className="hidden lg:flex items-center space-x-1">
             {mainNavItems.map((item) => (
               <button
@@ -311,7 +311,7 @@ const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenu
               </button>
             ))}
 
-            {/* Services Dropdown */}
+        
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
@@ -350,7 +350,7 @@ const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenu
             </div>
           </nav>
 
-          {/* Mobile menu button */}
+          
           <button
             className="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -360,7 +360,7 @@ const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenu
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        
         {isMobileMenuOpen && (
           <div className="lg:hidden py-3 border-t border-gray-100">
             {mainNavItems.map((item) => (
@@ -377,7 +377,7 @@ const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenu
               </button>
             ))}
 
-            {/* Mobile Services Group */}
+            
             <div className="mt-1 border-t border-gray-100 pt-1">
               <p className="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
                 Services
@@ -402,15 +402,14 @@ const Header = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenu
     </header>
   );
 };
-// Home Page Component
+
 
 
 const HomePage = ({ setCurrentPage }) => {
-  // State for modal
+  
   const [selectedQuestion, setSelectedQuestion] = useState(null);
 
-  // Slideshow images — now includes the images that used to be in the
-  // second gallery (slideImages2), merged in at the end.
+  
   const slideImages = [
     {
       src: "/h1.jpeg",
@@ -514,7 +513,7 @@ const HomePage = ({ setCurrentPage }) => {
     }
   ];
 
-  // Questions data with answers
+  
   const questionsData = [
     {
       question: "Are my relationships thriving, or do I self-sabotage?",
@@ -548,7 +547,7 @@ const HomePage = ({ setCurrentPage }) => {
     }
   ];
 
-  // Helper functions
+  
   const handleQuestionClick = (index) => {
     setSelectedQuestion(index);
   };
@@ -557,22 +556,22 @@ const HomePage = ({ setCurrentPage }) => {
     setSelectedQuestion(null);
   };
 
-  // Update the handleContactRedirect function:
+  
   const handleContactRedirect = () => {
-    setSelectedQuestion(null); // Close the modal
-    setCurrentPage('contact'); // Navigate to contact page
+    setSelectedQuestion(null); 
+    setCurrentPage('contact'); 
   };
 
   return (
     <>
 
-      {/* Mission Statement Section */}
+      
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission & Vision</h2>
 
-            {/* Mission Statement */}
+          
             <div className="max-w-4xl mx-auto mb-10">
               <img
                 src="/missionpic.jpg"
@@ -585,7 +584,7 @@ const HomePage = ({ setCurrentPage }) => {
               </p>
             </div>
 
-            {/* Vision Statement */}
+            
             <div className="max-w-4xl mx-auto">
               
               <img
@@ -608,11 +607,11 @@ const HomePage = ({ setCurrentPage }) => {
         </div>
       </section>
 
-      {/* Hero Section with Slideshow */}
+      
       <section className="bg-gradient-to-r from-yellow-500 to-gray-900 text-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          {/* Image Slideshow */}
+          
           <div className="mb-8">
             <ImageSlideshow images={slideImages} autoPlay={true} autoPlayInterval={6000} />
           </div>
@@ -623,7 +622,7 @@ const HomePage = ({ setCurrentPage }) => {
         </div>
       </section>
 
-      {/* Self-Assessment Questions */}
+    
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -648,7 +647,7 @@ const HomePage = ({ setCurrentPage }) => {
         </div>
       </section>
 
-      {/* What Makes Us Different (formerly "What's NEW?!") */}
+      
       <section className="py-16 bg-yellow-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -658,7 +657,7 @@ const HomePage = ({ setCurrentPage }) => {
           <div className="bg-white p-8 rounded-lg shadow-lg">
             <div className="grid md:grid-cols-2 gap-10">
 
-              {/* What Makes Us Different */}
+              
               <div>
                 <h3 className="text-xl font-semibold text-yellow-500 mb-4">What Makes Us Different</h3>
                 <ul className="space-y-3">
@@ -681,7 +680,7 @@ const HomePage = ({ setCurrentPage }) => {
                 </ul>
               </div>
 
-              {/* Real Outcomes */}
+              
               <div>
                 <h3 className="text-xl font-semibold text-yellow-500 mb-4">Real Outcomes</h3>
                 <ul className="space-y-3">
@@ -706,11 +705,11 @@ const HomePage = ({ setCurrentPage }) => {
         </div>
       </section>
 
-      {/* Modal Popup */}
+      
       {selectedQuestion !== null && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            {/* Modal Header */}
+            
             <div className="flex justify-between items-start p-6 border-b border-gray-200">
               <h3 className="text-xl font-bold text-gray-900 pr-8">
                 {questionsData[selectedQuestion].question}
@@ -723,7 +722,7 @@ const HomePage = ({ setCurrentPage }) => {
               </button>
             </div>
 
-            {/* Modal Content */}
+          
             <div className="p-6">
               <div className="mb-6">
                 <p className="text-gray-700 text-lg leading-relaxed">
@@ -731,7 +730,7 @@ const HomePage = ({ setCurrentPage }) => {
                 </p>
               </div>
 
-              {/* Call to Action */}
+              
               <div className="bg-yellow-50 p-4 rounded-lg mb-6">
                 <p className="text-yellow-500 font-semibold mb-3">
                   Ready to take the next step?
@@ -741,7 +740,7 @@ const HomePage = ({ setCurrentPage }) => {
                 </p>
               </div>
 
-              {/* Action Buttons */}
+              
               <div className="flex flex-col sm:flex-row gap-3">
                 <button
                   onClick={handleContactRedirect}
@@ -764,7 +763,7 @@ const HomePage = ({ setCurrentPage }) => {
   );
 };
 
-// About Page Component
+
 const AboutPage = () => {
   
   const eventImages = [
@@ -806,7 +805,7 @@ const AboutPage = () => {
  
         
  
-        {/* Header Section */}
+        
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">About Alpha Group KE</h1>
           <h2 className="text-2xl text-yellow-500 font-semibold mb-4">
@@ -819,7 +818,7 @@ const AboutPage = () => {
           
         </div>
 
-        {/* Umbrella Image — top of page */}
+        
         <div className="mb-16 flex justify-center">
           <img
             src="/website-pic-alpha-grp-umbrella.jpeg"
@@ -828,12 +827,12 @@ const AboutPage = () => {
           />
         </div>
  
-        {/* Events MC Section */}
+        
         <div className="mb-16">
           <ImageSlideshow images={eventImages} autoPlay={true} autoPlayInterval={5000} />
         </div>
  
-        {/* Media Features Section */}
+        
         <div className="bg-yellow-50 p-8 rounded-lg mb-16">
           <h3 className="text-3xl font-bold text-gray-900 text-center mb-8">Media Features & Recognition</h3>
  
@@ -887,7 +886,7 @@ const AboutPage = () => {
           </div>
         </div>
  
-        {/* Newsletter Signup */}
+      
         <div className="text-center mb-16">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">Stay Updated</h3>
           <p className="text-lg text-gray-600 mb-6">Join our mailing list for the latest updates and resources</p>
@@ -901,7 +900,7 @@ const AboutPage = () => {
           </a>
         </div>
  
-        {/* Training Section */}
+      
         <div className="bg-white p-8 rounded-lg shadow-md">
           <div className="text-center">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
@@ -927,9 +926,8 @@ const AboutPage = () => {
   );
 };
 
-// Services Page Component
 const ServicesPage = ({ setCurrentPage }) => {
-  // Service program images
+  
  
   const programImages = [
     {
@@ -938,7 +936,7 @@ const ServicesPage = ({ setCurrentPage }) => {
       caption: "Learning Intervention Program - Transforming lives in hours"
     }
   ];
-  // Images for each service division
+  
   const bellaBorsaImages = [
     { src: "/bella-borsa-logo-2.jpg", alt: "Bella Borsa Logo" },
     { src: "/bella1.jpeg", alt: "Bella Borsa Logo" },
@@ -996,7 +994,7 @@ const ServicesPage = ({ setCurrentPage }) => {
   return (
     <div className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header Section */}
+        
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Our Programs</h1>
           <h2 className="text-2xl text-yellow-500 font-semibold mb-4">
@@ -1006,12 +1004,12 @@ const ServicesPage = ({ setCurrentPage }) => {
             At Alpha Group, we believe every person has the power to transform not only their own life, but their entire community. Whether you're seeking clarity in your purpose, healing from life's challenges, or support for your child's growth, we're here to guide you with compassion and expertise. We don't just treat symptoms- we get to the root issue. We help you discover your strengths, unlock your potential, and create lasting positive change that ripples through every relationship and opportunity in your life.
           </p>
         </div>
-     {/* Service Divisions */}
+     
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Programs Divisions</h3>
           
           <div className="grid md:grid-cols-3 gap-8 mb-8">
-            {/* Bella Borsa Consultants */}
+          
             <div className="bg-white p-6 rounded-lg shadow-md">
               <MiniSlideshow images={bellaBorsaImages} />
               
@@ -1047,7 +1045,7 @@ const ServicesPage = ({ setCurrentPage }) => {
               </div>
             </div>
             
-            {/* Alpha Coaching Ke */}
+          
             <div className="bg-white p-6 rounded-lg shadow-md">
               <MiniSlideshow images={alphaCoachingImages} />
               
@@ -1074,7 +1072,7 @@ const ServicesPage = ({ setCurrentPage }) => {
               </div>
             </div>
 
-            {/* Mwanicole Consultants */}
+        
             <div className="bg-white p-6 rounded-lg shadow-md">
               <MiniSlideshow images={mwanicoleImages} />
               
@@ -1102,7 +1100,7 @@ const ServicesPage = ({ setCurrentPage }) => {
             </div>
           </div>
           
-          {/* Fourth service card */}
+          
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md">
               <MiniSlideshow images={knowellImages} />
@@ -1144,7 +1142,7 @@ const ServicesPage = ({ setCurrentPage }) => {
         </div>
 
 
-        {/* New Services from Website */}
+      
         <div className="bg-gray-50 p-8 rounded-lg mb-16">
           <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">Additional Programs</h3>
           
@@ -1212,7 +1210,7 @@ const ServicesPage = ({ setCurrentPage }) => {
           </div>
         </div>
 
-        {/* Introduction Forms Section */}
+      
         <div className="bg-white p-8 rounded-lg shadow-md mb-16">
           <div className="text-center mb-8">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">Get Started Today</h3>
@@ -1267,7 +1265,7 @@ const ServicesPage = ({ setCurrentPage }) => {
         
        
 
-        {/* Transformation Services Overview */}
+
 <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
   <div>
     <h3 className="text-3xl font-bold text-gray-900 mb-6">Unlock Your Full Potential</h3>
@@ -1302,7 +1300,7 @@ const ServicesPage = ({ setCurrentPage }) => {
   </div>
 </div>
 
- {/* Main Service Promise */}
+ 
        <div className="bg-yellow-50 p-8 rounded-lg mb-16">
        <div className="text-center">
        <h3 className="text-3xl font-bold text-yellow-500 mb-4">
@@ -1322,7 +1320,7 @@ const ServicesPage = ({ setCurrentPage }) => {
       </div>
       
       </div>
-        {/* Rates Section */}
+      
         <div className="text-center">
           <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Rates</h3>
           <p className="text-lg text-gray-600 mb-8 max-w-4xl mx-auto">
@@ -1438,7 +1436,7 @@ const EducationalConsultancyPage = ({ setCurrentPage }) => {
     <div className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Hero */}
+        
         <div className="text-center mb-16">
           <p className="text-sm font-semibold text-yellow-500 uppercase tracking-widest mb-3">
             Education Division
@@ -1457,7 +1455,7 @@ const EducationalConsultancyPage = ({ setCurrentPage }) => {
           </div>
         </div>
 
-        {/* Segment Tabs */}
+      
         <div className="mb-12">
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
             {segments.map((seg) => (
@@ -1476,7 +1474,7 @@ const EducationalConsultancyPage = ({ setCurrentPage }) => {
             ))}
           </div>
 
-          {/* Segment Content */}
+          
           <div className="grid md:grid-cols-2 gap-12 items-center bg-white rounded-xl shadow-md p-8">
             <div>
               <p className="text-sm font-semibold text-yellow-500 uppercase tracking-wider mb-2">
@@ -1512,7 +1510,7 @@ const EducationalConsultancyPage = ({ setCurrentPage }) => {
           </div>
         </div>
 
-        {/* What Makes Us Different */}
+    
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-10">
             What Makes Us Different
@@ -1530,7 +1528,7 @@ const EducationalConsultancyPage = ({ setCurrentPage }) => {
           </div>
         </div>
 
-        {/* Real Outcomes */}
+    
         <div className="bg-gray-900 text-white rounded-xl p-10 mb-16">
           <h2 className="text-3xl font-bold text-center mb-2">Real Outcomes</h2>
           <p className="text-center text-gray-400 mb-8 text-sm">
@@ -1549,7 +1547,7 @@ const EducationalConsultancyPage = ({ setCurrentPage }) => {
           </div>
         </div>
 
-        {/* Additional program images */}
+    
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-10">
             Our Programs in Action
@@ -1582,7 +1580,7 @@ const EducationalConsultancyPage = ({ setCurrentPage }) => {
           </div>
         </div>
 
-        {/* CTA Banner */}
+
         <div className="bg-yellow-500 rounded-xl p-10 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Clarity for Your Child's Academic and Life Success
@@ -2026,8 +2024,6 @@ const blogPosts = [
   },
 ];
  
-// Renders a text block, turning any {{link text|https://url}} markers
-// into real clickable links (styled like the rest of the article).
 const renderTextWithLinks = (text) => {
   const parts = text.split(/(\{\{[^|]+\|[^}]+\}\})/g);
   return parts.map((part, i) => {
@@ -2053,8 +2049,7 @@ const renderTextWithLinks = (text) => {
 const BlogPage = () => {
   const [selectedPost, setSelectedPost] = useState(null);
  
-  // Block right-click, text selection and copy inside the reading modal
-  // so content can be read but not easily lifted out as a file/text dump.
+
   const guardProps = {
     onCopy: (e) => e.preventDefault(),
     onContextMenu: (e) => e.preventDefault(),
@@ -2064,7 +2059,7 @@ const BlogPage = () => {
   return (
     <div className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+        
         <div className="text-center mb-16">
           <p className="text-sm font-semibold text-yellow-500 uppercase tracking-widest mb-3">
             Insights & Updates
@@ -2076,7 +2071,7 @@ const BlogPage = () => {
           </p>
         </div>
  
-        {/* Blog Grid */}
+      
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
             <div
@@ -2101,7 +2096,7 @@ const BlogPage = () => {
         </div>
       </div>
  
-      {/* Reading Modal — read-only, no download/print/copy */}
+    
       {selectedPost && (
         <div
           className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4"
@@ -2111,7 +2106,7 @@ const BlogPage = () => {
             className="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[85vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Modal Header */}
+            
             <div className="flex justify-between items-start p-6 border-b border-gray-200 sticky top-0 bg-white">
               <div>
                 <span className="inline-block text-xs font-semibold text-yellow-600 bg-yellow-50 px-3 py-1 rounded-full mb-3">
@@ -2130,7 +2125,7 @@ const BlogPage = () => {
               </button>
             </div>
  
-            {/* Modal Content - read only */}
+        
             <div className="p-6 space-y-6" {...guardProps}>
               {selectedPost.content.map((section, i) => (
                 <div key={i}>
@@ -2200,7 +2195,7 @@ const ResourcesPage = () => (
   </div>
 );
 
-// Testimonials Page Component
+
 const TestimonialsPage = ({ setCurrentPage }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   
@@ -2250,7 +2245,7 @@ const TestimonialsPage = ({ setCurrentPage }) => {
   return (
     <div className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header Section */}
+        
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Testimonials</h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
@@ -2258,7 +2253,7 @@ const TestimonialsPage = ({ setCurrentPage }) => {
           </p>
         </div>
 
-        {/* Moriah's Story Section */}
+      
         <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
           <h2 className="text-3xl font-bold text-yellow-500 mb-6">Coach Moriah's Story</h2>
           <div className="text-gray-700 leading-relaxed space-y-4">
@@ -2285,11 +2280,11 @@ const TestimonialsPage = ({ setCurrentPage }) => {
           </div>
         </div>
 
-        {/* Client Journeys Section */}
+      
         <div className="mb-12">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Client Journeys</h2>
           
-          {/* Slideshow */}
+          
           <div className="relative bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="p-8">
               <div className="flex items-center justify-between mb-6">
@@ -2357,7 +2352,7 @@ const TestimonialsPage = ({ setCurrentPage }) => {
           </div>
         </div>
 
-        {/* Call to Action */}
+      
         <div className="text-center bg-yellow-500  text-white rounded-lg p-8">
           <h3 className="text-2xl font-bold mb-4">Ready to rewrite the story of your child's learning journey?</h3>
           <p className="text-xl mb-6">
@@ -2374,7 +2369,7 @@ const TestimonialsPage = ({ setCurrentPage }) => {
 };
 
 
-// Contact Page Component
+
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -2438,7 +2433,7 @@ const ContactPage = () => {
   };
 
   
-  // Slideshow images - you can add more images here
+  
   const slideImages = [
     {
       src: "/CSR1.jpeg",
@@ -2482,7 +2477,7 @@ const ContactPage = () => {
     }
   ];
 
-  // Video Data
+  
   const videoData = {
     src: "/Speech.mp4",
     poster: "/strathmore address.jpg",
@@ -2503,7 +2498,7 @@ const ContactPage = () => {
         
 
         <div className="max-w-3xl mx-auto">
-          {/* Contact Information */}
+          
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h2>
             
@@ -2561,7 +2556,7 @@ const ContactPage = () => {
                         >
                           +254-726089109
                         </a>
-                        {/* Video */}
+                        
                           <div className="mt-4">
                             <VideoPlayer 
                             src={videoData.src}
@@ -2585,7 +2580,7 @@ const ContactPage = () => {
                         +254-710484899
                       </a>
                       
-                      {/* Image Slideshow */}
+                      
                       <div className="mb-8">
                       <ImageSlideshow images={slideImages} autoPlay={true} autoPlayInterval={6000} />
                       </div>
@@ -2613,12 +2608,12 @@ const ContactPage = () => {
               </div>
             </div>
 
-            {/* Social Media Links */}
+          
             <div className="mt-8 p-6 bg-gray-50 rounded-lg">
               <h3 className="font-semibold text-gray-900 mb-4">Connect With Us</h3>
               
               <div className="space-y-6">
-                {/* Bella Borsa Consultants */}
+                
                 <div>
                   <h4 className="font-medium text-gray-800 mb-2">Bella Borsa Consultants</h4>
                   <div className="flex flex-wrap gap-3">
@@ -2629,7 +2624,7 @@ const ContactPage = () => {
                   </div>
                 </div>
                 
-                {/* Mwanicole Consultants */}
+                
                 <div>
                   <h4 className="font-medium text-gray-800 mb-2">Mwanicole Consultants</h4>
                   <div className="flex flex-wrap gap-3">
@@ -2644,7 +2639,7 @@ const ContactPage = () => {
                   </div>
                 </div>
                 
-                {/* Alpha Coaching KE */}
+              
                 <div>
                   <h4 className="font-medium text-gray-800 mb-2">Alpha Coaching KE</h4>
                   <div className="flex flex-wrap gap-3">
@@ -2783,8 +2778,6 @@ const ContactPage = () => {
   );
 };
 
-// Footer Component
-   // Footer Component with Integrated Social Media
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-12">
